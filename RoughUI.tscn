@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdm4mjfy4px8q"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sefuc"]
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("CanvasItemMaterial_sefuc")
