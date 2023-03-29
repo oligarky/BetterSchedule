@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bl6gfuyh6yn57"
+
+[deps]
+
+files=["res://Comp_courses_data(1).Subject Description.translation", "res://Comp_courses_data(1).Course.translation", "res://Comp_courses_data(1).Section.translation", "res://Comp_courses_data(1).Hours.translation", "res://Comp_courses_data(1).CRN.translation", "res://Comp_courses_data(1).Term.translation", "res://Comp_courses_data(1).Instructor.translation", "res://Comp_courses_data(1).Meeting day.translation", "res://Comp_courses_data(1).meeting time start.translation", "res://Comp_courses_data(1).meeting time end.translation", "res://Comp_courses_data(1).building.translation", "res://Comp_courses_data(1).room.translation", "res://Comp_courses_data(1).campus.translation", "res://Comp_courses_data(1).status.translation", "res://Comp_courses_data(1).attrib.translation"]
+
+source_file="res://Comp_courses_data(1).csv"
+dest_files=["res://Comp_courses_data(1).Subject Description.translation", "res://Comp_courses_data(1).Course.translation", "res://Comp_courses_data(1).Section.translation", "res://Comp_courses_data(1).Hours.translation", "res://Comp_courses_data(1).CRN.translation", "res://Comp_courses_data(1).Term.translation", "res://Comp_courses_data(1).Instructor.translation", "res://Comp_courses_data(1).Meeting day.translation", "res://Comp_courses_data(1).meeting time start.translation", "res://Comp_courses_data(1).meeting time end.translation", "res://Comp_courses_data(1).building.translation", "res://Comp_courses_data(1).room.translation", "res://Comp_courses_data(1).campus.translation", "res://Comp_courses_data(1).status.translation", "res://Comp_courses_data(1).attrib.translation"]
+
+[params]
+
+compress=true
+delimiter=0
