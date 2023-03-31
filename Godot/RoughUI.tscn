@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdm4mjfy4px8q"]
+[gd_scene load_steps=7 format=3 uid="uid://bdm4mjfy4px8q"]
+
+[ext_resource type="Script" path="res://Hide.cs" id="1_tlow0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -114,7 +116,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 1"]
 layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
+text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION, Hide me"
 
 [node name="Class 2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
 layout_mode = 2
@@ -211,22 +213,28 @@ text = "FILTERS
 
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+action_mode = 0
 text = "Filter"
+script = ExtResource("1_tlow0")
 
 [node name="CheckButton2" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+action_mode = 0
 text = "Filter"
 
 [node name="CheckButton3" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+action_mode = 0
 text = "Filter"
 
 [node name="CheckButton4" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+action_mode = 0
 text = "Filter"
 
 [node name="CheckButton5" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+action_mode = 0
 text = "Filter"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer"]
@@ -359,3 +367,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Button"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2/CheckButton" to="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2/CheckButton" method="_on_pressed"]
