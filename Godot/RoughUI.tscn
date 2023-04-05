@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdm4mjfy4px8q"]
+[gd_scene load_steps=9 format=3 uid="uid://bdm4mjfy4px8q"]
 
+[ext_resource type="Script" path="res://TestingText.cs" id="1_iyrc2"]
 [ext_resource type="Script" path="res://Hide.cs" id="1_tlow0"]
+[ext_resource type="Script" path="res://Text_adding.cs" id="2_tfpvd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -124,6 +126,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]
 layout_mode = 2
 text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
+script = ExtResource("1_iyrc2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+script = ExtResource("2_tfpvd")
 
 [node name="Class 3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
 layout_mode = 2
