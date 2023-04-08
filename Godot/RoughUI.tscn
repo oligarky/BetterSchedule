@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0k70wqk8nv8v"]
+[gd_scene load_steps=7 format=3 uid="uid://c0k70wqk8nv8v"]
 
-[ext_resource type="Texture2D" uid="uid://btfhhlskhku1i" path="res://wentworth.jpg" id="1_f5r50"]
 [ext_resource type="Script" path="res://data.gd" id="2_7hlyb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
@@ -72,11 +71,6 @@ layout_mode = 2
 [node name="Left" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Wentworth" type="Sprite2D" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/Left"]
-position = Vector2(21, 25)
-scale = Vector2(0.113125, 0.113125)
-texture = ExtResource("1_f5r50")
 
 [node name="right" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2

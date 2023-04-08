@@ -22,7 +22,7 @@ func load_csv():
 		get_child(counter2).add_child(label)
 		get_child(counter2).get_child(counter).text = results[i]
 		get_child(counter2).get_child(counter).size_flags_horizontal += SIZE_SHRINK_BEGIN
-		get_child(counter2).get_child(counter).size_flags_vertical += SIZE_SHRINK_BEGIN
+		get_child(counter2).get_child(counter).size_flags_vertical += SIZE_SHRINK_CENTER
 		sizing(counter,counter2)
 		
 		counter = counter + 1
