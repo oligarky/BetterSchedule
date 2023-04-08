@@ -52,13 +52,35 @@ public partial class filter_hiding : Node
 
 			String filter = classes[j].Text;
 			if((filter.Contains(s))){
-				//left blank so it does nothing to nodes that match (could use not but was changed during debug steps)
+				//shows the classes if they were hidden by another pass through from earlier filters
+				//Might need to be changed later for additional filters
+				classes[j].GetParent<HBoxContainer>().Show();
 			}else{
 				//Hides the HBoxContainer instead of the label to clean up the output
 				classes[j].GetParent<HBoxContainer>().Hide();
 			}
 		}
 		
+	}
+	//setup as a reset for the filters to allow for showing specific things
+	public void showAll(){
+		for(var j=0;j<classes.Count-1;j++){
+			classes[j].GetParent<HBoxContainer>().Show();
+		}
+	}
+	//This just does the unhiding not any filtering beyond that. Can be used during later filtering to ensure things are shown
+	public void unHide(String s){
+		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
+		//intended otherwise without an error.
+		for(var j=0;j<classes.Count-1;j++){
+
+			String filter = classes[j].Text;
+			if((filter.Contains(s))){
+				//shows the classes if they were hidden by another pass through from earlier filters
+				//Might need to be changed later for additional filters
+				classes[j].GetParent<HBoxContainer>().Show();
+			}
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
