@@ -4,43 +4,61 @@ using System.Collections.Generic;
 
 public partial class filter_hiding : Node
 {
+
+	//creating list for filtering
+	List<Label> classes= new List<Label>();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print("Listing");
-		var head = this.GetChild(0);
+		//listlabels();
+
+		
+
+	}
+	//Moves through the tree of nodes to find all of the labels 
+	public void listlabels(VBoxContainer head){
+		//GD.Print("Listing");
+		//GD.Print(head);
 		var i = 0;
-		List<Label> classes= new List<Label>();
-		GD.Print(head.GetChild(i));
-		while(head.GetChild(i)!=null){
-			GD.Print(head.GetChild(i));
-			GD.Print(head.GetChild(i).GetChild(0));
+		//List<Label> classes= new List<Label>();
+		//GD.Print(head.GetChild(i));
+		var hc=head.GetChildCount();
+		while(i<hc){ //could be for loop but not changed after findind the child count method
+			//GD.Print(head.GetChild(i));
+			//GD.Print(head.GetChild(i).GetChild(0));
 			classes.Add((Label)head.GetChild(i).GetChild(0));
 			
 			i+=1;
-			GD.Print(i);
+			//GD.Print(i);
 		}
-		foreach (Label n in classes){
-			GD.Print(n);
-		}
-		GD.Print("End list");
+		//foreach (Label n in classes){
+			//GD.Print(n);
+		//}
+		//GD.Print("End list");
 
 	}
-	private void _on_pressed()
+	//still attached to the button but does nothing, should be removed in cleaning
+	public void _on_pressed()
 	{
-		//This is what should be done when we replace labels with RichTextLabels
-		GD.Print("Listing");
-		var head = this.GetChild(0);
-		var i = 0;
-		List<RichTextLabel> classes= new List<RichTextLabel>();
-		while(head.GetChild(i)!=null){
-			classes.Add((RichTextLabel)head.GetChild(i).GetChild(0));
-			i++;
+		//listlabels();
+	}
+	
+	//Finds all classes that contain a given string and then hides those that don't have the matching string.
+	//Called in FilterHandler.cs
+	public void filterby(String s){
+		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
+		//intended otherwise without an error.
+		for(var j=0;j<classes.Count-1;j++){
+
+			String filter = classes[j].Text;
+			if((filter.Contains(s))){
+				//left blank so it does nothing to nodes that match (could use not but was changed during debug steps)
+			}else{
+				//Hides the HBoxContainer instead of the label to clean up the output
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}
 		}
-		foreach (RichTextLabel n in classes){
-			GD.Print(n);
-		}
-		GD.Print("End list");
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
