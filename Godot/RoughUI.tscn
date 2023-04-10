@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdm4mjfy4px8q"]
+[gd_scene load_steps=8 format=3 uid="uid://c0k70wqk8nv8v"]
 
-[ext_resource type="Script" path="res://FilterHandler.cs" id="1_d3yvs"]
-[ext_resource type="Script" path="res://Hide.cs" id="1_tlow0"]
-[ext_resource type="Script" path="res://Text_adding.cs" id="2_tfpvd"]
+[ext_resource type="Script" path="res://pdfscraper.gd" id="1_xcy07"]
+[ext_resource type="Script" path="res://data.gd" id="2_7hlyb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -53,6 +52,7 @@ size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+script = ExtResource("1_xcy07")
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -72,11 +72,6 @@ grow_vertical = 2
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/Head"]
-layout_mode = 2
-text = "Wentworth Logo
-"
-
 [node name="Left" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -88,15 +83,6 @@ size_flags_horizontal = 3
 [node name="Top Right" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
-
-[node name="Profile" type="Label" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/Top Right"]
-layout_mode = 2
-text = "Profile Pic"
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/Top Right"]
-layout_mode = 2
-text = "Last, First
-"
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -115,99 +101,7 @@ script = ExtResource("1_d3yvs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head"]
 layout_mode = 2
-
-[node name="Class 1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 1"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION, Hide me"
-
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 1"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_bcckx")
-
-[node name="Class 2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-script = ExtResource("2_tfpvd")
-
-[node name="Class 3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 3"]
-layout_mode = 2
-text = "CRN, COMP, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 4"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 5"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 6"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 7"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 8" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 8"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 9" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 9"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 10" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 10"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 11" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 11"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 12" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 12"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
+script = ExtResource("2_7hlyb")
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 0)
@@ -222,6 +116,8 @@ offset_bottom = 291.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "FILTERS
 "
 

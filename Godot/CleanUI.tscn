@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://nd5nii67n0n1"]
+[gd_scene load_steps=10 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
+[ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
 [ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
+[ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -104,90 +106,7 @@ vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head"]
 layout_mode = 2
-
-[node name="Class 1" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 1"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 2" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 2"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 3" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 3"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 4" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 4"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 5" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 5"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 6" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 6"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 7" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 7"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 8" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 8"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 9" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 9"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 10" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 10"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 11" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 11"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
-
-[node name="Class 12" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer/Class 12"]
-layout_mode = 2
-text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
+script = ExtResource("4_xd4mr")
 
 [node name="Panel" type="Panel" parent="VBoxContainer/VSplitContainer/TopHBox"]
 custom_minimum_size = Vector2(100, 0)
