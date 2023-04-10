@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdm4mjfy4px8q"]
+[gd_scene load_steps=13 format=3 uid="uid://bdm4mjfy4px8q"]
 
+[ext_resource type="Script" path="res://External_run.gd" id="1_b8x20"]
 [ext_resource type="Script" path="res://FilterHandler.cs" id="1_d3yvs"]
 [ext_resource type="Script" path="res://TestingText.cs" id="1_iyrc2"]
 [ext_resource type="Script" path="res://Hide.cs" id="1_tlow0"]
@@ -107,6 +108,7 @@ size_flags_vertical = 3
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("1_b8x20")
 
 [node name="Head" type="ScrollContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2"]
 layout_mode = 2
@@ -135,7 +137,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]
 layout_mode = 2
-text = "CRN, COMP, INSTRUCTOR, TIME, LOCATION"
+text = "CRN, COURSE, INSTRUCTOR, TIME, LOCATION"
 script = ExtResource("1_iyrc2")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head/VBoxContainer/Class 2"]

@@ -54,10 +54,12 @@ public partial class filter_hiding : Node
 			if((filter.Contains(s))){
 				//shows the classes if they were hidden by another pass through from earlier filters
 				//Might need to be changed later for additional filters
-				classes[j].GetParent<HBoxContainer>().Show();
+				//classes[j].GetParent<HBoxContainer>().Show();
+				GD.Print(classes[j].GetParent<HBoxContainer>());
 			}else{
 				//Hides the HBoxContainer instead of the label to clean up the output
 				classes[j].GetParent<HBoxContainer>().Hide();
+				
 			}
 		}
 		

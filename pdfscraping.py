@@ -1,7 +1,7 @@
 import PyPDF2
 from PyPDF2 import PdfReader
 
-reader = PdfReader("..\\Degree evaluation record2.pdf")
+reader = PdfReader("Degree evaluation record2.pdf")
 number_of_pages = len(reader.pages)
 parts = []
 
@@ -12,7 +12,7 @@ parts = []
 
 # vb = visitor_body
 
-with open("..\\Output.txt", "a") as f:
+with open("Output.txt", "a") as f:
     for i in range(1,number_of_pages) :
         page = reader.pages[i]
         text= page.extract_text() #visitor_text=vb
