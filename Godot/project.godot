@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Better Schedule"
-run/main_scene="res://RoughUI.tscn"
+run/main_scene="res://CleanUI.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,4 +21,4 @@ project/assembly_name="Better Schedule"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
