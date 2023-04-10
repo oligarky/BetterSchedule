@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://nd5nii67n0n1"]
+[gd_scene load_steps=8 format=3 uid="uid://nd5nii67n0n1"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
-[ext_resource type="Script" path="res://Scripts/CalendarHBox.gd" id="3_42sql"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -341,7 +340,6 @@ vertical_scroll_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("3_42sql")
 
 [node name="Time" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
 custom_minimum_size = Vector2(20, 0)
