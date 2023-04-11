@@ -27,6 +27,6 @@ with open("Output.txt", 'r') as file_object:
         line = file_object.readline() #gets the next line from the file
     datas = pd.DataFrame(data) #adds the data to the dataframe from pandas
 datas = datas.to_csv(columns=None,index=None,header=None)
-print(datas)
-with open("ParsedOutput.txt", "a") as f:
+#print(datas)
+with open("ParsedOutput.txt", "w") as f:
     print(datas, file=f) #prints the dataframe to the file

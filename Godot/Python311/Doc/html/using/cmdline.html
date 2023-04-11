@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="1. Command line and environment" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/using/cmdline.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="The CPython interpreter scans the command line and the environment for various settings. CPython implementation detail: Other implementations’ command line schemes may differ. See Alternate Impleme..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="The CPython interpreter scans the command line and the environment for various settings. CPython implementation detail: Other implementations’ command line schemes may differ. See Alternate Impleme..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>1. Command line and environment &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Command line and environment &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -115,7 +104,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/cmdline.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/cmdline.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -152,7 +141,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python Setup and Usage</a> &#187;</li>
@@ -190,11 +179,11 @@ settings.</p>
 <section id="command-line">
 <span id="using-on-cmdline"></span><h2><span class="section-number">1.1. </span>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
 <p>When invoking Python, you may specify any of these options:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="o">[</span>-bBdEhiIOqsSuvVWx?<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>-m<span class="w"> </span>module-name<span class="w"> </span><span class="p">|</span><span class="w"> </span>script<span class="w"> </span><span class="p">|</span><span class="w"> </span>-<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">[</span>args<span class="o">]</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python <span class="o">[</span>-bBdEhiIOqsSuvVWx?<span class="o">]</span> <span class="o">[</span>-c <span class="nb">command</span> <span class="p">|</span> -m module-name <span class="p">|</span> script <span class="p">|</span> - <span class="o">]</span> <span class="o">[</span>args<span class="o">]</span>
 </pre></div>
 </div>
 <p>The most common use case is, of course, a simple invocation of a script:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>myscript.py
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python myscript.py
 </pre></div>
 </div>
 <section id="interface-options">
@@ -265,8 +254,8 @@ site-packages directory. All <span class="target" id="index-0"></span><code clas
 ignored, too.</p>
 <p>Many standard library modules contain code that is invoked on their execution
 as a script.  An example is the <a class="reference internal" href="../library/timeit.html#module-timeit" title="timeit: Measure the execution time of small code snippets."><code class="xref py py-mod docutils literal notranslate"><span class="pre">timeit</span></code></a> module:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>timeit<span class="w"> </span>-s<span class="w"> </span><span class="s1">&#39;setup here&#39;</span><span class="w"> </span><span class="s1">&#39;benchmarked code here&#39;</span>
-python<span class="w"> </span>-m<span class="w"> </span>timeit<span class="w"> </span>-h<span class="w"> </span><span class="c1"># for details</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m timeit -s <span class="s1">&#39;setup here&#39;</span> <span class="s1">&#39;benchmarked code here&#39;</span>
+python -m timeit -h <span class="c1"># for details</span>
 </pre></div>
 </div>
 <p class="audit-hook">Raises an <a class="reference internal" href="../library/sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">cpython.run_module</span></code> with argument <code class="docutils literal notranslate"><span class="pre">module-name</span></code>.</p>
@@ -604,12 +593,12 @@ messages to <a class="reference internal" href="../library/sys.html#sys.stderr" 
 <p>The simplest settings apply a particular action unconditionally to all
 warnings emitted by a process (even those that are otherwise ignored by
 default):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-Wdefault<span class="w">  </span><span class="c1"># Warn once per call location</span>
--Werror<span class="w">    </span><span class="c1"># Convert to exceptions</span>
--Walways<span class="w">   </span><span class="c1"># Warn every time</span>
--Wmodule<span class="w">   </span><span class="c1"># Warn once per calling module</span>
--Wonce<span class="w">     </span><span class="c1"># Warn once per Python process</span>
--Wignore<span class="w">   </span><span class="c1"># Never warn</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-Wdefault  <span class="c1"># Warn once per call location</span>
+-Werror    <span class="c1"># Convert to exceptions</span>
+-Walways   <span class="c1"># Warn every time</span>
+-Wmodule   <span class="c1"># Warn once per calling module</span>
+-Wonce     <span class="c1"># Warn once per Python process</span>
+-Wignore   <span class="c1"># Never warn</span>
 </pre></div>
 </div>
 <p>The action names can be abbreviated as desired and the interpreter will
@@ -998,12 +987,12 @@ in the list.</p>
 <p>The simplest settings apply a particular action unconditionally to all
 warnings emitted by a process (even those that are otherwise ignored by
 default):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTHONWARNINGS</span><span class="o">=</span>default<span class="w">  </span><span class="c1"># Warn once per call location</span>
-<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>error<span class="w">    </span><span class="c1"># Convert to exceptions</span>
-<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>always<span class="w">   </span><span class="c1"># Warn every time</span>
-<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>module<span class="w">   </span><span class="c1"># Warn once per calling module</span>
-<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>once<span class="w">     </span><span class="c1"># Warn once per Python process</span>
-<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>ignore<span class="w">   </span><span class="c1"># Never warn</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTHONWARNINGS</span><span class="o">=</span>default  <span class="c1"># Warn once per call location</span>
+<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>error    <span class="c1"># Convert to exceptions</span>
+<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>always   <span class="c1"># Warn every time</span>
+<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>module   <span class="c1"># Warn once per calling module</span>
+<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>once     <span class="c1"># Warn once per Python process</span>
+<span class="nv">PYTHONWARNINGS</span><span class="o">=</span>ignore   <span class="c1"># Never warn</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../library/warnings.html#warning-filter"><span class="std std-ref">The Warnings Filter</span></a> and <a class="reference internal" href="../library/warnings.html#describing-warning-filters"><span class="std std-ref">Describing Warning Filters</span></a> for more
@@ -1302,7 +1291,7 @@ after shutting down the interpreter into a file called <em>FILENAME</em>.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/cmdline.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/cmdline.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1338,7 +1327,7 @@ after shutting down the interpreter into a file called <em>FILENAME</em>.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python Setup and Usage</a> &#187;</li>
@@ -1360,7 +1349,7 @@ after shutting down the interpreter into a file called <em>FILENAME</em>.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1374,7 +1363,7 @@ after shutting down the interpreter into a file called <em>FILENAME</em>.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

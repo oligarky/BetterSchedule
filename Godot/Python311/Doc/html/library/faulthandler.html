@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="faulthandler — Dump the Python traceback" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/faulthandler.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="This module contains functions to dump Python tracebacks explicitly, on a fault, after a timeout, or on a user signal. Call faulthandler.enable() to install fault handlers for the SIGSEGV, SIGFPE, ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="This module contains functions to dump Python tracebacks explicitly, on a fault, after a timeout, or on a user signal. Call faulthandler.enable() to install fault handlers for the SIGSEGV, SIGFPE, ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>faulthandler — Dump the Python traceback &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faulthandler — Dump the Python traceback &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -110,7 +99,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/faulthandler.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/faulthandler.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -147,7 +136,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -211,15 +200,6 @@ alternatively be passed to <a class="reference internal" href="#faulthandler.ena
 Python is deadlocked.</p>
 <p>The <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> calls <a class="reference internal" href="#faulthandler.enable" title="faulthandler.enable"><code class="xref py py-func docutils literal notranslate"><span class="pre">faulthandler.enable()</span></code></a>
 at Python startup.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt>Module <a class="reference internal" href="pdb.html#module-pdb" title="pdb: The Python debugger for interactive interpreters."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pdb</span></code></a></dt><dd><p>Interactive source code debugger for Python programs.</p>
-</dd>
-<dt>Module <a class="reference internal" href="traceback.html#module-traceback" title="traceback: Print or retrieve a stack traceback."><code class="xref py py-mod docutils literal notranslate"><span class="pre">traceback</span></code></a></dt><dd><p>Standard interface to extract, format and print stack traces of Python programs.</p>
-</dd>
-</dl>
-</div>
 <section id="dumping-the-traceback">
 <h2>Dumping the traceback<a class="headerlink" href="#dumping-the-traceback" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -227,10 +207,6 @@ at Python startup.</p>
 <span class="sig-prename descclassname"><span class="pre">faulthandler.</span></span><span class="sig-name descname"><span class="pre">dump_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sys.stderr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#faulthandler.dump_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the tracebacks of all threads into <em>file</em>. If <em>all_threads</em> is
 <code class="docutils literal notranslate"><span class="pre">False</span></code>, dump only the current thread.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="traceback.html#traceback.print_tb" title="traceback.print_tb"><code class="xref py py-func docutils literal notranslate"><span class="pre">traceback.print_tb()</span></code></a>, which can be used to print a traceback object.</p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.5: </span>Added support for passing file descriptor to this function.</p>
 </div>
@@ -344,10 +320,10 @@ these functions again each time that the file is replaced.</p>
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Example of a segmentation fault on Linux with and without enabling the fault
 handler:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import ctypes; ctypes.string_at(0)&quot;</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -c <span class="s2">&quot;import ctypes; ctypes.string_at(0)&quot;</span>
 <span class="go">Segmentation fault</span>
 
-<span class="gp">$ </span>python3<span class="w"> </span>-q<span class="w"> </span>-X<span class="w"> </span>faulthandler
+<span class="gp">$ </span>python3 -q -X faulthandler
 <span class="go">&gt;&gt;&gt; import ctypes</span>
 <span class="go">&gt;&gt;&gt; ctypes.string_at(0)</span>
 <span class="go">Fatal Python error: Segmentation fault</span>
@@ -398,7 +374,7 @@ handler:</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/faulthandler.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/faulthandler.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -434,7 +410,7 @@ handler:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -457,7 +433,7 @@ handler:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -471,7 +447,7 @@ handler:</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Context Variables Objects" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/c-api/contextvars.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="This section details the public C API for the contextvars module. Type-check macros: Context object management functions: Context variable functions:" />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="This section details the public C API for the contextvars module. Type-check macros: Context object management functions: Context variable functions:" />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Context Variables Objects &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Variables Objects &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -95,7 +84,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/contextvars.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/contextvars.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -132,7 +121,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
@@ -171,10 +160,10 @@ C APIs were <strong>changed</strong> to use <a class="reference internal" href="
 of <a class="reference internal" href="#c.PyContext" title="PyContext"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyContext</span></code></a>, <a class="reference internal" href="#c.PyContextVar" title="PyContextVar"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyContextVar</span></code></a>, and
 <a class="reference internal" href="#c.PyContextToken" title="PyContextToken"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyContextToken</span></code></a>, e.g.:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// in 3.7.0:</span>
-<span class="n">PyContext</span><span class="w"> </span><span class="o">*</span><span class="nf">PyContext_New</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="n">PyContext</span><span class="w"> </span><span class="o">*</span><span class="nf">PyContext_New</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// in 3.7.1+:</span>
-<span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="nf">PyContext_New</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="nf">PyContext_New</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=34762">bpo-34762</a> for more details.</p>
@@ -346,7 +335,7 @@ This function returns <code class="docutils literal notranslate"><span class="pr
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/contextvars.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/contextvars.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -382,7 +371,7 @@ This function returns <code class="docutils literal notranslate"><span class="pr
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
@@ -405,7 +394,7 @@ This function returns <code class="docutils literal notranslate"><span class="pr
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -419,7 +408,7 @@ This function returns <code class="docutils literal notranslate"><span class="pr
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

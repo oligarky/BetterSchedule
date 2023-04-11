@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="array — Efficient arrays of numeric values" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/array.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="This module defines an object type which can compactly represent an array of basic values: characters, integers, floating point numbers. Arrays are sequence types and behave very much like lists, e..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="This module defines an object type which can compactly represent an array of basic values: characters, integers, floating point numbers. Arrays are sequence types and behave very much like lists, e..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>array — Efficient arrays of numeric values &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array — Efficient arrays of numeric values &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -95,7 +84,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/array.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/array.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -132,7 +121,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -281,14 +270,7 @@ defined:</p>
 </ol>
 <p>The actual representation of values is determined by the machine architecture
 (strictly speaking, by the C implementation).  The actual size can be accessed
-through the <a class="reference internal" href="#array.array.itemsize" title="array.array.itemsize"><code class="xref py py-attr docutils literal notranslate"><span class="pre">array.itemsize</span></code></a> attribute.</p>
-<p>The module defines the following item:</p>
-<dl class="py data">
-<dt class="sig sig-object py" id="array.typecodes">
-<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">typecodes</span></span><a class="headerlink" href="#array.typecodes" title="Permalink to this definition">¶</a></dt>
-<dd><p>A string with all available type codes.</p>
-</dd></dl>
-
+through the <code class="xref py py-attr docutils literal notranslate"><span class="pre">itemsize</span></code> attribute.</p>
 <p>The module defines the following type:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="array.array">
@@ -301,33 +283,42 @@ appropriate type.</p>
 <a class="reference internal" href="#array.array.fromlist" title="array.array.fromlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromlist()</span></code></a>, <a class="reference internal" href="#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">frombytes()</span></code></a>, or <a class="reference internal" href="#array.array.fromunicode" title="array.array.fromunicode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromunicode()</span></code></a> method (see below)
 to add initial items to the array.  Otherwise, the iterable initializer is
 passed to the <a class="reference internal" href="#array.array.extend" title="array.array.extend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code></a> method.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">array.__new__</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">typecode</span></code>, <code class="docutils literal notranslate"><span class="pre">initializer</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="array.typecodes">
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">typecodes</span></span><a class="headerlink" href="#array.typecodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string with all available type codes.</p>
+</dd></dl>
+
 <p>Array objects support the ordinary sequence operations of indexing, slicing,
 concatenation, and multiplication.  When using slice assignment, the assigned
 value must be an array object with the same type code; in all other cases,
 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> is raised. Array objects also implement the buffer interface,
 and may be used wherever <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> are supported.</p>
-<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">array.__new__</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">typecode</span></code>, <code class="docutils literal notranslate"><span class="pre">initializer</span></code>.</p>
+<p>The following data items and methods are also supported:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="array.array.typecode">
-<span class="sig-name descname"><span class="pre">typecode</span></span><a class="headerlink" href="#array.array.typecode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">typecode</span></span><a class="headerlink" href="#array.array.typecode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The typecode character used to create the array.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="array.array.itemsize">
-<span class="sig-name descname"><span class="pre">itemsize</span></span><a class="headerlink" href="#array.array.itemsize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">itemsize</span></span><a class="headerlink" href="#array.array.itemsize" title="Permalink to this definition">¶</a></dt>
 <dd><p>The length in bytes of one array item in the internal representation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.append" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append a new item with value <em>x</em> to the end of the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.buffer_info">
-<span class="sig-name descname"><span class="pre">buffer_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.buffer_info" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">buffer_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.buffer_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a tuple <code class="docutils literal notranslate"><span class="pre">(address,</span> <span class="pre">length)</span></code> giving the current memory address and the
 length in elements of the buffer used to hold array’s contents.  The size of the
 memory buffer in bytes can be computed as <code class="docutils literal notranslate"><span class="pre">array.buffer_info()[1]</span> <span class="pre">*</span>
@@ -347,7 +338,7 @@ documented in <a class="reference internal" href="../c-api/buffer.html#bufferobj
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.byteswap">
-<span class="sig-name descname"><span class="pre">byteswap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.byteswap" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">byteswap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.byteswap" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Byteswap” all items of the array.  This is only supported for values which are
 1, 2, 4, or 8 bytes in size; for other types of values, <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a> is
 raised.  It is useful when reading data from a file written on a machine with a
@@ -356,13 +347,13 @@ different byte order.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of occurrences of <em>x</em> in the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.extend">
-<span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.extend" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.extend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append items from <em>iterable</em> to the end of the array.  If <em>iterable</em> is another
 array, it must have <em>exactly</em> the same type code; if not, <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> will
 be raised.  If <em>iterable</em> is not an array, it must be iterable and its elements
@@ -371,7 +362,7 @@ must be the right type to be appended to the array.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.frombytes">
-<span class="sig-name descname"><span class="pre">frombytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.frombytes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">frombytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.frombytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends items from the string, interpreting the string as an array of machine
 values (as if it had been read from a file using the <a class="reference internal" href="#array.array.fromfile" title="array.array.fromfile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromfile()</span></code></a> method).</p>
 <div class="versionadded">
@@ -381,7 +372,7 @@ values (as if it had been read from a file using the <a class="reference interna
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.fromfile">
-<span class="sig-name descname"><span class="pre">fromfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromfile" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">fromfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read <em>n</em> items (as machine values) from the <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a> <em>f</em> and append
 them to the end of the array.  If less than <em>n</em> items are available,
 <a class="reference internal" href="exceptions.html#EOFError" title="EOFError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">EOFError</span></code></a> is raised, but the items that were available are still
@@ -390,14 +381,14 @@ inserted into the array.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.fromlist">
-<span class="sig-name descname"><span class="pre">fromlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromlist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">fromlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append items from the list.  This is equivalent to <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">list:</span>
 <span class="pre">a.append(x)</span></code> except that if there is a type error, the array is unchanged.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.fromunicode">
-<span class="sig-name descname"><span class="pre">fromunicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromunicode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">fromunicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromunicode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extends this array with data from the given unicode string.  The array must
 be a type <code class="docutils literal notranslate"><span class="pre">'u'</span></code> array; otherwise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.  Use
 <code class="docutils literal notranslate"><span class="pre">array.frombytes(unicodestring.encode(enc))</span></code> to append Unicode data to an
@@ -406,7 +397,7 @@ array of some other type.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.index" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the smallest <em>i</em> such that <em>i</em> is the index of the first occurrence of
 <em>x</em> in the array.  The optional arguments <em>start</em> and <em>stop</em> can be
 specified to search for <em>x</em> within a subsection of the array.  Raise
@@ -418,14 +409,14 @@ specified to search for <em>x</em> within a subsection of the array.  Raise
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.insert" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a new item with value <em>x</em> in the array before position <em>i</em>. Negative
 values are treated as being relative to the end of the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.pop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.pop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the item with the index <em>i</em> from the array and returns it. The optional
 argument defaults to <code class="docutils literal notranslate"><span class="pre">-1</span></code>, so that by default the last item is removed and
 returned.</p>
@@ -433,19 +424,19 @@ returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.remove">
-<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.remove" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the first occurrence of <em>x</em> from the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.reverse">
-<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.reverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverse the order of the items in the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tobytes">
-<span class="sig-name descname"><span class="pre">tobytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tobytes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tobytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tobytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the array to an array of machine values and return the bytes
 representation (the same sequence of bytes that would be written to a file by
 the <a class="reference internal" href="#array.array.tofile" title="array.array.tofile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tofile()</span></code></a> method.)</p>
@@ -456,24 +447,22 @@ the <a class="reference internal" href="#array.array.tofile" title="array.array.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tofile">
-<span class="sig-name descname"><span class="pre">tofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tofile" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tofile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write all items (as machine values) to the <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a> <em>f</em>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tolist">
-<span class="sig-name descname"><span class="pre">tolist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tolist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tolist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tolist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the array to an ordinary list with the same items.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tounicode">
-<span class="sig-name descname"><span class="pre">tounicode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tounicode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tounicode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tounicode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the array to a unicode string.  The array must be a type <code class="docutils literal notranslate"><span class="pre">'u'</span></code> array;
 otherwise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised. Use <code class="docutils literal notranslate"><span class="pre">array.tobytes().decode(enc)</span></code> to
 obtain a unicode string from an array of some other type.</p>
-</dd></dl>
-
 </dd></dl>
 
 <p>When an array object is printed or converted to a string, it is represented as
@@ -525,7 +514,7 @@ remote procedure call systems.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/array.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/array.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -561,7 +550,7 @@ remote procedure call systems.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -584,7 +573,7 @@ remote procedure call systems.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -598,7 +587,7 @@ remote procedure call systems.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

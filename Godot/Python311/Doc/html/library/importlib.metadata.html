@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Using importlib.metadata" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/importlib.metadata.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/importlib/metadata/__init__.py importlib_metadata is a library that provides access to the metadata of an installed Distribution Package, such as its entry points or its top-level ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/importlib/metadata/__init__.py importlib_metadata is a library that provides access to the metadata of an installed Distribution Package, such as its entry points or its top-level ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Using importlib.metadata &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using importlib.metadata &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,7 +106,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/importlib.metadata.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/importlib.metadata.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -154,7 +143,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -242,9 +231,9 @@ for existing users of <code class="docutils literal notranslate"><span class="pr
 <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a> you’ve installed
 using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.  We start by creating a virtual environment and installing
 something into it:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>example
-<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>example/bin/activate
-<span class="gp gp-VirtualEnv">(example)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>wheel
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m venv example
+<span class="gp">$ </span><span class="nb">source</span> example/bin/activate
+<span class="gp gp-VirtualEnv">(example)</span> <span class="gp">$ </span>python -m pip install wheel
 </pre></div>
 </div>
 <p>You can get the version string for <code class="docutils literal notranslate"><span class="pre">wheel</span></code> by running the following:</p>
@@ -512,7 +501,7 @@ interface expected of finders by Python’s import system.
 method:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
 <span class="k">def</span> <span class="nf">find_distributions</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">DistributionFinder</span><span class="o">.</span><span class="n">Context</span><span class="p">()):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return an iterable of all Distribution instances capable of</span>
+    <span class="sd">&quot;&quot;&quot;Return an iterable of all Distribution instances capable of</span>
 <span class="sd">    loading the metadata for packages for the indicated ``context``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
@@ -572,7 +561,7 @@ a custom finder, return instances of this derived <code class="docutils literal 
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/importlib.metadata.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/importlib.metadata.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -608,7 +597,7 @@ a custom finder, return instances of this derived <code class="docutils literal 
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -631,7 +620,7 @@ a custom finder, return instances of this derived <code class="docutils literal 
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -645,7 +634,7 @@ a custom finder, return instances of this derived <code class="docutils literal 
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

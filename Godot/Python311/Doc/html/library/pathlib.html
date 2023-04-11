@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="pathlib — Object-oriented filesystem paths" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/pathlib.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/pathlib.py This module offers classes representing filesystem paths with semantics appropriate for different operating systems. Path classes are divided between pure paths, which p..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/pathlib.py This module offers classes representing filesystem paths with semantics appropriate for different operating systems. Path classes are divided between pure paths, which p..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>pathlib — Object-oriented filesystem paths &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pathlib — Object-oriented filesystem paths &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,7 +106,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/pathlib.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/pathlib.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -154,7 +143,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -287,16 +276,16 @@ which returns a string, or another path object:</p>
 <span class="go">PurePosixPath(&#39;.&#39;)</span>
 </pre></div>
 </div>
-<p>If a segment is an absolute path, all previous segments are ignored
-(like <a class="reference internal" href="os.path.html#os.path.join" title="os.path.join"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.join()</span></code></a>):</p>
+<p>When several absolute paths are given, the last is taken as an anchor
+(mimicking <a class="reference internal" href="os.path.html#os.path.join" title="os.path.join"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.join()</span></code></a>’s behaviour):</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;/etc&#39;</span><span class="p">,</span> <span class="s1">&#39;/usr&#39;</span><span class="p">,</span> <span class="s1">&#39;lib64&#39;</span><span class="p">)</span>
 <span class="go">PurePosixPath(&#39;/usr/lib64&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;c:/Windows&#39;</span><span class="p">,</span> <span class="s1">&#39;d:bar&#39;</span><span class="p">)</span>
 <span class="go">PureWindowsPath(&#39;d:bar&#39;)</span>
 </pre></div>
 </div>
-<p>On Windows, the drive is not reset when a rooted relative path
-segment (e.g., <code class="docutils literal notranslate"><span class="pre">r'\foo'</span></code>) is encountered:</p>
+<p>However, in a Windows path, changing the local root doesn’t discard the
+previous drive setting:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;c:/Windows&#39;</span><span class="p">,</span> <span class="s1">&#39;/Program Files&#39;</span><span class="p">)</span>
 <span class="go">PureWindowsPath(&#39;c:/Program Files&#39;)</span>
 </pre></div>
@@ -379,10 +368,7 @@ semantics:</p>
 </section>
 <section id="operators">
 <h3>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
-<p>The slash operator helps create child paths, like <a class="reference internal" href="os.path.html#os.path.join" title="os.path.join"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.join()</span></code></a>.
-If the argument is an absolute path, the previous path is ignored.
-On Windows, the drive is not reset when the argument is a rooted
-relative path (e.g., <code class="docutils literal notranslate"><span class="pre">r'\foo'</span></code>):</p>
+<p>The slash operator helps create child paths, similarly to <a class="reference internal" href="os.path.html#os.path.join" title="os.path.join"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.join()</span></code></a>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;/etc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
 <span class="go">PurePosixPath(&#39;/etc&#39;)</span>
@@ -391,10 +377,6 @@ relative path (e.g., <code class="docutils literal notranslate"><span class="pre
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;bin&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;/usr&#39;</span> <span class="o">/</span> <span class="n">q</span>
 <span class="go">PurePosixPath(&#39;/usr/bin&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;/an_absolute_path&#39;</span>
-<span class="go">PurePosixPath(&#39;/an_absolute_path&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;c:/Windows&#39;</span><span class="p">,</span> <span class="s1">&#39;/Program Files&#39;</span><span class="p">)</span>
-<span class="go">PureWindowsPath(&#39;c:/Program Files&#39;)</span>
 </pre></div>
 </div>
 <p>A path object can be used anywhere an object implementing <a class="reference internal" href="os.html#os.PathLike" title="os.PathLike"><code class="xref py py-class docutils literal notranslate"><span class="pre">os.PathLike</span></code></a>
@@ -432,7 +414,7 @@ the unicode form is the canonical representation of filesystem paths.</p>
 <h3>Accessing individual parts<a class="headerlink" href="#accessing-individual-parts" title="Permalink to this headline">¶</a></h3>
 <p>To access the individual “parts” (components) of a path, use the following
 property:</p>
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.parts">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">parts</span></span><a class="headerlink" href="#pathlib.PurePath.parts" title="Permalink to this definition">¶</a></dt>
 <dd><p>A tuple giving access to the path’s various components:</p>
@@ -452,7 +434,7 @@ property:</p>
 <section id="methods-and-properties">
 <h3>Methods and properties<a class="headerlink" href="#methods-and-properties" title="Permalink to this headline">¶</a></h3>
 <p>Pure paths provide the following methods and properties:</p>
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.drive">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">drive</span></span><a class="headerlink" href="#pathlib.PurePath.drive" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string representing the drive letter or name, if any:</p>
@@ -471,7 +453,7 @@ property:</p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.root">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">root</span></span><a class="headerlink" href="#pathlib.PurePath.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string representing the (local or global) root, if any:</p>
@@ -508,7 +490,7 @@ shall be treated as a single slash.”</em></p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.anchor">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#pathlib.PurePath.anchor" title="Permalink to this definition">¶</a></dt>
 <dd><p>The concatenation of the drive and root:</p>
@@ -524,7 +506,7 @@ shall be treated as a single slash.”</em></p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.parents">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">parents</span></span><a class="headerlink" href="#pathlib.PurePath.parents" title="Permalink to this definition">¶</a></dt>
 <dd><p>An immutable sequence providing access to the logical ancestors of
@@ -543,7 +525,7 @@ the path:</p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.parent">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">parent</span></span><a class="headerlink" href="#pathlib.PurePath.parent" title="Permalink to this definition">¶</a></dt>
 <dd><p>The logical parent of the path:</p>
@@ -575,7 +557,7 @@ symlinks and eliminate <code class="docutils literal notranslate"><span class="p
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.name">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#pathlib.PurePath.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string representing the final path component, excluding the drive and
@@ -593,7 +575,7 @@ root, if any:</p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.suffix">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">suffix</span></span><a class="headerlink" href="#pathlib.PurePath.suffix" title="Permalink to this definition">¶</a></dt>
 <dd><p>The file extension of the final component, if any:</p>
@@ -607,7 +589,7 @@ root, if any:</p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.suffixes">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">suffixes</span></span><a class="headerlink" href="#pathlib.PurePath.suffixes" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of the path’s file extensions:</p>
@@ -621,7 +603,7 @@ root, if any:</p>
 </div>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py data">
 <dt class="sig sig-object py" id="pathlib.PurePath.stem">
 <span class="sig-prename descclassname"><span class="pre">PurePath.</span></span><span class="sig-name descname"><span class="pre">stem</span></span><a class="headerlink" href="#pathlib.PurePath.stem" title="Permalink to this definition">¶</a></dt>
 <dd><p>The final path component, without its suffix:</p>
@@ -780,7 +762,7 @@ must match:</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
   File <span class="nb">&quot;pathlib.py&quot;</span>, line <span class="m">694</span>, in <span class="n">relative_to</span>
-<span class="w">    </span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">formatted</span><span class="p">)))</span>
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">formatted</span><span class="p">)))</span>
 <span class="gr">ValueError</span>: <span class="n">&#39;/etc/passwd&#39; is not in the subpath of &#39;/usr&#39; OR one path is relative and the other absolute.</span>
 </pre></div>
 </div>
@@ -800,7 +782,7 @@ doesn’t have a name, ValueError is raised:</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
   File <span class="nb">&quot;/home/antoine/cpython/default/Lib/pathlib.py&quot;</span>, line <span class="m">751</span>, in <span class="n">with_name</span>
-<span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2"> has an empty name&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,))</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2"> has an empty name&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,))</span>
 <span class="gr">ValueError</span>: <span class="n">PureWindowsPath(&#39;c:/&#39;) has an empty name</span>
 </pre></div>
 </div>
@@ -822,9 +804,9 @@ doesn’t have a name, ValueError is raised:</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
   File <span class="nb">&quot;/home/antoine/cpython/default/Lib/pathlib.py&quot;</span>, line <span class="m">861</span>, in <span class="n">with_stem</span>
-<span class="w">    </span><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="n">stem</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="n">stem</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span><span class="p">)</span>
   File <span class="nb">&quot;/home/antoine/cpython/default/Lib/pathlib.py&quot;</span>, line <span class="m">851</span>, in <span class="n">with_name</span>
-<span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2"> has an empty name&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,))</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2"> has an empty name&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,))</span>
 <span class="gr">ValueError</span>: <span class="n">PureWindowsPath(&#39;c:/&#39;) has an empty name</span>
 </pre></div>
 </div>
@@ -910,7 +892,7 @@ bugs or failures in your application):</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
   File <span class="nb">&quot;pathlib.py&quot;</span>, line <span class="m">798</span>, in <span class="n">__new__</span>
-<span class="w">    </span><span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,))</span>
+    <span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,))</span>
 <span class="gr">NotImplementedError</span>: <span class="n">cannot instantiate &#39;WindowsPath&#39; on your system</span>
 </pre></div>
 </div>
@@ -1297,7 +1279,6 @@ On Windows, if <em>target</em> exists, <a class="reference internal" href="excep
 <p>The target path may be absolute or relative. Relative paths are interpreted
 relative to the current working directory, <em>not</em> the directory of the Path
 object.</p>
-<p>It is implemented in terms of <a class="reference internal" href="os.html#os.rename" title="os.rename"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.rename()</span></code></a> and gives the same guarantees.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.8: </span>Added return value, return the new Path instance.</p>
 </div>
@@ -1625,17 +1606,17 @@ include <a class="reference internal" href="os.path.html#os.path.abspath" title=
 <td><p><a class="reference internal" href="#pathlib.PurePath.joinpath" title="pathlib.PurePath.joinpath"><code class="xref py py-func docutils literal notranslate"><span class="pre">PurePath.joinpath()</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="os.path.html#os.path.basename" title="os.path.basename"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.basename()</span></code></a></p></td>
-<td><p><a class="reference internal" href="#pathlib.PurePath.name" title="pathlib.PurePath.name"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PurePath.name</span></code></a></p></td>
+<td><p><a class="reference internal" href="#pathlib.PurePath.name" title="pathlib.PurePath.name"><code class="xref py py-data docutils literal notranslate"><span class="pre">PurePath.name</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="os.path.html#os.path.dirname" title="os.path.dirname"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.dirname()</span></code></a></p></td>
-<td><p><a class="reference internal" href="#pathlib.PurePath.parent" title="pathlib.PurePath.parent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PurePath.parent</span></code></a></p></td>
+<td><p><a class="reference internal" href="#pathlib.PurePath.parent" title="pathlib.PurePath.parent"><code class="xref py py-data docutils literal notranslate"><span class="pre">PurePath.parent</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="os.path.html#os.path.samefile" title="os.path.samefile"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.samefile()</span></code></a></p></td>
 <td><p><a class="reference internal" href="#pathlib.Path.samefile" title="pathlib.Path.samefile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Path.samefile()</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="os.path.html#os.path.splitext" title="os.path.splitext"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.splitext()</span></code></a></p></td>
-<td><p><a class="reference internal" href="#pathlib.PurePath.stem" title="pathlib.PurePath.stem"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PurePath.stem</span></code></a> and
-<a class="reference internal" href="#pathlib.PurePath.suffix" title="pathlib.PurePath.suffix"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PurePath.suffix</span></code></a></p></td>
+<td><p><a class="reference internal" href="#pathlib.PurePath.stem" title="pathlib.PurePath.stem"><code class="xref py py-data docutils literal notranslate"><span class="pre">PurePath.stem</span></code></a> and
+<a class="reference internal" href="#pathlib.PurePath.suffix" title="pathlib.PurePath.suffix"><code class="xref py py-data docutils literal notranslate"><span class="pre">PurePath.suffix</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1695,7 +1676,7 @@ include <a class="reference internal" href="os.path.html#os.path.abspath" title=
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/pathlib.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/pathlib.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1731,7 +1712,7 @@ include <a class="reference internal" href="os.path.html#os.path.abspath" title=
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -1754,7 +1735,7 @@ include <a class="reference internal" href="os.path.html#os.path.abspath" title=
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1768,7 +1749,7 @@ include <a class="reference internal" href="os.path.html#os.path.abspath" title=
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

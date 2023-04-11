@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="2. Using Python on Unix platforms" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/using/unix.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Getting and installing the latest version of Python: On Linux: Python comes preinstalled on most Linux distributions, and is available as a package on all others. However there are certain features..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Getting and installing the latest version of Python: On Linux: Python comes preinstalled on most Linux distributions, and is available as a package on all others. However there are certain features..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>2. Using Python on Unix platforms &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Using Python on Unix platforms &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +103,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/unix.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/unix.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -151,7 +140,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python Setup and Usage</a> &#187;</li>
@@ -209,18 +198,18 @@ following links:</p>
 <h3><span class="section-number">2.1.2. </span>On FreeBSD and OpenBSD<a class="headerlink" href="#on-freebsd-and-openbsd" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>FreeBSD users, to add the package use:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg<span class="w"> </span>install<span class="w"> </span>python3
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg install python3
 </pre></div>
 </div>
 </li>
 <li><p>OpenBSD users, to add the package use:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg_add<span class="w"> </span>-r<span class="w"> </span>python
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg_add -r python
 
-pkg_add<span class="w"> </span>ftp://ftp.openbsd.org/pub/OpenBSD/4.2/packages/&lt;insert<span class="w"> </span>your<span class="w"> </span>architecture<span class="w"> </span>here&gt;/python-&lt;version&gt;.tgz
+pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/4.2/packages/&lt;insert your architecture here&gt;/python-&lt;version&gt;.tgz
 </pre></div>
 </div>
 <p>For example i386 users get the 2.5.1 version of Python using:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg_add<span class="w"> </span>ftp://ftp.openbsd.org/pub/OpenBSD/4.2/packages/i386/python-2.5.1p2.tgz
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/4.2/packages/i386/python-2.5.1p2.tgz
 </pre></div>
 </div>
 </li>
@@ -241,7 +230,7 @@ to contribute patches, you will need a clone.)</p>
 <p>The build process consists of the usual commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./configure
 make
-make<span class="w"> </span>install
+make install
 </pre></div>
 </div>
 <p><a class="reference internal" href="configure.html#configure-options"><span class="std std-ref">Configuration options</span></a> and caveats for specific Unix
@@ -294,7 +283,7 @@ embedding the interpreter.</p></td>
 <h2><span class="section-number">2.4. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
 <p>To easily use Python scripts on Unix, you need to make them executable,
 e.g. with</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>script
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod +x script
 </pre></div>
 </div>
 <p>and put an appropriate Shebang line at the top of the script.  A good choice is
@@ -315,7 +304,7 @@ the directory with <code class="docutils literal notranslate"><span class="pre">
 distribution the file is either in <code class="docutils literal notranslate"><span class="pre">/etc/ssl</span></code> or <code class="docutils literal notranslate"><span class="pre">/etc/pki/tls</span></code>. The
 directory should also contain a <code class="docutils literal notranslate"><span class="pre">cert.pem</span></code> file and/or a <code class="docutils literal notranslate"><span class="pre">certs</span></code>
 directory.</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>find<span class="w"> </span>/etc/<span class="w"> </span>-name<span class="w"> </span>openssl.cnf<span class="w"> </span>-printf<span class="w"> </span><span class="s2">&quot;%h\n&quot;</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>find /etc/ -name openssl.cnf -printf <span class="s2">&quot;%h\n&quot;</span>
 <span class="go">/etc/ssl</span>
 </pre></div>
 </div>
@@ -323,29 +312,29 @@ directory.</p>
 <li><p>Download, build, and install OpenSSL. Make sure you use <code class="docutils literal notranslate"><span class="pre">install_sw</span></code> and
 not <code class="docutils literal notranslate"><span class="pre">install</span></code>. The <code class="docutils literal notranslate"><span class="pre">install_sw</span></code> target does not override
 <code class="docutils literal notranslate"><span class="pre">openssl.cnf</span></code>.</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl<span class="w"> </span>-O<span class="w"> </span>https://www.openssl.org/source/openssl-VERSION.tar.gz
-<span class="gp">$ </span>tar<span class="w"> </span>xzf<span class="w"> </span>openssl-VERSION
-<span class="gp">$ </span><span class="nb">pushd</span><span class="w"> </span>openssl-VERSION
-<span class="gp">$ </span>./config<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefix<span class="o">=</span>/usr/local/custom-openssl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--libdir<span class="o">=</span>lib<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--openssldir<span class="o">=</span>/etc/ssl
-<span class="gp">$ </span>make<span class="w"> </span>-j1<span class="w"> </span>depend
-<span class="gp">$ </span>make<span class="w"> </span>-j8
-<span class="gp">$ </span>make<span class="w"> </span>install_sw
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl -O https://www.openssl.org/source/openssl-VERSION.tar.gz
+<span class="gp">$ </span>tar xzf openssl-VERSION
+<span class="gp">$ </span><span class="nb">pushd</span> openssl-VERSION
+<span class="gp">$ </span>./config <span class="se">\</span>
+    --prefix<span class="o">=</span>/usr/local/custom-openssl <span class="se">\</span>
+    --libdir<span class="o">=</span>lib <span class="se">\</span>
+    --openssldir<span class="o">=</span>/etc/ssl
+<span class="gp">$ </span>make -j1 depend
+<span class="gp">$ </span>make -j8
+<span class="gp">$ </span>make install_sw
 <span class="gp">$ </span><span class="nb">popd</span>
 </pre></div>
 </div>
 </li>
 <li><p>Build Python with custom OpenSSL
 (see the configure <code class="docutils literal notranslate"><span class="pre">--with-openssl</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-openssl-rpath</span></code> options)</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pushd</span><span class="w"> </span>python-3.x.x
-<span class="gp">$ </span>./configure<span class="w"> </span>-C<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--with-openssl<span class="o">=</span>/usr/local/custom-openssl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--with-openssl-rpath<span class="o">=</span>auto<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefix<span class="o">=</span>/usr/local/python-3.x.x
-<span class="gp">$ </span>make<span class="w"> </span>-j8
-<span class="gp">$ </span>make<span class="w"> </span>altinstall
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pushd</span> python-3.x.x
+<span class="gp">$ </span>./configure -C <span class="se">\</span>
+    --with-openssl<span class="o">=</span>/usr/local/custom-openssl <span class="se">\</span>
+    --with-openssl-rpath<span class="o">=</span>auto <span class="se">\</span>
+    --prefix<span class="o">=</span>/usr/local/python-3.x.x
+<span class="gp">$ </span>make -j8
+<span class="gp">$ </span>make altinstall
 </pre></div>
 </div>
 </li>
@@ -400,7 +389,7 @@ custom OpenSSL installation with a newer version.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/unix.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/unix.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -436,7 +425,7 @@ custom OpenSSL installation with a newer version.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python Setup and Usage</a> &#187;</li>
@@ -458,7 +447,7 @@ custom OpenSSL installation with a newer version.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -472,7 +461,7 @@ custom OpenSSL installation with a newer version.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

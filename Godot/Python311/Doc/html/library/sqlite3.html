@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="sqlite3 — DB-API 2.0 interface for SQLite databases" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/sqlite3.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/sqlite3/ SQLite is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and allows accessing the database using a nonstandard ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/sqlite3/ SQLite is a C library that provides a lightweight disk-based database that doesn’t require a separate server process and allows accessing the database using a nonstandard ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>sqlite3 — DB-API 2.0 interface for SQLite databases &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sqlite3 — DB-API 2.0 interface for SQLite databases &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -137,7 +126,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/sqlite3.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/sqlite3.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -174,7 +163,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -419,13 +408,10 @@ controlling whether and how transactions are implicitly opened.
 Can be <code class="docutils literal notranslate"><span class="pre">&quot;DEFERRED&quot;</span></code> (default), <code class="docutils literal notranslate"><span class="pre">&quot;EXCLUSIVE&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;IMMEDIATE&quot;</span></code>;
 or <code class="docutils literal notranslate"><span class="pre">None</span></code> to disable opening transactions implicitly.
 See <a class="reference internal" href="#sqlite3-controlling-transactions"><span class="std std-ref">Transaction control</span></a> for more.</p></li>
-<li><p><strong>check_same_thread</strong> (<a class="reference internal" href="functions.html#bool" title="bool"><em>bool</em></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> (default), <a class="reference internal" href="#sqlite3.ProgrammingError" title="sqlite3.ProgrammingError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ProgrammingError</span></code></a> will be raised
-if the database connection is used by a thread
-other than the one that created it.
-If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the connection may be accessed in multiple threads;
-write operations may need to be serialized by the user
-to avoid data corruption.
-See <a class="reference internal" href="#sqlite3.threadsafety" title="sqlite3.threadsafety"><code class="xref py py-attr docutils literal notranslate"><span class="pre">threadsafety</span></code></a> for more information.</p></li>
+<li><p><strong>check_same_thread</strong> (<a class="reference internal" href="functions.html#bool" title="bool"><em>bool</em></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> (default), only the creating thread may use the connection.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the connection may be shared across multiple threads;
+if so, write operations should be serialized by the user to avoid data
+corruption.</p></li>
 <li><p><strong>factory</strong> (<a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><em>Connection</em></a>) – A custom subclass of <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> to create the connection with,
 if not the default <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> class.</p></li>
 <li><p><strong>cached_statements</strong> (<a class="reference internal" href="functions.html#int" title="int"><em>int</em></a>) – The number of statements that <code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code>
@@ -540,7 +526,7 @@ case-insensitively.</p>
 using the type name, parsed from the query column name,
 as the converter dictionary key.
 The type name must be wrapped in square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="ss">&quot;p [point]&quot;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w">  </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="ss">&quot;point&quot;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="ss">&quot;p [point]&quot;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w">  </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="ss">&quot;point&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This flag may be combined with <a class="reference internal" href="#sqlite3.PARSE_DECLTYPES" title="sqlite3.PARSE_DECLTYPES"><code class="xref py py-const docutils literal notranslate"><span class="pre">PARSE_DECLTYPES</span></code></a> using the <code class="docutils literal notranslate"><span class="pre">|</span></code>
@@ -557,11 +543,11 @@ The types are declared when the database table is created.
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> will look up a converter function using the first word of the
 declared type as the converter dictionary key.
 For example:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test</span><span class="p">(</span>
-<span class="w">   </span><span class="n">i</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">  </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span>
-<span class="w">   </span><span class="n">p</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w">                </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;point&quot;</span>
-<span class="w">   </span><span class="n">n</span><span class="w"> </span><span class="nb">number</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">            </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;number&quot;</span>
-<span class="w"> </span><span class="p">)</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="w"></span>
+<span class="w">   </span><span class="n">i</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">  </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;integer&quot;</span><span class="w"></span>
+<span class="w">   </span><span class="n">p</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w">                </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;point&quot;</span><span class="w"></span>
+<span class="w">   </span><span class="n">n</span><span class="w"> </span><span class="nb">number</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">            </span><span class="o">!</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="ss">&quot;number&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This flag may be combined with <a class="reference internal" href="#sqlite3.PARSE_COLNAMES" title="sqlite3.PARSE_COLNAMES"><code class="xref py py-const docutils literal notranslate"><span class="pre">PARSE_COLNAMES</span></code></a> using the <code class="docutils literal notranslate"><span class="pre">|</span></code>
@@ -599,7 +585,11 @@ the <code class="xref py py-mod docutils literal notranslate"><span class="pre">
 <code class="docutils literal notranslate"><span class="pre">&quot;qmark&quot;</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">named</span></code> DB-API parameter style is also supported.</p>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> module supports <code class="docutils literal notranslate"><span class="pre">qmark</span></code>, <code class="docutils literal notranslate"><span class="pre">numeric</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">named</span></code> DB-API parameter styles,
+because that is what the underlying SQLite library supports.
+However, the DB-API does not allow multiple values for
+the <code class="docutils literal notranslate"><span class="pre">paramstyle</span></code> attribute.</p>
 </div>
 </dd></dl>
 
@@ -924,19 +914,19 @@ which does not support aggregate window functions.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a row to the current window.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add a row to the current window.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="n">value</span>
 
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the current value of the aggregate.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the current value of the aggregate.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span>
 
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove a row from the current window.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Remove a row from the current window.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="n">value</span>
 
     <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the final value of the aggregate.</span>
+        <span class="sd">&quot;&quot;&quot;Return the final value of the aggregate.</span>
 
 <span class="sd">        Any clean-up actions should be placed here.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1979,53 +1969,42 @@ offset-aware converter with <a class="reference internal" href="#sqlite3.registe
 <span id="sqlite3-placeholders"></span><h3>How to use placeholders to bind values in SQL queries<a class="headerlink" href="#how-to-use-placeholders-to-bind-values-in-sql-queries" title="Permalink to this headline">¶</a></h3>
 <p>SQL operations usually need to use values from Python variables. However,
 beware of using Python’s string operations to assemble queries, as they
-are vulnerable to <a class="reference external" href="https://en.wikipedia.org/wiki/SQL_injection">SQL injection attacks</a>. For example, an attacker can simply
-close the single quote and inject <code class="docutils literal notranslate"><span class="pre">OR</span> <span class="pre">TRUE</span></code> to select all rows:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Never do this -- insecure!</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">symbol</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="go">&#39; OR TRUE; --</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM stocks WHERE symbol = &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">symbol</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
-<span class="go">SELECT * FROM stocks WHERE symbol = &#39;&#39; OR TRUE; --&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+are vulnerable to <a class="reference external" href="https://en.wikipedia.org/wiki/SQL_injection">SQL injection attacks</a> (see the <a class="reference external" href="https://xkcd.com/327/">xkcd webcomic</a> for a humorous example of what can go wrong):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Never do this -- insecure!</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;RHAT&#39;</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM stocks WHERE symbol = &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">symbol</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Instead, use the DB-API’s parameter substitution. To insert a variable into a
 query string, use a placeholder in the string, and substitute the actual values
 into the query by providing them as a <a class="reference internal" href="stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> of values to the second
-argument of the cursor’s <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method.</p>
-<p>An SQL statement may use one of two kinds of placeholders:
-question marks (qmark style) or named placeholders (named style).
-For the qmark style, <em>parameters</em> must be a
-<a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> whose length must match the number of placeholders,
-or a <a class="reference internal" href="#sqlite3.ProgrammingError" title="sqlite3.ProgrammingError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ProgrammingError</span></code></a> is raised.
-For the named style, <em>parameters</em> should be
-an instance of a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> (or a subclass),
-which must contain keys for all named parameters;
-any extra items are ignored.
-Here’s an example of both styles:</p>
+argument of the cursor’s <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method. An SQL statement may
+use one of two kinds of placeholders: question marks (qmark style) or named
+placeholders (named style). For the qmark style, <code class="docutils literal notranslate"><span class="pre">parameters</span></code> must be a
+<a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a>. For the named style, it can be either a
+<a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> or <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> instance. The length of the
+<a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> must match the number of placeholders, or a
+<a class="reference internal" href="#sqlite3.ProgrammingError" title="sqlite3.ProgrammingError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ProgrammingError</span></code></a> is raised. If a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> is given, it must contain
+keys for all named parameters. Any extra items are ignored. Here’s an example of
+both styles:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE lang(name, first_appeared)&quot;</span><span class="p">)</span>
 
-<span class="c1"># This is the named style used with executemany():</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1972</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Fortran&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1957</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1991</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Go&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2009</span><span class="p">},</span>
-<span class="p">)</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s2">&quot;INSERT INTO lang VALUES(:name, :year)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="c1"># This is the qmark style:</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO lang VALUES(?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">1972</span><span class="p">))</span>
 
-<span class="c1"># This is the qmark style used in a SELECT query:</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1972</span><span class="p">,)</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM lang WHERE first_appeared = ?&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="c1"># The qmark style used with executemany():</span>
+<span class="n">lang_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Fortran&quot;</span><span class="p">,</span> <span class="mi">1957</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="mi">1991</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Go&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s2">&quot;INSERT INTO lang VALUES(?, ?)&quot;</span><span class="p">,</span> <span class="n">lang_list</span><span class="p">)</span>
+
+<span class="c1"># And this is the named style:</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM lang WHERE first_appeared = :year&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1972</span><span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0249/"><strong>PEP 249</strong></a> numeric placeholders are <em>not</em> supported.
-If used, they will be interpreted as named placeholders.</p>
 </div>
 </section>
 <section id="how-to-adapt-custom-python-types-to-sqlite-values">
@@ -2165,15 +2144,15 @@ Column names take precedence over declared types.</p></li>
 <span class="kn">import</span> <span class="nn">sqlite3</span>
 
 <span class="k">def</span> <span class="nf">adapt_date_iso</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adapt datetime.date to ISO 8601 date.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Adapt datetime.date to ISO 8601 date.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">adapt_datetime_iso</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adapt datetime.datetime to timezone-naive ISO 8601 date.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Adapt datetime.datetime to timezone-naive ISO 8601 date.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">adapt_datetime_epoch</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adapt datetime.datetime to Unix timestamp.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Adapt datetime.datetime to Unix timestamp.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span>
 
 <span class="n">sqlite3</span><span class="o">.</span><span class="n">register_adapter</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">adapt_date_iso</span><span class="p">)</span>
@@ -2181,15 +2160,15 @@ Column names take precedence over declared types.</p></li>
 <span class="n">sqlite3</span><span class="o">.</span><span class="n">register_adapter</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="n">adapt_datetime_epoch</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">convert_date</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert ISO 8601 date to datetime.date object.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Convert ISO 8601 date to datetime.date object.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">convert_datetime</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert ISO 8601 datetime to datetime.datetime object.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Convert ISO 8601 datetime to datetime.datetime object.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">convert_timestamp</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Unix epoch timestamp to datetime.datetime object.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Convert Unix epoch timestamp to datetime.datetime object.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
 
 <span class="n">sqlite3</span><span class="o">.</span><span class="n">register_converter</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">convert_date</span><span class="p">)</span>
@@ -2382,7 +2361,7 @@ instead of a <a class="reference internal" href="collections.html#collections.na
 <section id="transaction-control">
 <span id="sqlite3-controlling-transactions"></span><h3>Transaction control<a class="headerlink" href="#transaction-control" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> module does not adhere to the transaction handling recommended
-by <span class="target" id="index-7"></span><a class="pep reference external" href="https://peps.python.org/pep-0249/"><strong>PEP 249</strong></a>.</p>
+by <span class="target" id="index-6"></span><a class="pep reference external" href="https://peps.python.org/pep-0249/"><strong>PEP 249</strong></a>.</p>
 <p>If the connection attribute <a class="reference internal" href="#sqlite3.Connection.isolation_level" title="sqlite3.Connection.isolation_level"><code class="xref py py-attr docutils literal notranslate"><span class="pre">isolation_level</span></code></a>
 is not <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 new transactions are implicitly opened before
@@ -2477,7 +2456,7 @@ statements.  This is no longer the case.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/sqlite3.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/sqlite3.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -2513,7 +2492,7 @@ statements.  This is no longer the case.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -2536,7 +2515,7 @@ statements.  This is no longer the case.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -2550,7 +2529,7 @@ statements.  This is no longer the case.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

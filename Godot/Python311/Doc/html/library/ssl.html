@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="ssl — TLS/SSL wrapper for socket objects" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/ssl.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/ssl.py This module provides access to Transport Layer Security (often known as “Secure Sockets Layer”) encryption and peer authentication facilities for network sockets, both clien..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/ssl.py This module provides access to Transport Layer Security (often known as “Secure Sockets Layer”) encryption and peer authentication facilities for network sockets, both clien..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>ssl — TLS/SSL wrapper for socket objects &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ssl — TLS/SSL wrapper for socket objects &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -143,7 +132,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/ssl.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/ssl.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -180,7 +169,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -1530,7 +1519,7 @@ the specification of normal, OS-level sockets.  See especially the
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.5: </span>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">shutdown()</span></code> does not reset the socket timeout each time bytes
-are received or sent. The socket timeout is now the maximum total duration
+are received or sent. The socket timeout is now to maximum total duration
 of the shutdown.</p>
 </div>
 <div class="deprecated">
@@ -1562,8 +1551,8 @@ instead, and return the number of bytes read.</p>
 <p>As at any time a re-negotiation is possible, a call to <a class="reference internal" href="#ssl.SSLSocket.read" title="ssl.SSLSocket.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> can also
 cause write operations.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no longer reset each time bytes are received or sent.
-The socket timeout is now the maximum total duration to read up to <em>len</em>
+<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no more reset each time bytes are received or sent.
+The socket timeout is now to maximum total duration to read up to <em>len</em>
 bytes.</p>
 </div>
 <div class="deprecated">
@@ -1581,8 +1570,8 @@ bytes.</p>
 <p>As at any time a re-negotiation is possible, a call to <a class="reference internal" href="#ssl.SSLSocket.write" title="ssl.SSLSocket.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> can
 also cause read operations.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no longer reset each time bytes are received or sent.
-The socket timeout is now the maximum total duration to write <em>buf</em>.</p>
+<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no more reset each time bytes are received or sent.
+The socket timeout is now to maximum total duration to write <em>buf</em>.</p>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 3.6: </span>Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">send()</span></code> instead of <a class="reference internal" href="#ssl.SSLSocket.write" title="ssl.SSLSocket.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a>.</p>
@@ -1610,14 +1599,14 @@ methods.</p>
 <a class="reference internal" href="#ssl.SSLSocket.context" title="ssl.SSLSocket.context"><code class="xref py py-attr docutils literal notranslate"><span class="pre">context</span></code></a> is true.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no longer reset each time bytes are received or sent.
-The socket timeout is now the maximum total duration of the handshake.</p>
+<p><span class="versionmodified changed">Changed in version 3.5: </span>The socket timeout is no more reset each time bytes are received or sent.
+The socket timeout is now to maximum total duration of the handshake.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.7: </span>Hostname or IP address is matched by OpenSSL during handshake. The
 function <a class="reference internal" href="#ssl.match_hostname" title="ssl.match_hostname"><code class="xref py py-func docutils literal notranslate"><span class="pre">match_hostname()</span></code></a> is no longer used. In case OpenSSL
 refuses a hostname or IP address, the handshake is aborted early and
-a TLS alert message is sent to the peer.</p>
+a TLS alert message is send to the peer.</p>
 </div>
 </dd></dl>
 
@@ -3363,7 +3352,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/ssl.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/ssl.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -3399,7 +3388,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -3422,7 +3411,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -3436,7 +3425,7 @@ signature algorithm configuration, and rekeying are not supported yet.</p></li>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

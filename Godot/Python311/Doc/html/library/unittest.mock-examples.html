@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="unittest.mock — getting started" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/unittest.mock-examples.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Using Mock: Mock Patching Methods: Common uses for Mock objects include: Patching methods, Recording method calls on objects. You might want to replace a method on an object to check that it is cal..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Using Mock: Mock Patching Methods: Common uses for Mock objects include: Patching methods, Recording method calls on objects. You might want to replace a method on an object to check that it is cal..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>unittest.mock — getting started &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unittest.mock — getting started &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -135,7 +124,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/unittest.mock-examples.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/unittest.mock-examples.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -172,7 +161,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -403,7 +392,7 @@ is called.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">side_effect</span><span class="o">=</span><span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Boom!&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">Exception</span>: <span class="n">Boom!</span>
 </pre></div>
 </div>
@@ -496,7 +485,7 @@ instantiate the class in those tests.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">spec</span><span class="o">=</span><span class="n">SomeClass</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="o">.</span><span class="n">old_method</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">   </span><span class="c">...</span>
+   <span class="c">...</span>
 <span class="gr">AttributeError</span>: <span class="n">object has no attribute &#39;old_method&#39;</span>
 </pre></div>
 </div>
@@ -892,7 +881,7 @@ with a Mock instance instead, and isn’t called with <code class="docutils lite
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="o">.</span><span class="n">foo_bar</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="o">.</span><span class="n">foo_bar</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="n">spam</span><span class="o">=</span><span class="s1">&#39;eggs&#39;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>: <span class="n">Expected to be called once. Called 2 times.</span>
 </pre></div>
 </div>
@@ -944,7 +933,7 @@ what happens:</p>
 <span class="go">set()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock_frob</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">({</span><span class="mi">6</span><span class="p">})</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>: <span class="n">Expected: (({6},), {})</span>
 <span class="go">Called with: ((set(),), {})</span>
 </pre></div>
@@ -996,7 +985,7 @@ checking inside a <code class="docutils literal notranslate"><span class="pre">s
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">({</span><span class="mi">6</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>
 </pre></div>
 </div>
@@ -1018,7 +1007,7 @@ Here’s an example implementation:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>: <span class="n">Expected call: mock({1})</span>
 <span class="go">Actual call: mock(set())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">foo</span>
@@ -1127,7 +1116,7 @@ to access a key that doesn’t exist.</p>
 <span class="go">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">KeyError</span>: <span class="n">&#39;d&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;fish&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eggs&#39;</span>
@@ -1366,7 +1355,7 @@ sufficient:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="p">(</span><span class="n">Foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="n">Foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>: <span class="n">Expected: call(&lt;__main__.Foo object at 0x...&gt;)</span>
 <span class="go">Actual call: call(&lt;__main__.Foo object at 0x...&gt;)</span>
 </pre></div>
@@ -1407,7 +1396,7 @@ against the one we created our matcher with. If they match then
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">match_wrong</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">compare</span><span class="p">,</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mock</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="n">match_wrong</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">    </span><span class="o">...</span>
+    <span class="o">...</span>
 <span class="gr">AssertionError</span>: <span class="n">Expected: ((&lt;Matcher object at 0x...&gt;,), {})</span>
 <span class="go">Called with: ((&lt;Foo object at 0x...&gt;,), {})</span>
 </pre></div>
@@ -1483,7 +1472,7 @@ that may be useful here, in the form of its equality matcher
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/unittest.mock-examples.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/unittest.mock-examples.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1519,7 +1508,7 @@ that may be useful here, in the form of its equality matcher
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -1542,7 +1531,7 @@ that may be useful here, in the form of its equality matcher
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1556,7 +1545,7 @@ that may be useful here, in the form of its equality matcher
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

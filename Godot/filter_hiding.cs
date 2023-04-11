@@ -20,14 +20,20 @@ public partial class filter_hiding : Node
 		//GD.Print("Listing");
 		//GD.Print(head);
 		var i = 0;
+		var j=0;
 		//List<Label> classes= new List<Label>();
 		//GD.Print(head.GetChild(i));
 		var hc=head.GetChildCount();
+		GD.Print(hc);
+		GD.Print(head.GetChild(0).GetChildCount());
 		while(i<hc){ //could be for loop but not changed after findind the child count method
 			//GD.Print(head.GetChild(i));
 			//GD.Print(head.GetChild(i).GetChild(0));
-			classes.Add((Label)head.GetChild(i).GetChild(0));
-			
+			while(j<head.GetChild(i).GetChildCount()){
+				classes.Add((Label)head.GetChild(i).GetChild(j));
+				j++;
+			}
+			j=0;
 			i+=1;
 			//GD.Print(i);
 		}
@@ -48,7 +54,7 @@ public partial class filter_hiding : Node
 	public void filterby(String s){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
-		for(var j=0;j<classes.Count-1;j++){
+		for(var j=1;j<classes.Count-1;j+=15){
 
 			String filter = classes[j].Text;
 			if((filter.Contains(s))){

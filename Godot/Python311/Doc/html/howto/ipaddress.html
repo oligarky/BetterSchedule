@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="An introduction to the ipaddress module" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/howto/ipaddress.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="author, Peter Moody,, author, Nick Coghlan,. Overview: This document aims to provide a gentle introduction to the ipaddress module. It is aimed primarily at users that aren’t already familiar with ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="author, Peter Moody,, author, Nick Coghlan,. Overview: This document aims to provide a gentle introduction to the ipaddress module. It is aimed primarily at users that aren’t already familiar with ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>An introduction to the ipaddress module &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An introduction to the ipaddress module &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -116,7 +105,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/howto/ipaddress.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/howto/ipaddress.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -153,7 +142,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
@@ -278,7 +267,7 @@ additional bits instead be coerced to zero, the flag <code class="docutils liter
 be passed to the constructor:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_network</span><span class="p">(</span><span class="s1">&#39;192.0.2.1/24&#39;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">   </span><span class="c">...</span>
+   <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">192.0.2.1/24 has host bits set</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_network</span><span class="p">(</span><span class="s1">&#39;192.0.2.1/24&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">IPv4Network(&#39;192.0.2.0/24&#39;)</span>
@@ -465,20 +454,20 @@ the definition failed to parse correctly.</p>
 class constructors directly. For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_address</span><span class="p">(</span><span class="s2">&quot;192.168.0.256&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">&#39;192.168.0.256&#39; does not appear to be an IPv4 or IPv6 address</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Address</span><span class="p">(</span><span class="s2">&quot;192.168.0.256&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">ipaddress.AddressValueError</span>: <span class="n">Octet 256 (&gt; 255) not permitted in &#39;192.168.0.256&#39;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_network</span><span class="p">(</span><span class="s2">&quot;192.168.0.1/64&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">ValueError</span>: <span class="n">&#39;192.168.0.1/64&#39; does not appear to be an IPv4 or IPv6 network</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Network</span><span class="p">(</span><span class="s2">&quot;192.168.0.1/64&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">ipaddress.NetmaskValueError</span>: <span class="n">&#39;64&#39; is not a valid netmask</span>
 </pre></div>
 </div>
@@ -537,7 +526,7 @@ you can still write code like the following:</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/howto/ipaddress.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/howto/ipaddress.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -573,7 +562,7 @@ you can still write code like the following:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
@@ -595,7 +584,7 @@ you can still write code like the following:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -609,7 +598,7 @@ you can still write code like the following:</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

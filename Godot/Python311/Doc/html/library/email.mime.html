@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="email.mime: Creating email and MIME objects from scratch" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/email.mime.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/email/mime/ This module is part of the legacy ( Compat32) email API. Its functionality is partially replaced by the contentmanager in the new API, but in certain applications these..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/email/mime/ This module is part of the legacy ( Compat32) email API. Its functionality is partially replaced by the contentmanager in the new API, but in certain applications these..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>email.mime: Creating email and MIME objects from scratch &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.mime: Creating email and MIME objects from scratch &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -95,7 +84,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/email.mime.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/email.mime.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -132,7 +121,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -248,9 +237,9 @@ dictionary.</p>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.application</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.application.MIMEApplication" title="email.mime.application.MIMEApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEApplication</span></code></a> class is used to represent MIME message objects of
-major type <em class="mimetype">application</em>.  <em>_data</em> contains the bytes for the raw
-application data.  Optional <em>_subtype</em> specifies the MIME subtype and defaults
-to <em class="mimetype">octet-stream</em>.</p>
+major type <em class="mimetype">application</em>.  <em>_data</em> is a string containing the raw
+byte data.  Optional <em>_subtype</em> specifies the MIME subtype and defaults to
+<em class="mimetype">octet-stream</em>.</p>
 <p>Optional <em>_encoder</em> is a callable (i.e. function) which will perform the actual
 encoding of the data for transport.  This callable takes one argument, which is
 the <a class="reference internal" href="#email.mime.application.MIMEApplication" title="email.mime.application.MIMEApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEApplication</span></code></a> instance. It should use
@@ -273,7 +262,7 @@ object as necessary.  The default encoding is base64.  See the
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.audio</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.audio.MIMEAudio" title="email.mime.audio.MIMEAudio"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEAudio</span></code></a> class is used to create MIME message objects of major type
-<em class="mimetype">audio</em>. <em>_audiodata</em> contains the bytes for the raw audio data.  If
+<em class="mimetype">audio</em>. <em>_audiodata</em> is a string containing the raw audio data.  If
 this data can be decoded as au, wav, aiff, or aifc, then the
 subtype will be automatically included in the <em class="mailheader">Content-Type</em> header.
 Otherwise you can explicitly specify the audio subtype via the <em>_subtype</em>
@@ -301,7 +290,7 @@ object as necessary.  The default encoding is base64.  See the
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.image</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.image.MIMEImage" title="email.mime.image.MIMEImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEImage</span></code></a> class is used to create MIME message objects of major type
-<em class="mimetype">image</em>. <em>_imagedata</em> contains the bytes for the raw image data.  If
+<em class="mimetype">image</em>. <em>_imagedata</em> is a string containing the raw image data.  If
 this data type can be detected (jpeg, png, gif, tiff, rgb, pbm, pgm, ppm,
 rast, xbm, bmp, webp, and exr attempted), then the subtype will be
 automatically included in the <em class="mailheader">Content-Type</em> header. Otherwise
@@ -397,7 +386,7 @@ will automatically encode the new payload (and add a new
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/email.mime.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/email.mime.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -433,7 +422,7 @@ will automatically encode the new payload (and add a new
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -457,7 +446,7 @@ will automatically encode the new payload (and add a new
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -471,7 +460,7 @@ will automatically encode the new payload (and add a new
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

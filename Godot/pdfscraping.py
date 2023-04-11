@@ -6,7 +6,7 @@ number_of_pages = len(reader.pages)
 parts = []
 
 
-with open("Output.txt", "a") as f:
+with open("Output.txt", "w") as f:
     for i in range(1,number_of_pages) :
         page = reader.pages[i]
         text= page.extract_text()

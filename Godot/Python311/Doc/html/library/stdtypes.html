@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Built-in Types" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/stdtypes.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="The following sections describe the standard types that are built into the interpreter. The principal built-in types are numerics, sequences, mappings, classes, instances and exceptions. Some colle..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="The following sections describe the standard types that are built into the interpreter. The principal built-in types are numerics, sequences, mappings, classes, instances and exceptions. Some colle..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Built-in Types &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built-in Types &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -176,7 +165,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/stdtypes.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/stdtypes.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -213,7 +202,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Standard Library</a> &#187;</li>
@@ -937,7 +926,7 @@ number, <a class="reference internal" href="functions.html#float" title="float">
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">hash_fraction</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the hash of a rational number m / n.</span>
+    <span class="sd">&quot;&quot;&quot;Compute the hash of a rational number m / n.</span>
 
 <span class="sd">    Assumes m and n are integers, with n positive.</span>
 <span class="sd">    Equivalent to hash(fractions.Fraction(m, n)).</span>
@@ -961,7 +950,7 @@ number, <a class="reference internal" href="functions.html#float" title="float">
     <span class="k">return</span> <span class="n">hash_value</span>
 
 <span class="k">def</span> <span class="nf">hash_float</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the hash of a float x.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Compute the hash of a float x.&quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -971,7 +960,7 @@ number, <a class="reference internal" href="functions.html#float" title="float">
         <span class="k">return</span> <span class="n">hash_fraction</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">hash_complex</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the hash of a complex number z.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Compute the hash of a complex number z.&quot;&quot;&quot;</span>
 
     <span class="n">hash_value</span> <span class="o">=</span> <span class="n">hash_float</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">real</span><span class="p">)</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">hash_info</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">hash_float</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
     <span class="c1"># do a signed reduction modulo 2**sys.hash_info.width</span>
@@ -1722,24 +1711,23 @@ which is the length of the string plus one.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="str.encode">
 <span class="sig-prename descclassname"><span class="pre">str.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#str.encode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the string encoded to <a class="reference internal" href="#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
-<p><em>encoding</em> defaults to <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>;
-see <a class="reference internal" href="codecs.html#standard-encodings"><span class="std std-ref">Standard Encodings</span></a> for possible values.</p>
-<p><em>errors</em> controls how encoding errors are handled.
-If <code class="docutils literal notranslate"><span class="pre">'strict'</span></code> (the default), a <a class="reference internal" href="exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a> exception is raised.
-Other possible values are <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'replace'</span></code>, <code class="docutils literal notranslate"><span class="pre">'xmlcharrefreplace'</span></code>, <code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> and any
-other name registered via <a class="reference internal" href="codecs.html#codecs.register_error" title="codecs.register_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">codecs.register_error()</span></code></a>.
-See <a class="reference internal" href="codecs.html#error-handlers"><span class="std std-ref">Error Handlers</span></a> for details.</p>
-<p>For performance reasons, the value of <em>errors</em> is not checked for validity
-unless an encoding error actually occurs,
-<a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> is enabled
-or a <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a> is used.</p>
+<dd><p>Return an encoded version of the string as a bytes object. Default encoding
+is <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>. <em>errors</em> may be given to set a different error handling scheme.
+The default for <em>errors</em> is <code class="docutils literal notranslate"><span class="pre">'strict'</span></code>, meaning that encoding errors raise
+a <a class="reference internal" href="exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a>. Other possible
+values are <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>, <code class="docutils literal notranslate"><span class="pre">'replace'</span></code>, <code class="docutils literal notranslate"><span class="pre">'xmlcharrefreplace'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> and any other name registered via
+<a class="reference internal" href="codecs.html#codecs.register_error" title="codecs.register_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">codecs.register_error()</span></code></a>, see section <a class="reference internal" href="codecs.html#error-handlers"><span class="std std-ref">Error Handlers</span></a>. For a
+list of possible encodings, see section <a class="reference internal" href="codecs.html#standard-encodings"><span class="std std-ref">Standard Encodings</span></a>.</p>
+<p>By default, the <em>errors</em> argument is not checked for best performances, but
+only used at the first encoding error. Enable the <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development
+Mode</span></a>, or use a <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a> to check
+<em>errors</em>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.1: </span>Added support for keyword arguments.</p>
+<p><span class="versionmodified changed">Changed in version 3.1: </span>Support for keyword arguments added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.9: </span>The value of the <em>errors</em> argument is now checked in <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> and
+<p><span class="versionmodified changed">Changed in version 3.9: </span>The <em>errors</em> is now checked in development mode and
 in <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug mode</span></a>.</p>
 </div>
 </dd></dl>
@@ -2901,28 +2889,27 @@ it always produces a new object, even if no changes were made.</p>
 <span class="sig-prename descclassname"><span class="pre">bytes.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bytes.decode" title="Permalink to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="bytearray.decode">
 <span class="sig-prename descclassname"><span class="pre">bytearray.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bytearray.decode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the bytes decoded to a <a class="reference internal" href="#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.</p>
-<p><em>encoding</em> defaults to <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>;
-see <a class="reference internal" href="codecs.html#standard-encodings"><span class="std std-ref">Standard Encodings</span></a> for possible values.</p>
-<p><em>errors</em> controls how decoding errors are handled.
-If <code class="docutils literal notranslate"><span class="pre">'strict'</span></code> (the default), a <a class="reference internal" href="exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a> exception is raised.
-Other possible values are <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>, <code class="docutils literal notranslate"><span class="pre">'replace'</span></code>,
-and any other name registered via <a class="reference internal" href="codecs.html#codecs.register_error" title="codecs.register_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">codecs.register_error()</span></code></a>.
-See <a class="reference internal" href="codecs.html#error-handlers"><span class="std std-ref">Error Handlers</span></a> for details.</p>
-<p>For performance reasons, the value of <em>errors</em> is not checked for validity
-unless a decoding error actually occurs,
-<a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> is enabled or a <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a> is used.</p>
+<dd><p>Return a string decoded from the given bytes.  Default encoding is
+<code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>. <em>errors</em> may be given to set a different
+error handling scheme.  The default for <em>errors</em> is <code class="docutils literal notranslate"><span class="pre">'strict'</span></code>, meaning
+that encoding errors raise a <a class="reference internal" href="exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a>.  Other possible values are
+<code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>, <code class="docutils literal notranslate"><span class="pre">'replace'</span></code> and any other name registered via
+<a class="reference internal" href="codecs.html#codecs.register_error" title="codecs.register_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">codecs.register_error()</span></code></a>, see section <a class="reference internal" href="codecs.html#error-handlers"><span class="std std-ref">Error Handlers</span></a>. For a
+list of possible encodings, see section <a class="reference internal" href="codecs.html#standard-encodings"><span class="std std-ref">Standard Encodings</span></a>.</p>
+<p>By default, the <em>errors</em> argument is not checked for best performances, but
+only used at the first decoding error. Enable the <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development
+Mode</span></a>, or use a <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a> to check <em>errors</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Passing the <em>encoding</em> argument to <a class="reference internal" href="#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> allows decoding any
 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> directly, without needing to make a temporary
-<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code> object.</p>
+bytes or bytearray object.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.1: </span>Added support for keyword arguments.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.9: </span>The value of the <em>errors</em> argument is now checked in <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> and
+<p><span class="versionmodified changed">Changed in version 3.9: </span>The <em>errors</em> is now checked in development mode and
 in <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug mode</span></a>.</p>
 </div>
 </dd></dl>
@@ -5047,7 +5034,7 @@ available (for example, <code class="docutils literal notranslate"><span class="
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># get back a read-only proxy for the original dictionary</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">mapping</span>
-<span class="go">mappingproxy({&#39;bacon&#39;: 1, &#39;spam&#39;: 500})</span>
+<span class="go">mappingproxy({&#39;eggs&#39;: 2, &#39;sausage&#39;: 1, &#39;bacon&#39;: 1, &#39;spam&#39;: 500})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">mapping</span><span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
 <span class="go">500</span>
 </pre></div>
@@ -5694,7 +5681,7 @@ definition order.  Example:</p>
 to mitigate denial of service attacks. This limit <em>only</em> applies to decimal or
 other non-power-of-two number bases. Hexadecimal, octal, and binary conversions
 are unlimited. The limit can be configured.</p>
-<p>The <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> type in CPython is an arbitrary length number stored in binary
+<p>The <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> type in CPython is an abitrary length number stored in binary
 form (commonly known as a “bignum”). There exists no algorithm that can convert
 a string to a binary integer or a binary integer to a string in linear time,
 <em>unless</em> the base is a power of 2. Even the best known algorithms for base 10
@@ -5710,7 +5697,7 @@ and the sign are not counted towards the limit.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2&#39;</span> <span class="o">*</span> <span class="mi">5432</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="gr">ValueError</span>: <span class="n">Exceeds the limit (4300 digits) for integer string conversion: value has 5432 digits; use sys.set_int_max_str_digits() to increase the limit.</span>
+<span class="gr">ValueError</span>: <span class="n">Exceeds the limit (4300) for integer string conversion: value has 5432 digits; use sys.set_int_max_str_digits() to increase the limit.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2&#39;</span> <span class="o">*</span> <span class="mi">4300</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 <span class="go">4300</span>
@@ -5718,7 +5705,7 @@ and the sign are not counted towards the limit.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i_squared</span><span class="p">))</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="gr">ValueError</span>: <span class="n">Exceeds the limit (4300 digits) for integer string conversion: value has 8599 digits; use sys.set_int_max_str_digits() to increase the limit.</span>
+<span class="gr">ValueError</span>: <span class="n">Exceeds the limit (4300) for integer string conversion: value has 8599 digits; use sys.set_int_max_str_digits() to increase the limit.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">i_squared</span><span class="p">))</span>
 <span class="go">7144</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">i_squared</span><span class="p">),</span> <span class="n">base</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>  <span class="c1"># Hexadecimal is unlimited.</span>
@@ -5749,7 +5736,7 @@ and <a class="reference internal" href="#str" title="str"><code class="xref py p
 <li><p><code class="docutils literal notranslate"><span class="pre">int(string)</span></code> with default base 10.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">int(string,</span> <span class="pre">base)</span></code> for all bases that are not a power of 2.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">str(integer)</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">repr(integer)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repr(integer)</span></code></p></li>
 <li><p>any other string conversion to base 10, for example <code class="docutils literal notranslate"><span class="pre">f&quot;{integer}&quot;</span></code>,
 <code class="docutils literal notranslate"><span class="pre">&quot;{}&quot;.format(integer)</span></code>, or <code class="docutils literal notranslate"><span class="pre">b&quot;%d&quot;</span> <span class="pre">%</span> <span class="pre">integer</span></code>.</p></li>
 </ul>
@@ -5777,7 +5764,7 @@ command line flag to configure the limit:</p>
 <span class="target" id="index-68"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONINTMAXSTRDIGITS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONINTMAXSTRDIGITS</span></code></a> or <a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span> <span class="pre">int_max_str_digits</span></code></a>.
 If both the env var and the <code class="docutils literal notranslate"><span class="pre">-X</span></code> option are set, the <code class="docutils literal notranslate"><span class="pre">-X</span></code> option takes
 precedence. A value of <em>-1</em> indicates that both were unset, thus a value of
-<code class="xref py py-data docutils literal notranslate"><span class="pre">sys.int_info.default_max_str_digits</span></code> was used during initialization.</p></li>
+<code class="xref py py-data docutils literal notranslate"><span class="pre">sys.int_info.default_max_str_digits</span></code> was used during initilization.</p></li>
 </ul>
 <p>From code, you can inspect the current limit and set a new one using these
 <a class="reference internal" href="sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> APIs:</p>
@@ -5960,7 +5947,7 @@ element is the tuple to be formatted.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/stdtypes.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/stdtypes.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -5996,7 +5983,7 @@ element is the tuple to be formatted.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -6018,7 +6005,7 @@ element is the tuple to be formatted.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -6032,7 +6019,7 @@ element is the tuple to be formatted.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

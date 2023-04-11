@@ -956,8 +956,7 @@ class DocTestFinder:
             return module is inspect.getmodule(object)
         elif inspect.isfunction(object):
             return module.__dict__ is object.__globals__
-        elif (inspect.ismethoddescriptor(object) or
-              inspect.ismethodwrapper(object)):
+        elif inspect.ismethoddescriptor(object):
             if hasattr(object, '__objclass__'):
                 obj_mod = object.__objclass__.__module__
             elif hasattr(object, '__module__'):

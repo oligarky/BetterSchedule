@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="8. Compound statements" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/reference/compound_stmts.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Compound statements contain (groups of) other statements; they affect or control the execution of those other statements in some way. In general, compound statements span multiple lines, although i..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Compound statements contain (groups of) other statements; they affect or control the execution of those other statements in some way. In general, compound statements span multiple lines, although i..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>8. Compound statements &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Compound statements &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -142,7 +131,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/reference/compound_stmts.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/reference/compound_stmts.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -179,7 +168,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Language Reference</a> &#187;</li>
@@ -325,8 +314,9 @@ those made in the suite of the for-loop:</p>
 </div>
 <p id="index-8">Names in the target list are not deleted when the loop is finished, but if the
 sequence is empty, they will not have been assigned to at all by the loop.  Hint:
-the built-in type <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> represents immutable arithmetic sequences of integers.
-For instance, iterating <code class="docutils literal notranslate"><span class="pre">range(3)</span></code> successively yields 0, 1, and then 2.</p>
+the built-in function <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> returns an iterator of integers suitable to
+emulate the effect of Pascal’s <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">:=</span> <span class="pre">a</span> <span class="pre">to</span> <span class="pre">b</span> <span class="pre">do</span></code>; e.g., <code class="docutils literal notranslate"><span class="pre">list(range(3))</span></code>
+returns the list <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2]</span></code>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.11: </span>Starred elements are now allowed in the expression list.</p>
 </div>
@@ -562,7 +552,7 @@ from <code class="xref py py-meth docutils literal notranslate"><span class="pre
 method returns without an error, then <code class="xref py py-meth docutils literal notranslate"><span class="pre">__exit__()</span></code> will always be
 called. Thus, if an error occurs during the assignment to the target list,
 it will be treated the same as an error occurring within the suite would
-be. See step 7 below.</p>
+be. See step 6 below.</p>
 </div>
 </li>
 <li><p>The suite is executed.</p></li>
@@ -722,7 +712,7 @@ which skip repeated evaluations.</p>
 <span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case 2&#39;</span><span class="p">)</span>
 <span class="gp">... </span>   <span class="k">case</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  <span class="c1"># Matches and binds y to 200</span>
 <span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Case 3, y: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="gp">... </span>   <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>  <span class="c1"># Pattern not attempted</span>
+<span class="gp">... </span>   <span class="k">case</span> <span class="k">_</span><span class="p">:</span>  <span class="c1"># Pattern not attempted</span>
 <span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case 4, I match anything!&#39;</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">Case 3, y: 200</span>
@@ -1584,7 +1574,7 @@ transformed into the namespace’s <code class="docutils literal notranslate"><s
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/reference/compound_stmts.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/reference/compound_stmts.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1620,7 +1610,7 @@ transformed into the namespace’s <code class="docutils literal notranslate"><s
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Language Reference</a> &#187;</li>
@@ -1642,7 +1632,7 @@ transformed into the namespace’s <code class="docutils literal notranslate"><s
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1656,7 +1646,7 @@ transformed into the namespace’s <code class="docutils literal notranslate"><s
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

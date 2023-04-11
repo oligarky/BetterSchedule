@@ -1,0 +1,19 @@
+Yes, COMP ,1000 
+Yes, MATH ,2300 
+Yes, COMP ,1050 
+Yes, COMP ,1200 
+Yes, COMP ,2000 
+Yes, COMP ,2100 
+Yes, MATH ,2860 
+Yes, COMP ,2350 
+Yes, COMP ,2650 
+Yes, MATH ,2100 
+Yes, COMP ,3400 
+Yes, DATA ,3125 
+Yes, COOP ,3500 
+Yes, COMP ,3350 
+Yes, COMP ,3450 
+Yes, COOP ,4500 
+Yes, COMP ,4960 
+Yes, DATA ,3125 
+
