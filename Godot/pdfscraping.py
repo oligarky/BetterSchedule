@@ -1,7 +1,8 @@
 import PyPDF2
+import sys
 from PyPDF2 import PdfReader
 
-reader = PdfReader("DegreeAudit.pdf")
+reader = PdfReader(sys.argv[1])
 number_of_pages = len(reader.pages)
 parts = []
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://iuwl0fe038rq"]
+[gd_scene load_steps=12 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
 [ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
 [ext_resource type="Script" path="res://FilterHandler.cs" id="4_asn7s"]
 [ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
+[ext_resource type="Script" path="res://Managefile.gd" id="7_io627"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -41,7 +42,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_es1a6")
 
 [node name="WentworthTitleBar" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -1030,3 +1030,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Button"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+initial_position = 1
+title = "Upload successful"
+size = Vector2i(155, 100)
+dialog_text = "Upload successful"
+script = ExtResource("1_es1a6")
+
+[node name="FileDialog" type="FileDialog" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+title = "Open a File"
+size = Vector2i(600, 500)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+script = ExtResource("7_io627")
+
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Button" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/FileDialog" method="_on_pressed"]
+[connection signal="file_selected" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/FileDialog" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/AcceptDialog" method="scraper"]
