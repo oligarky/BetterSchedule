@@ -112,7 +112,7 @@ layout_mode = 2
 script = ExtResource("4_xd4mr")
 
 [node name="Panel" type="Panel" parent="VBoxContainer/VSplitContainer/TopHBox"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l8hnr")
 
@@ -146,6 +146,58 @@ text = "Filter"
 [node name="CheckButton5" type="CheckButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
 layout_mode = 2
 text = "Filter"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
+layout_mode = 2
+item_count = 21
+popup/item_0/text = "Subject"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "HUSS"
+popup/item_1/id = 1
+popup/item_2/text = "HUMN"
+popup/item_2/id = 2
+popup/item_3/text = "MATH"
+popup/item_3/id = 3
+popup/item_4/text = "HIST"
+popup/item_4/id = 4
+popup/item_5/text = "COMP"
+popup/item_5/id = 5
+popup/item_6/text = "Building"
+popup/item_6/id = 6
+popup/item_6/disabled = true
+popup/item_6/separator = true
+popup/item_7/text = "Wentworth Hall"
+popup/item_7/id = 7
+popup/item_8/text = "CEIS"
+popup/item_8/id = 8
+popup/item_9/text = "Beatty Hall"
+popup/item_9/id = 9
+popup/item_10/text = "Online Section"
+popup/item_10/id = 10
+popup/item_11/text = "Dobbs Hall"
+popup/item_11/id = 11
+popup/item_12/text = "Annex Central"
+popup/item_12/id = 12
+popup/item_13/text = "Annex South"
+popup/item_13/id = 13
+popup/item_14/text = "Dobbs Hall"
+popup/item_14/id = 14
+popup/item_15/text = "Rubenstein Hall"
+popup/item_15/id = 15
+popup/item_16/text = "Start time"
+popup/item_16/id = 16
+popup/item_16/disabled = true
+popup/item_16/separator = true
+popup/item_17/text = "9:30:00"
+popup/item_17/id = 17
+popup/item_18/text = "10:00:00"
+popup/item_18/id = 18
+popup/item_19/text = "8:00:00"
+popup/item_19/id = 19
+popup/item_20/text = "14:00:00"
+popup/item_20/id = 20
 
 [node name="BottomHBox" type="HBoxContainer" parent="VBoxContainer/VSplitContainer"]
 layout_mode = 2
