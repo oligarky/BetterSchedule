@@ -14,7 +14,7 @@ func _add_filter():
 	b.set_script(load("res://removeFilter.gd"))
 	l.clip_text=true
 	l.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	l.SIZE_EXPAND_FILL
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,5 +22,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

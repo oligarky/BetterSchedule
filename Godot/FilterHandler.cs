@@ -36,7 +36,7 @@ public partial class FilterHandler : Node
 	List<String> Room= new List<String>();
 	List<String> Campus= new List<String>();
 	List<String> Status= new List<String>();
-
+	List<String> stat= new List<String>();
 
 	bool exclusive=false;
 
@@ -72,7 +72,6 @@ public partial class FilterHandler : Node
 				filters.Add(vp.GetChild<Label>(i));
 			}
 		}
-		GD.Print(filters[0]);
 		sortFilter();
 	}
 
@@ -114,7 +113,7 @@ public partial class FilterHandler : Node
 				rfilters.Add(match);
 			}else if(Campus.Contains(match)){
 				cafilters.Add(match);
-			}else if(Status.Contains(match)){
+			}else if(match.Contains("Space") || match.Contains("Full")){
 				stfilters.Add(match);
 			}
 		}
@@ -129,10 +128,10 @@ public partial class FilterHandler : Node
 		if(exclusive){
 			GD.Print("Sending to exclusive");
 
-			//filter.exfilter(fi);
+			filter.exfilter(fi);
 		}else{
-			GD.Print(Subject[0]);
-			GD.Print(fi[1].Contains("COMP"));
+			GD.Print(Status[1]);
+			GD.Print(fi[14].Contains("Full"));
 			GD.Print("Sending to inclusive");
 			filter.filterby(fi);//example used is COMP but will eventaully be finding the text from nodes elsewhere
 		}
@@ -214,7 +213,7 @@ public partial class FilterHandler : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
