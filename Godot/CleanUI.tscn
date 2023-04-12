@@ -1,0 +1,1088 @@
+[gd_scene load_steps=13 format=3 uid="uid://iuwl0fe038rq"]
+
+[ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
+[ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
+[ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
+[ext_resource type="Script" path="res://FilterHandler.cs" id="4_asn7s"]
+[ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
+[ext_resource type="Script" path="res://addFilter.gd" id="5_2jukh"]
+[ext_resource type="Script" path="res://Managefile.gd" id="7_io627"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apem3"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8hnr"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gfic"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1lnn"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WentworthTitleBar" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rwxw7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/WentworthTitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Head" type="HBoxContainer" parent="VBoxContainer/WentworthTitleBar/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/WentworthTitleBar/HBoxContainer/Head"]
+position = Vector2(144, 26)
+scale = Vector2(0.234694, 0.234694)
+texture = ExtResource("1_8fobm")
+
+[node name="Left" type="MarginContainer" parent="VBoxContainer/WentworthTitleBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="right" type="MarginContainer" parent="VBoxContainer/WentworthTitleBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Top Right" type="HBoxContainer" parent="VBoxContainer/WentworthTitleBar/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/WentworthTitleBar/HBoxContainer/Top Right"]
+position = Vector2(-32.0001, 28)
+scale = Vector2(0.819476, 0.819476)
+texture = ExtResource("2_etl5u")
+
+[node name="Label" type="Label" parent="VBoxContainer/WentworthTitleBar/HBoxContainer/Top Right"]
+layout_mode = 2
+text = "Last, First
+"
+
+[node name="right2" type="MarginContainer" parent="VBoxContainer/WentworthTitleBar/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopHBox" type="HBoxContainer" parent="VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Head" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_apem3")
+vertical_scroll_mode = 2
+script = ExtResource("4_asn7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Head"]
+layout_mode = 2
+script = ExtResource("4_xd4mr")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/VSplitContainer/TopHBox"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l8hnr")
+
+[node name="Head2" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/TopHBox/Panel"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 104.0
+offset_bottom = 291.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
+layout_mode = 2
+text = "FILTERS
+"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
+layout_mode = 2
+item_count = 20
+popup/item_0/text = "Subject"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "HUSS"
+popup/item_1/id = 1
+popup/item_2/text = "HUMN"
+popup/item_2/id = 2
+popup/item_3/text = "MATH"
+popup/item_3/id = 3
+popup/item_4/text = "HIST"
+popup/item_4/id = 4
+popup/item_5/text = "COMP"
+popup/item_5/id = 5
+popup/item_6/text = "Building"
+popup/item_6/id = 6
+popup/item_6/disabled = true
+popup/item_6/separator = true
+popup/item_7/text = "Wentworth Hall"
+popup/item_7/id = 7
+popup/item_8/text = "CEIS"
+popup/item_8/id = 8
+popup/item_9/text = "Beatty Hall"
+popup/item_9/id = 9
+popup/item_10/text = "Online Section"
+popup/item_10/id = 10
+popup/item_11/text = "Dobbs Hall"
+popup/item_11/id = 11
+popup/item_12/text = "Annex Central"
+popup/item_12/id = 12
+popup/item_13/text = "Annex South"
+popup/item_13/id = 13
+popup/item_14/text = "Rubenstein Hall"
+popup/item_14/id = 15
+popup/item_15/text = "Start time"
+popup/item_15/id = 16
+popup/item_15/disabled = true
+popup/item_15/separator = true
+popup/item_16/text = "9:30:00"
+popup/item_16/id = 17
+popup/item_17/text = "10:00:00"
+popup/item_17/id = 18
+popup/item_18/text = "8:00:00"
+popup/item_18/id = 19
+popup/item_19/text = "14:00:00"
+popup/item_19/id = 20
+script = ExtResource("5_2jukh")
+
+[node name="AddFilter" type="Button" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
+layout_mode = 2
+text = "Add"
+
+[node name="BottomHBox" type="HBoxContainer" parent="VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CalendarVBox" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WeekdayVBoxLabel" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Monday" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gfic")
+
+[node name="Monday" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel/Monday"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Monday"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tuesday" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gfic")
+
+[node name="Tuesday" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel/Tuesday"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tuesday
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wednesday" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gfic")
+
+[node name="Wednesday" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel/Wednesday"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wednesday
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thursday" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gfic")
+
+[node name="Thursday" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel/Thursday"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thursday
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Friday" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gfic")
+
+[node name="Friday" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel/Friday"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Friday
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/WeekdayVBoxLabel"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="CalendarScroll" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="CalendarHBox" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Time" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/7am"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "7am"
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/8am"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "8am"
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/9am"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "9am"
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/10am"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "10am"
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/11am"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "11am"
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/12pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "12pm"
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/1pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "1pm"
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/2pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "2pm"
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/3pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "3pm"
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/4pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "4pm"
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/5pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "5pm"
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/6pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "6pm"
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/7pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "7pm"
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/8pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "8pm"
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1lnn")
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Time/GridContainer/9pm"]
+layout_mode = 1
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 9
+text = "9pm"
+
+[node name="Mon" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tues" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Tues/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Wed" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Wed/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Thurs" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Thurs/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Fri" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="10am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="11am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="12pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="3pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="4pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="6pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="7pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="8pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="9pm" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Fri/GridContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Head2" type="GridContainer" parent="VBoxContainer/VSplitContainer/BottomHBox"]
+layout_mode = 2
+columns = 2
+
+[node name="DegreeAudit" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 17
+text = "Upload 
+Degree 
+Audit
+"
+text_overrun_behavior = 3
+
+[node name="Button2" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button3" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button4" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button5" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button6" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Upload Succesful" type="AcceptDialog" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+initial_position = 1
+title = "Upload successful"
+size = Vector2i(155, 100)
+dialog_text = "Upload successful"
+script = ExtResource("1_es1a6")
+
+[node name="Select degree audit" type="FileDialog" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+title = "Open a File"
+size = Vector2i(600, 500)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+script = ExtResource("7_io627")
+
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/DegreeAudit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" method="_on_pressed"]
+[connection signal="file_selected" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" method="scraper"]

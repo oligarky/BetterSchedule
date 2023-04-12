@@ -1,0 +1,282 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0k70wqk8nv8v"]
+
+[ext_resource type="Script" path="res://pdfscraper.gd" id="1_xcy07"]
+[ext_resource type="Script" path="res://data.gd" id="2_7hlyb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apem3"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bcckx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8hnr"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k0mg"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vvjp"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+script = ExtResource("1_xcy07")
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rwxw7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Head" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="right" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Top Right" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Head" type="ScrollContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_apem3")
+vertical_scroll_mode = 2
+script = ExtResource("1_d3yvs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head"]
+layout_mode = 2
+script = ExtResource("2_7hlyb")
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l8hnr")
+
+[node name="Head2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 104.0
+offset_bottom = 291.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "FILTERS
+"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+action_mode = 0
+text = "Filter"
+script = ExtResource("1_tlow0")
+
+[node name="CheckButton2" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+action_mode = 0
+text = "Filter"
+
+[node name="CheckButton3" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+action_mode = 0
+text = "Filter"
+
+[node name="CheckButton4" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+action_mode = 0
+text = "Filter"
+
+[node name="CheckButton5" type="CheckButton" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2"]
+layout_mode = 2
+action_mode = 0
+text = "Filter"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Head" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mon" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Mon"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6k0mg")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Mon/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Mon"
+
+[node name="Tues" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Tues"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6k0mg")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Tues/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Tues"
+
+[node name="Wed" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Wed"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6k0mg")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Wed/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Wed"
+
+[node name="Thurs" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Thurs"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6k0mg")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Thurs/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Thurs"
+
+[node name="Fri" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Fri"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6k0mg")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Head/Fri/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Fri"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vvjp")
+
+[node name="Head2" type="GridContainer" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 204.0
+offset_bottom = 291.0
+columns = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button6" type="Button" parent="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer3/Panel/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2/CheckButton" to="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2/CheckButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Panel/Head2/CheckButton2" to="MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/Head" method="_on_pressed"]
