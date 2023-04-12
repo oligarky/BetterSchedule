@@ -7,10 +7,16 @@ public partial class filter_hiding : Node
 
 	//creating list for filtering
 	List<Label> classes= new List<Label>();
+	List<String> stat= new List<String>();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//listlabels();
+		
+			stat.Add("12 of 12");
+			stat.Add("14 of 14");
+			stat.Add("20 of 20");
+			stat.Add("24 of 24");
+			stat.Add("25 of 25");
 
 		
 
@@ -50,23 +56,33 @@ public partial class filter_hiding : Node
 	}
 
 	
-	public void exfilter(List<String> s,List<String> b, List<String> ts){
+	public void exfilter(List<String>[] fi){
 		showAll();
-		var si=1;
-		var tsi=9;
-		var bi=11;
+		// var si=1;
+		// var tsi=9;
+		// var bi=11;
 		
-		for(var i=0;i<classes.Count-1;i+=15){
+		// for(var i=0;i<classes.Count-1;i+=15){
 			
 			
-			if(s.Count==0 || s.Contains(classes[i+si].Text)){ //either s is nothing or it matches
-				if(b.Count==0 || b.Contains(classes[i+bi].Text)){ //either b is nothing or it matches
-					if(ts.Count==0 || ts.Contains(classes[i+tsi].Text)){ //either ts is nothing or it matches
-						classes[i].GetParent<HBoxContainer>().Hide();
-					}
-				}
+		// 	if(s.Count==0 || s.Contains(classes[i+si].Text)){ //either s is nothing or it matches
+		// 		if(b.Count==0 || b.Contains(classes[i+bi].Text)){ //either b is nothing or it matches
+		// 			if(ts.Count==0 || ts.Contains(classes[i+tsi].Text)){ //either ts is nothing or it matches
+		// 				classes[i].GetParent<HBoxContainer>().Hide();
+		// 			}
+		// 		}
+		// 	}
+		// }
+		for(var j=0;j<classes.Count-1;j++){
+
+			String filter = classes[j].Text;
+			for(var i=0; i<15;i++){
+				if((fi[i].Contains(filter) && j%15==i)){
+					classes[j].GetParent<HBoxContainer>().Hide();
+				}		
 			}
 		}
+
 		for(var j=0;j<classes.Count-1;j++){
 			
 			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
@@ -80,30 +96,23 @@ public partial class filter_hiding : Node
 
 	//Finds all classes that contain a given string and then hides those that don't have the matching string.
 	//Called in FilterHandler.cs
-	public void sfilterby(List<String> s,List<String> b, List<String> ts){
+	public void filterby(List<String>[] fi){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
 		showAll();
-		var si=0;
-		var tsi=0;
-		var bi=0;
+		
 		for(var j=0;j<classes.Count-1;j++){
 
 			String filter = classes[j].Text;
-			if((s.Contains(filter) && si%15==1)){
-				//shows the classes if they were hidden by another pass through from earlier filters
-				//Might need to be changed later for additional filters
-				//classes[j].GetParent<HBoxContainer>().Show();
-				classes[j].GetParent<HBoxContainer>().Hide();
-			}else if(b.Contains(filter) && bi%15==11){
-				classes[j].GetParent<HBoxContainer>().Hide();
-			}else if(ts.Contains(filter) && tsi%15==9){
-				classes[j].GetParent<HBoxContainer>().Hide();
+			for(var i=0; i<15;i++){
+				if(!(j%15==14)&& ((fi[i].Contains(filter) && j%15==i))){
+					classes[j].GetParent<HBoxContainer>().Hide();
+				}else if(j%15==14 && stat.Contains(filter)){
+					classes[j].GetParent<HBoxContainer>().Hide();
+				}		
 			}
-			si++;
-			tsi++;
-			bi++;
 		}
+		
 		for(var j=0;j<classes.Count-1;j++){
 			
 			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
