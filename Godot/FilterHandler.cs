@@ -79,23 +79,42 @@ public partial class FilterHandler : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		subject.Add("COMP");
-		subject.Add("MATH");
-		subject.Add("HUSS");
-		subject.Add("HUMN");
-		subject.Add("HIST");
-		Building.Add("Wentworth Hall");
-		Building.Add("CEIS");
-		Building.Add("Beatty Hall");
-		Building.Add("Online Section");
-		Building.Add("Dobbs Hall");
-		Building.Add("Annex Central");
-		Building.Add("Annex South");
-		Building.Add("Rubenstein Hall");
-		TimeStart.Add("09:30:00");
-		TimeStart.Add("10:00:00");
-		TimeStart.Add("08:00:00");
-		TimeStart.Add("14:00:00");
+		var ob=get_filter_parent().GetChild<OptionButton>(1);
+		var obc=ob.ItemCount;
+		String group="";
+		for (int i=0;i<obc;i++){
+			if(ob.GetItemText(i).Contains("Subject")){
+				group="Subject";
+			}else if(ob.GetItemText(i).Contains("Building")){
+				group="Building";
+			}else if(ob.GetItemText(i).Contains("Start time")){
+				group="Start time";
+			}else if(group.Contains("Subject")){
+				subject.Add(ob.GetItemText(i));
+			}else if(group.Contains("Building")){
+				Building.Add(ob.GetItemText(i));
+			}else if(group.Contains("Start time")){
+				TimeStart.Add(ob.GetItemText(i));
+			}
+		}
+
+		// subject.Add("COMP");
+		// subject.Add("MATH");
+		// subject.Add("HUSS");
+		// subject.Add("HUMN");
+		// subject.Add("HIST");
+		// Building.Add("Wentworth Hall");
+		// Building.Add("CEIS");
+		// Building.Add("Beatty Hall");
+		// Building.Add("Online Section");
+		// Building.Add("Dobbs Hall");
+		// Building.Add("Annex Central");
+		// Building.Add("Annex South");
+		// Building.Add("Rubenstein Hall");
+		// TimeStart.Add("09:30:00");
+		// TimeStart.Add("10:00:00");
+		// TimeStart.Add("08:00:00");
+		// TimeStart.Add("14:00:00");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
