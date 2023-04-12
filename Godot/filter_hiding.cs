@@ -48,20 +48,62 @@ public partial class filter_hiding : Node
 	{
 		//listlabels();
 	}
+
 	
 	//Finds all classes that contain a given string and then hides those that don't have the matching string.
 	//Called in FilterHandler.cs
-	public void filterby(String s){
+	public void sfilterby(List<String> f){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
 		for(var j=1;j<classes.Count-1;j+=15){
 
 			String filter = classes[j].Text;
-			if((filter.Contains(s))){
+			if((f.Contains(filter))){
 				//shows the classes if they were hidden by another pass through from earlier filters
 				//Might need to be changed later for additional filters
 				//classes[j].GetParent<HBoxContainer>().Show();
 				GD.Print(classes[j].GetParent<HBoxContainer>());
+				classes[j].GetParent<HBoxContainer>().Show();
+			}else{
+				//Hides the HBoxContainer instead of the label to clean up the output
+				classes[j].GetParent<HBoxContainer>().Hide();
+				
+			}
+		}
+		
+	}
+	public void bfilterby(List<String> f){
+		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
+		//intended otherwise without an error.
+		for(var j=11;j<classes.Count-1;j+=15){
+
+			String filter = classes[j].Text;
+			if((f.Contains(filter))){
+				//shows the classes if they were hidden by another pass through from earlier filters
+				//Might need to be changed later for additional filters
+				//classes[j].GetParent<HBoxContainer>().Show();
+				GD.Print(classes[j].GetParent<HBoxContainer>());
+				classes[j].GetParent<HBoxContainer>().Show();
+			}else{
+				//Hides the HBoxContainer instead of the label to clean up the output
+				classes[j].GetParent<HBoxContainer>().Hide();
+				
+			}
+		}
+		
+	}
+	public void tsfilterby(List<String> f){
+		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
+		//intended otherwise without an error.
+		for(var j=9;j<classes.Count-1;j+=15){
+
+			String filter = classes[j].Text;
+			if((f.Contains(filter))){
+				//shows the classes if they were hidden by another pass through from earlier filters
+				//Might need to be changed later for additional filters
+				//classes[j].GetParent<HBoxContainer>().Show();
+				GD.Print(classes[j].GetParent<HBoxContainer>());
+				classes[j].GetParent<HBoxContainer>().Show();
 			}else{
 				//Hides the HBoxContainer instead of the label to clean up the output
 				classes[j].GetParent<HBoxContainer>().Hide();
