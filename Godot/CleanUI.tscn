@@ -128,6 +128,13 @@ layout_mode = 2
 text = "FILTERS
 "
 
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label"]
+layout_mode = 0
+offset_left = 130.0
+offset_right = 174.0
+offset_bottom = 24.0
+tooltip_text = "Exclusive search"
+
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
 layout_mode = 2
 item_count = 20
@@ -169,11 +176,11 @@ popup/item_15/text = "Start time"
 popup/item_15/id = 16
 popup/item_15/disabled = true
 popup/item_15/separator = true
-popup/item_16/text = "9:30:00"
+popup/item_16/text = "09:30:00"
 popup/item_16/id = 17
 popup/item_17/text = "10:00:00"
 popup/item_17/id = 18
-popup/item_18/text = "8:00:00"
+popup/item_18/text = "08:00:00"
 popup/item_18/id = 19
 popup/item_19/text = "14:00:00"
 popup/item_19/id = 20
@@ -1082,6 +1089,7 @@ file_mode = 0
 access = 2
 script = ExtResource("7_io627")
 
+[connection signal="toggled" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/CheckButton" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="exin"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/DegreeAudit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" method="_on_pressed"]

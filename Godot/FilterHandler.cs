@@ -13,20 +13,31 @@ public partial class FilterHandler : Node
 	List<String> subject= new List<String>();
 	List<String> Building= new List<String>();
 	List<String> TimeStart= new List<String>();
-	
+	bool exclusive=false;
 
 	public async void get_filter(){
 		await Task.Delay(1);
+		sfilters.Clear();
+		bfilters.Clear();
+		tsfilters.Clear();
+		filters.Clear();
 		VBoxContainer vp = get_filter_parent();
 		GD.Print("Getting filters");
 		GD.Print("vp child count "+vp.GetChildCount());
 		for(int i=3;i<vp.GetChildCount();i++){
 			GD.Print(vp.GetChild(i));
 			GD.Print(vp.GetChild<Label>(i).Text);
-			filters.Add(vp.GetChild<Label>(i));
+			if(vp.GetChild<Label>(i).IsVisibleInTree()){
+				filters.Add(vp.GetChild<Label>(i));
+			}
 		}
 		GD.Print(filters);
 		sortFilter();
+	}
+
+	public void exin(bool b){
+		exclusive = b;
+		get_filter();
 	}
 	
 	private void sortFilter(){
@@ -52,10 +63,14 @@ public partial class FilterHandler : Node
 		
 		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
-		GD.Print("Sending to hide");
-		filter.sfilterby(sfilters);//example used is COMP but will eventaully be finding the text from nodes elsewhere
-		filter.bfilterby(bfilters);
-		filter.tsfilterby(tsfilters);
+		
+		if(exclusive){
+			GD.Print("Sending to exclusive");
+			filter.exfilter(sfilters,bfilters,tsfilters);
+		}else{
+			GD.Print("Sending to inclusive");
+			filter.sfilterby(sfilters,bfilters,tsfilters);//example used is COMP but will eventaully be finding the text from nodes elsewhere
+		}
 	}
 	//Seperated for easier editing
 	private VBoxContainer get_filter_parent(){
@@ -76,10 +91,10 @@ public partial class FilterHandler : Node
 		Building.Add("Dobbs Hall");
 		Building.Add("Annex Central");
 		Building.Add("Annex South");
-		Building.Add("Rubenstein");
-		TimeStart.Add("9:30:00");
+		Building.Add("Rubenstein Hall");
+		TimeStart.Add("09:30:00");
 		TimeStart.Add("10:00:00");
-		TimeStart.Add("8:00:00");
+		TimeStart.Add("08:00:00");
 		TimeStart.Add("14:00:00");
 	}
 

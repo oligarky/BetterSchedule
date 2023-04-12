@@ -50,67 +50,70 @@ public partial class filter_hiding : Node
 	}
 
 	
+	public void exfilter(List<String> s,List<String> b, List<String> ts){
+		showAll();
+		var si=1;
+		var tsi=9;
+		var bi=11;
+		
+		for(var i=0;i<classes.Count-1;i+=15){
+			
+			
+			if(s.Count==0 || s.Contains(classes[i+si].Text)){ //either s is nothing or it matches
+				if(b.Count==0 || b.Contains(classes[i+bi].Text)){ //either b is nothing or it matches
+					if(ts.Count==0 || ts.Contains(classes[i+tsi].Text)){ //either ts is nothing or it matches
+						classes[i].GetParent<HBoxContainer>().Hide();
+					}
+				}
+			}
+		}
+		for(var j=0;j<classes.Count-1;j++){
+			
+			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}else{
+				classes[j].GetParent<HBoxContainer>().Show();
+			}
+		}
+	}
+
+
 	//Finds all classes that contain a given string and then hides those that don't have the matching string.
 	//Called in FilterHandler.cs
-	public void sfilterby(List<String> f){
+	public void sfilterby(List<String> s,List<String> b, List<String> ts){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
-		for(var j=1;j<classes.Count-1;j+=15){
+		showAll();
+		var si=0;
+		var tsi=0;
+		var bi=0;
+		for(var j=0;j<classes.Count-1;j++){
 
 			String filter = classes[j].Text;
-			if((f.Contains(filter))){
+			if((s.Contains(filter) && si%15==1)){
 				//shows the classes if they were hidden by another pass through from earlier filters
 				//Might need to be changed later for additional filters
 				//classes[j].GetParent<HBoxContainer>().Show();
-				GD.Print(classes[j].GetParent<HBoxContainer>());
-				classes[j].GetParent<HBoxContainer>().Show();
-			}else{
-				//Hides the HBoxContainer instead of the label to clean up the output
 				classes[j].GetParent<HBoxContainer>().Hide();
-				
+			}else if(b.Contains(filter) && bi%15==11){
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}else if(ts.Contains(filter) && tsi%15==9){
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}
+			si++;
+			tsi++;
+			bi++;
+		}
+		for(var j=0;j<classes.Count-1;j++){
+			
+			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}else{
+				classes[j].GetParent<HBoxContainer>().Show();
 			}
 		}
-		
-	}
-	public void bfilterby(List<String> f){
-		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
-		//intended otherwise without an error.
-		for(var j=11;j<classes.Count-1;j+=15){
 
-			String filter = classes[j].Text;
-			if((f.Contains(filter))){
-				//shows the classes if they were hidden by another pass through from earlier filters
-				//Might need to be changed later for additional filters
-				//classes[j].GetParent<HBoxContainer>().Show();
-				GD.Print(classes[j].GetParent<HBoxContainer>());
-				classes[j].GetParent<HBoxContainer>().Show();
-			}else{
-				//Hides the HBoxContainer instead of the label to clean up the output
-				classes[j].GetParent<HBoxContainer>().Hide();
-				
-			}
-		}
-		
-	}
-	public void tsfilterby(List<String> f){
-		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
-		//intended otherwise without an error.
-		for(var j=9;j<classes.Count-1;j+=15){
 
-			String filter = classes[j].Text;
-			if((f.Contains(filter))){
-				//shows the classes if they were hidden by another pass through from earlier filters
-				//Might need to be changed later for additional filters
-				//classes[j].GetParent<HBoxContainer>().Show();
-				GD.Print(classes[j].GetParent<HBoxContainer>());
-				classes[j].GetParent<HBoxContainer>().Show();
-			}else{
-				//Hides the HBoxContainer instead of the label to clean up the output
-				classes[j].GetParent<HBoxContainer>().Hide();
-				
-			}
-		}
-		
 	}
 	//setup as a reset for the filters to allow for showing specific things
 	public void showAll(){
