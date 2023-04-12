@@ -136,6 +136,14 @@ public partial class FilterHandler : Node
 			filter.filterby(fi);//example used is COMP but will eventaully be finding the text from nodes elsewhere
 		}
 	}
+
+	public void degreefilter(String s, String n){
+		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
+		GD.Print("in filter handler");
+		filter.listlabels(this.GetChild<VBoxContainer>(0));
+		GD.Print("going to hides");
+		filter.Hides(s,n);
+	}
 	//Seperated for easier editing
 	private VBoxContainer get_filter_parent(){
 		GD.Print(this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0));

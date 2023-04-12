@@ -51,9 +51,9 @@ public partial class filter_hiding : Node
 		//listlabels();
 	}
 
-	
+	//Not working
 	public void exfilter(List<String>[] fi){
-		hideAll();
+		showAll();
 		statManager();
 		
 		
@@ -62,7 +62,7 @@ public partial class filter_hiding : Node
 			for(var t=0;t<15;t++){
 				String filter = classes[j+t].Text;
 				for(var i=0; i<15;i++){
-					if(!(j%15==14)&&((fi[i].Count!=0 && j%15==i)||(fi[i].Contains(filter) && j%15==i))){
+					if(!(t%15==14)&&((fi[i].Count==0 && t%15==i)||(fi[i].Contains(filter) && t%15==i))){
 						classes[j+t].GetParent<HBoxContainer>().Show();
 						GD.Print(filter);
 					}else if(j%15==14 ){
@@ -73,21 +73,22 @@ public partial class filter_hiding : Node
 						}
 						
 					}else{
-						classes[j+t].GetParent<HBoxContainer>().Show();
+						classes[j+t].GetParent<HBoxContainer>().Hide();
+						//GD.Print(filter);
 					}
 				}
 			}
 		}
 
 
-		// for(var j=0;j<classes.Count-1;j++){
+		for(var j=0;j<classes.Count-1;j++){
 			
-		// 	if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
-		// 		classes[j].GetParent<HBoxContainer>().Hide();
-		// 	}else{
-		// 		classes[j].GetParent<HBoxContainer>().Show();
-		// 	}
-		// }
+			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
+				classes[j].GetParent<HBoxContainer>().Hide();
+			}else{
+				classes[j].GetParent<HBoxContainer>().Show();
+			}
+		}
 	}
 	private void statManager(){
 		
@@ -161,6 +162,25 @@ public partial class filter_hiding : Node
 				//shows the classes if they were hidden by another pass through from earlier filters
 				//Might need to be changed later for additional filters
 				classes[j].GetParent<HBoxContainer>().Show();
+			}
+		}
+	}
+	public void Hides(String s,String n){
+		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
+		//intended otherwise without an error.
+		
+		for(var j=0;j<classes.Count-2;j++){
+			
+			String filter = classes[j].Text;
+			if((filter.Contains(s) && j%15==1)){
+				
+				if(classes[j+1].Text.Contains(n)){
+					classes[j].GetParent<HBoxContainer>().Hide();
+					
+				}
+				//shows the classes if they were hidden by another pass through from earlier filters
+				//Might need to be changed later for additional filters
+				
 			}
 		}
 	}
