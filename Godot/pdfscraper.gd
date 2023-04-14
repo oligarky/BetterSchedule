@@ -8,4 +8,4 @@ func _ready():
 
 
 func scraper():
-	OS.create_process("./Python311/python.exe", ["C:/Users/powellt1/Documents/GitHub/BetterSchedule/Godot/pdfscraping.py"])
+	OS.create_process("./Python311/python.exe", ["./pdfscraping.py"])

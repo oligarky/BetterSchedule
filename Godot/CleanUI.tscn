@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://iuwl0fe038rq"]
+[gd_scene load_steps=11 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
 [ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
 [ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
+[ext_resource type="Script" path="res://bookmarklet.gd" id="5_ke4is"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
 border_width_left = 1
@@ -119,6 +120,7 @@ layout_mode = 2
 offset_left = 4.0
 offset_right = 104.0
 offset_bottom = 291.0
+script = ExtResource("5_ke4is")
 
 [node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
 layout_mode = 2
