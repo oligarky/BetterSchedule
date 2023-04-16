@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://iuwl0fe038rq"]
+[gd_scene load_steps=16 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
+[ext_resource type="Script" path="res://bookmarklet.gd" id="1_vhfeo"]
 [ext_resource type="Texture2D" uid="uid://dmw771crv0avl" path="res://Images/ProfileLeopard.png" id="2_etl5u"]
 [ext_resource type="Script" path="res://DegreeInParse.cs" id="3_u5aou"]
 [ext_resource type="Script" path="res://FilterHandler.cs" id="4_asn7s"]
@@ -45,6 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_vhfeo")
 
 [node name="WentworthTitleBar" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
