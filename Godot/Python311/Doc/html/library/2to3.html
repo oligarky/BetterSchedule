@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="2to3 — Automated Python 2 to 3 code translation" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/2to3.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="2to3 is a Python program that reads Python 2.x source code and applies a series of fixers to transform it into valid Python 3.x code. The standard library contains a rich set of fixers that will ha..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="2to3 is a Python program that reads Python 2.x source code and applies a series of fixers to transform it into valid Python 3.x code. The standard library contains a rich set of fixers that will ha..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>2to3 — Automated Python 2 to 3 code translation &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2to3 — Automated Python 2 to 3 code translation &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -107,7 +96,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/2to3.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/2to3.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -144,7 +133,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -200,14 +189,14 @@ directories are recursively traversed for Python sources.</p>
 </pre></div>
 </div>
 <p>It can be converted to Python 3.x code via 2to3 on the command line:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 example.py
 </pre></div>
 </div>
 <p>A diff against the original source file is printed.  2to3 can also write the
 needed modifications right back to the source file.  (A backup of the original
 file is made unless <code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code> is also given.)  Writing the changes back is
 enabled with the <code class="xref std std-option docutils literal notranslate"><span class="pre">-w</span></code> flag:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>-w<span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 -w example.py
 </pre></div>
 </div>
 <p>After transformation, <code class="file docutils literal notranslate"><span class="pre">example.py</span></code> looks like this:</p>
@@ -223,17 +212,17 @@ enabled with the <code class="xref std std-option docutils literal notranslate">
 <code class="xref std std-option docutils literal notranslate"><span class="pre">-l</span></code> flag lists all available fixers.  An explicit set of fixers to run
 can be given with <code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code>.  Likewise the <code class="xref std std-option docutils literal notranslate"><span class="pre">-x</span></code> explicitly disables a
 fixer.  The following example runs only the <code class="docutils literal notranslate"><span class="pre">imports</span></code> and <code class="docutils literal notranslate"><span class="pre">has_key</span></code> fixers:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>-f<span class="w"> </span>imports<span class="w"> </span>-f<span class="w"> </span>has_key<span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 -f imports -f has_key example.py
 </pre></div>
 </div>
 <p>This command runs every fixer except the <code class="docutils literal notranslate"><span class="pre">apply</span></code> fixer:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>-x<span class="w"> </span>apply<span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 -x apply example.py
 </pre></div>
 </div>
 <p>Some fixers are <em>explicit</em>, meaning they aren’t run by default and must be
 listed on the command line to be run.  Here, in addition to the default fixers,
 the <code class="docutils literal notranslate"><span class="pre">idioms</span></code> fixer is run:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>-f<span class="w"> </span>all<span class="w"> </span>-f<span class="w"> </span>idioms<span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 -f all -f idioms example.py
 </pre></div>
 </div>
 <p>Notice how passing <code class="docutils literal notranslate"><span class="pre">all</span></code> enables all default fixers.</p>
@@ -272,7 +261,7 @@ This option implies the <code class="xref std std-option docutils literal notran
 <p>The <code class="xref std std-option docutils literal notranslate"><span class="pre">--add-suffix</span></code> option specifies a string to append to all output
 filenames.  The <code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code> flag is required when specifying this as backups
 are not necessary when writing to different filenames.  Example:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>-n<span class="w"> </span>-W<span class="w"> </span>--add-suffix<span class="o">=</span><span class="m">3</span><span class="w"> </span>example.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 -n -W --add-suffix<span class="o">=</span><span class="m">3</span> example.py
 </pre></div>
 </div>
 <p>Will cause a converted file named <code class="docutils literal notranslate"><span class="pre">example.py3</span></code> to be written.</p>
@@ -280,7 +269,7 @@ are not necessary when writing to different filenames.  Example:</p>
 <p><span class="versionmodified added">New in version 3.2.3: </span>The <code class="xref std std-option docutils literal notranslate"><span class="pre">--add-suffix</span></code> option was added.</p>
 </div>
 <p>To translate an entire project from one directory tree to another use:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3<span class="w"> </span>--output-dir<span class="o">=</span>python3-version/mycode<span class="w"> </span>-W<span class="w"> </span>-n<span class="w"> </span>python2-version/mycode
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>2to3 --output-dir<span class="o">=</span>python3-version/mycode -W -n python2-version/mycode
 </pre></div>
 </div>
 </section>
@@ -794,7 +783,7 @@ drastically in the future.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/2to3.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/2to3.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -830,7 +819,7 @@ drastically in the future.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -853,7 +842,7 @@ drastically in the future.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -867,7 +856,7 @@ drastically in the future.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

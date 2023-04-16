@@ -5,7 +5,7 @@ func _ready():
 	load_csv()
 
 func load_csv():
-	var file = FileAccess.open("res://Comp_courses_data(1).csv", FileAccess.READ)
+	var file = FileAccess.open("Comp_courses_data(1).csv", FileAccess.READ)
 	var content = file.get_as_text()
 	var results = content.rsplit(",", true)
 	var length = results.size()

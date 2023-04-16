@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Parsing arguments and building values" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/c-api/arg.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="These functions are useful when creating your own extensions functions and methods. Additional information and examples are available in Extending and Embedding the Python Interpreter. The first th..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="These functions are useful when creating your own extensions functions and methods. Additional information and examples are available in Extending and Embedding the Python Interpreter. The first th..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Parsing arguments and building values &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing arguments and building values &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -112,7 +101,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/arg.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/arg.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -149,7 +138,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
@@ -201,34 +190,21 @@ variable(s) whose address should be passed.</p>
 <p>These formats allow accessing an object as a contiguous chunk of memory.
 You don’t have to provide raw storage for the returned unicode or bytes
 area.</p>
+<p>In general, when a format sets a pointer to a buffer, the buffer is
+managed by the corresponding Python object, and the buffer shares
+the lifetime of this object.  You won’t have to release any memory yourself.
+The only exceptions are <code class="docutils literal notranslate"><span class="pre">es</span></code>, <code class="docutils literal notranslate"><span class="pre">es#</span></code>, <code class="docutils literal notranslate"><span class="pre">et</span></code> and <code class="docutils literal notranslate"><span class="pre">et#</span></code>.</p>
+<p>However, when a <a class="reference internal" href="buffer.html#c.Py_buffer" title="Py_buffer"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_buffer</span></code></a> structure gets filled, the underlying
+buffer is locked so that the caller can subsequently use the buffer even
+inside a <a class="reference internal" href="init.html#c.Py_BEGIN_ALLOW_THREADS" title="Py_BEGIN_ALLOW_THREADS"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></code></a> block without the risk of mutable data
+being resized or destroyed.  As a result, <strong>you have to call</strong>
+<a class="reference internal" href="buffer.html#c.PyBuffer_Release" title="PyBuffer_Release"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyBuffer_Release()</span></code></a> after you have finished processing the data (or
+in any early abort case).</p>
 <p>Unless otherwise stated, buffers are not NUL-terminated.</p>
-<p>There are three ways strings and buffers can be converted to C:</p>
-<ul>
-<li><p>Formats such as <code class="docutils literal notranslate"><span class="pre">y*</span></code> and <code class="docutils literal notranslate"><span class="pre">s*</span></code> fill a <a class="reference internal" href="buffer.html#c.Py_buffer" title="Py_buffer"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_buffer</span></code></a> structure.
-This locks the underlying buffer so that the caller can subsequently use
-the buffer even inside a <a class="reference internal" href="init.html#c.Py_BEGIN_ALLOW_THREADS" title="Py_BEGIN_ALLOW_THREADS"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></code></a>
-block without the risk of mutable data being resized or destroyed.
-As a result, <strong>you have to call</strong> <a class="reference internal" href="buffer.html#c.PyBuffer_Release" title="PyBuffer_Release"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyBuffer_Release()</span></code></a> after you have
-finished processing the data (or in any early abort case).</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">es</span></code>, <code class="docutils literal notranslate"><span class="pre">es#</span></code>, <code class="docutils literal notranslate"><span class="pre">et</span></code> and <code class="docutils literal notranslate"><span class="pre">et#</span></code> formats allocate the result buffer.
-<strong>You have to call</strong> <a class="reference internal" href="memory.html#c.PyMem_Free" title="PyMem_Free"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyMem_Free()</span></code></a> after you have finished
-processing the data (or in any early abort case).</p></li>
-<li><p id="c-arg-borrowed-buffer">Other formats take a <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or a read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>,
-such as <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>, and provide a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span></code> pointer to
-its buffer.
-In this case the buffer is “borrowed”: it is managed by the corresponding
-Python object, and shares the lifetime of this object.
-You won’t have to release any memory yourself.</p>
-<p>To ensure that the underlying buffer may be safely borrowed, the object’s
-<a class="reference internal" href="typeobj.html#c.PyBufferProcs.bf_releasebuffer" title="PyBufferProcs.bf_releasebuffer"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyBufferProcs.bf_releasebuffer</span></code></a> field must be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.
-This disallows common mutable objects such as <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>,
-but also some read-only objects such as <a class="reference internal" href="../library/stdtypes.html#memoryview" title="memoryview"><code class="xref py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> of
-<a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
-<p>Besides this <code class="docutils literal notranslate"><span class="pre">bf_releasebuffer</span></code> requirement, there is no check to verify
-whether the input object is immutable (e.g. whether it would honor a request
-for a writable buffer, or whether another thread can mutate the data).</p>
-</li>
-</ul>
+<p>Some formats require a read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>, and set a
+pointer instead of a buffer structure.  They work by checking that
+the object’s <a class="reference internal" href="typeobj.html#c.PyBufferProcs.bf_releasebuffer" title="PyBufferProcs.bf_releasebuffer"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyBufferProcs.bf_releasebuffer</span></code></a> field is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>,
+which disallows mutable objects such as <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For all <code class="docutils literal notranslate"><span class="pre">#</span></code> variants of formats (<code class="docutils literal notranslate"><span class="pre">s#</span></code>, <code class="docutils literal notranslate"><span class="pre">y#</span></code>, etc.), the macro
@@ -262,7 +238,7 @@ It fills a <a class="reference internal" href="buffer.html#c.Py_buffer" title="P
 In this case the resulting C string may contain embedded NUL bytes.
 Unicode objects are converted to C strings using <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code> encoding.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">s#</span></code> (<a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>) [const char *, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a>]</dt><dd><p>Like <code class="docutils literal notranslate"><span class="pre">s*</span></code>, except that it provides a <a class="reference internal" href="#c-arg-borrowed-buffer"><span class="std std-ref">borrowed buffer</span></a>.
+<dt><code class="docutils literal notranslate"><span class="pre">s#</span></code> (<a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>) [const char *, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a>]</dt><dd><p>Like <code class="docutils literal notranslate"><span class="pre">s*</span></code>, except that it doesn’t accept mutable objects.
 The result is stored into two C variables,
 the first one a pointer to a C string, the second one its length.
 The string may contain embedded null bytes. Unicode objects are converted
@@ -277,9 +253,8 @@ pointer is set to <code class="docutils literal notranslate"><span class="pre">N
 <dt><code class="docutils literal notranslate"><span class="pre">z#</span></code> (<a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>) [const char *, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a>]</dt><dd><p>Like <code class="docutils literal notranslate"><span class="pre">s#</span></code>, but the Python object may also be <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the C
 pointer is set to <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">y</span></code> (read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>) [const char *]</dt><dd><p>This format converts a bytes-like object to a C pointer to a
-<a class="reference internal" href="#c-arg-borrowed-buffer"><span class="std std-ref">borrowed</span></a> character string;
-it does not accept Unicode objects.  The bytes buffer must not
+<dt><code class="docutils literal notranslate"><span class="pre">y</span></code> (read-only <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>) [const char *]</dt><dd><p>This format converts a bytes-like object to a C pointer to a character
+string; it does not accept Unicode objects.  The bytes buffer must not
 contain embedded null bytes; if it does, a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>
 exception is raised.</p>
 <div class="versionchanged">
@@ -465,7 +440,7 @@ type, <a class="reference internal" href="../library/exceptions.html#TypeError" 
 takes two arguments: the first is a function, the second is the address of a C
 variable (of arbitrary type), converted to <span class="c-expr sig sig-inline c"><span class="kt">void</span><span class="p">*</span></span>.  The <em>converter</em>
 function in turn is called as follows:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">converter</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">converter</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where <em>object</em> is the Python object to be converted and <em>address</em> is the
@@ -623,23 +598,23 @@ be initialized by the caller. This function returns true on success and false if
 will be set if there was a failure.</p>
 <p>This is an example of the use of this function, taken from the sources for the
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">_weakref</span></code> helper module for weak references:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span>
-<span class="nf">weakref_ref</span><span class="p">(</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">object</span><span class="p">;</span>
-<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="nf">weakref_ref</span><span class="p">(</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">object</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">PyArg_UnpackTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">callback</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyWeakref_NewRef</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">PyArg_UnpackTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">callback</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyWeakref_NewRef</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The call to <a class="reference internal" href="#c.PyArg_UnpackTuple" title="PyArg_UnpackTuple"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_UnpackTuple()</span></code></a> in this example is entirely equivalent to
 this call to <a class="reference internal" href="#c.PyArg_ParseTuple" title="PyArg_ParseTuple"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_ParseTuple()</span></code></a>:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;O|O:ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">callback</span><span class="p">)</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;O|O:ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">callback</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </dd></dl>
@@ -817,7 +792,7 @@ rather than a variable number of arguments.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/arg.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/arg.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -853,7 +828,7 @@ rather than a variable number of arguments.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
@@ -876,7 +851,7 @@ rather than a variable number of arguments.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -890,7 +865,7 @@ rather than a variable number of arguments.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

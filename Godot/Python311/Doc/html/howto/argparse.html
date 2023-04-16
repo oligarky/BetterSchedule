@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Argparse Tutorial" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/howto/argparse.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="author, Tshepang Lekhonkhobe,. This tutorial is intended to be a gentle introduction to argparse, the recommended command-line parsing module in the Python standard library. Concepts: Let’s show th..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="author, Tshepang Lekhonkhobe,. This tutorial is intended to be a gentle introduction to argparse, the recommended command-line parsing module in the Python standard library. Concepts: Let’s show th..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Argparse Tutorial &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argparse Tutorial &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,7 +106,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/howto/argparse.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/howto/argparse.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -154,7 +143,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
@@ -204,16 +193,16 @@ and therefore very similar in terms of usage.</p>
 introductory tutorial by making use of the <strong class="command">ls</strong> command:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls
 <span class="go">cpython  devguide  prog.py  pypy  rm-unused-function.patch</span>
-<span class="gp">$ </span>ls<span class="w"> </span>pypy
+<span class="gp">$ </span>ls pypy
 <span class="go">ctypes_configure  demo  dotviewer  include  lib_pypy  lib-python ...</span>
-<span class="gp">$ </span>ls<span class="w"> </span>-l
+<span class="gp">$ </span>ls -l
 <span class="go">total 20</span>
 <span class="go">drwxr-xr-x 19 wena wena 4096 Feb 18 18:51 cpython</span>
 <span class="go">drwxr-xr-x  4 wena wena 4096 Feb  8 12:04 devguide</span>
 <span class="go">-rwxr-xr-x  1 wena wena  535 Feb 19 00:05 prog.py</span>
 <span class="go">drwxr-xr-x 14 wena wena 4096 Feb  7 00:59 pypy</span>
 <span class="go">-rw-r--r--  1 wena wena  741 Feb 18 01:01 rm-unused-function.patch</span>
-<span class="gp">$ </span>ls<span class="w"> </span>--help
+<span class="gp">$ </span>ls --help
 <span class="go">Usage: ls [OPTION]... [FILE]...</span>
 <span class="go">List information about the FILEs (the current directory by default).</span>
 <span class="go">Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.</span>
@@ -249,16 +238,16 @@ how it works simply by reading its help text.</p></li>
 </pre></div>
 </div>
 <p>Following is a result of running the code:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
+<span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h]</span>
 
 <span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbose
+<span class="gp">$ </span>python3 prog.py --verbose
 <span class="go">usage: prog.py [-h]</span>
 <span class="go">prog.py: error: unrecognized arguments: --verbose</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>foo
+<span class="gp">$ </span>python3 prog.py foo
 <span class="go">usage: prog.py [-h]</span>
 <span class="go">prog.py: error: unrecognized arguments: foo</span>
 </pre></div>
@@ -286,10 +275,10 @@ also for free.</p></li>
 </pre></div>
 </div>
 <p>And running the code:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] echo</span>
 <span class="go">prog.py: error: the following arguments are required: echo</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] echo</span>
 
 <span class="go">positional arguments:</span>
@@ -297,7 +286,7 @@ also for free.</p></li>
 
 <span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>foo
+<span class="gp">$ </span>python3 prog.py foo
 <span class="go">foo</span>
 </pre></div>
 </div>
@@ -326,7 +315,7 @@ by reading the source code. So, let’s make it a bit more useful:</p>
 </pre></div>
 </div>
 <p>And we get:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>-h
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py -h
 <span class="go">usage: prog.py [-h] echo</span>
 
 <span class="go">positional arguments:</span>
@@ -345,7 +334,7 @@ by reading the source code. So, let’s make it a bit more useful:</p>
 </pre></div>
 </div>
 <p>Following is a result of running the code:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">Traceback (most recent call last):</span>
 <span class="go">  File &quot;prog.py&quot;, line 5, in &lt;module&gt;</span>
 <span class="go">    print(args.square**2)</span>
@@ -364,9 +353,9 @@ give it as strings, unless we tell it otherwise. So, let’s tell
 </pre></div>
 </div>
 <p>Following is a result of running the code:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>four
+<span class="gp">$ </span>python3 prog.py four
 <span class="go">usage: prog.py [-h] square</span>
 <span class="go">prog.py: error: argument square: invalid int value: &#39;four&#39;</span>
 </pre></div>
@@ -387,17 +376,17 @@ have a look on how to add optional ones:</p>
 </pre></div>
 </div>
 <p>And the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbosity<span class="w"> </span><span class="m">1</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py --verbosity <span class="m">1</span>
 <span class="go">verbosity turned on</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<span class="gp">$ </span>python3 prog.py
+<span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [--verbosity VERBOSITY]</span>
 
 <span class="go">options:</span>
 <span class="go">  -h, --help            show this help message and exit</span>
 <span class="go">  --verbosity VERBOSITY</span>
 <span class="go">                        increase output verbosity</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbosity
+<span class="gp">$ </span>python3 prog.py --verbosity
 <span class="go">usage: prog.py [-h] [--verbosity VERBOSITY]</span>
 <span class="go">prog.py: error: argument --verbosity: expected one argument</span>
 </pre></div>
@@ -428,12 +417,12 @@ Let’s modify the code accordingly:</p>
 </pre></div>
 </div>
 <p>And the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbose
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py --verbose
 <span class="go">verbosity turned on</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbose<span class="w"> </span><span class="m">1</span>
+<span class="gp">$ </span>python3 prog.py --verbose <span class="m">1</span>
 <span class="go">usage: prog.py [-h] [--verbose]</span>
 <span class="go">prog.py: error: unrecognized arguments: 1</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [--verbose]</span>
 
 <span class="go">options:</span>
@@ -468,9 +457,9 @@ versions of the options. It’s quite simple:</p>
 </pre></div>
 </div>
 <p>And here goes:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>-v
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py -v
 <span class="go">verbosity turned on</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [-v]</span>
 
 <span class="go">options:</span>
@@ -499,14 +488,14 @@ versions of the options. It’s quite simple:</p>
 </pre></div>
 </div>
 <p>And now the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] [-v] square</span>
 <span class="go">prog.py: error: the following arguments are required: square</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>--verbose
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> --verbose
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--verbose<span class="w"> </span><span class="m">4</span>
+<span class="gp">$ </span>python3 prog.py --verbose <span class="m">4</span>
 <span class="go">the square of 4 equals 16</span>
 </pre></div>
 </div>
@@ -533,16 +522,16 @@ multiple verbosity values, and actually get to use them:</p>
 </pre></div>
 </div>
 <p>And the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v
 <span class="go">usage: prog.py [-h] [-v VERBOSITY] square</span>
 <span class="go">prog.py: error: argument -v/--verbosity: expected one argument</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">1</span>
 <span class="go">4^2 == 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span><span class="m">2</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">2</span>
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span><span class="m">3</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">3</span>
 <span class="go">16</span>
 </pre></div>
 </div>
@@ -565,10 +554,10 @@ Let’s fix it by restricting the values the <code class="docutils literal notra
 </pre></div>
 </div>
 <p>And the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span><span class="m">3</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">3</span>
 <span class="go">usage: prog.py [-h] [-v {0,1,2}] square</span>
 <span class="go">prog.py: error: argument -v/--verbosity: invalid choice: 3 (choose from 0, 1, 2)</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-h
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -h
 <span class="go">usage: prog.py [-h] [-v {0,1,2}] square</span>
 
 <span class="go">positional arguments:</span>
@@ -603,18 +592,18 @@ verbosity argument (check the output of <code class="docutils literal notranslat
 </div>
 <p>We have introduced another action, “count”,
 to count the number of occurrences of specific options.</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v
 <span class="go">4^2 == 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-vv
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vv
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>--verbosity<span class="w"> </span>--verbosity
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> --verbosity --verbosity
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">1</span>
 <span class="go">usage: prog.py [-h] [-v] square</span>
 <span class="go">prog.py: error: unrecognized arguments: 1</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-h
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -h
 <span class="go">usage: prog.py [-h] [-v] square</span>
 
 <span class="go">positional arguments:</span>
@@ -623,7 +612,7 @@ to count the number of occurrences of specific options.</p>
 <span class="go">options:</span>
 <span class="go">  -h, --help       show this help message and exit</span>
 <span class="go">  -v, --verbosity  increase output verbosity</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-vvv
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvv
 <span class="go">16</span>
 </pre></div>
 </div>
@@ -662,11 +651,11 @@ our script (e.g. via the <code class="docutils literal notranslate"><span class=
 </pre></div>
 </div>
 <p>And this is what it gives:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-vvv
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvv
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span>-vvvv
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvvv
 <span class="go">the square of 4 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">Traceback (most recent call last):</span>
 <span class="go">  File &quot;prog.py&quot;, line 11, in &lt;module&gt;</span>
 <span class="go">    if args.verbosity &gt;= 2:</span>
@@ -702,7 +691,7 @@ if an optional argument isn’t specified,
 it gets the <code class="docutils literal notranslate"><span class="pre">None</span></code> value, and that cannot be compared to an int value
 (hence the <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> exception).</p>
 <p>And:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
 </pre></div>
 </div>
@@ -731,10 +720,10 @@ not just squares:</p>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] [-v] x y</span>
 <span class="go">prog.py: error: the following arguments are required: x, y</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>-h
+<span class="gp">$ </span>python3 prog.py -h
 <span class="go">usage: prog.py [-h] [-v] x y</span>
 
 <span class="go">positional arguments:</span>
@@ -744,7 +733,7 @@ not just squares:</p>
 <span class="go">options:</span>
 <span class="go">  -h, --help       show this help message and exit</span>
 <span class="go">  -v, --verbosity</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-v
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v
 <span class="go">4^2 == 16</span>
 </pre></div>
 </div>
@@ -766,11 +755,11 @@ to display <em>more</em> text instead:</p>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span>
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-v
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v
 <span class="go">4^2 == 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-vv
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -vv
 <span class="go">Running &#39;prog.py&#39;</span>
 <span class="go">4^2 == 16</span>
 </pre></div>
@@ -805,16 +794,16 @@ which will be the opposite of the <code class="docutils literal notranslate"><sp
 </div>
 <p>Our program is now simpler, and we’ve lost some functionality for the sake of
 demonstration. Anyways, here’s the output:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span>
 <span class="go">4^2 == 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-q
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -q
 <span class="go">16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-v
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v
 <span class="go">4 to the power 2 equals 16</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-vq
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -vq
 <span class="go">usage: prog.py [-h] [-v | -q] x y</span>
 <span class="go">prog.py: error: argument -q/--quiet: not allowed with argument -v/--verbose</span>
-<span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>-v<span class="w"> </span>--quiet
+<span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v --quiet
 <span class="go">usage: prog.py [-h] [-v | -q] x y</span>
 <span class="go">prog.py: error: argument -q/--quiet: not allowed with argument -v/--verbose</span>
 </pre></div>
@@ -846,7 +835,7 @@ your program, just in case they don’t know:</p>
 <p>Note that slight difference in the usage text. Note the <code class="docutils literal notranslate"><span class="pre">[-v</span> <span class="pre">|</span> <span class="pre">-q]</span></code>,
 which tells us that we can either use <code class="docutils literal notranslate"><span class="pre">-v</span></code> or <code class="docutils literal notranslate"><span class="pre">-q</span></code>,
 but not both at the same time:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>prog.py<span class="w"> </span>--help
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [-v | -q] x y</span>
 
 <span class="go">calculate X to the power of Y</span>
@@ -916,7 +905,7 @@ without feeling overwhelmed.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/howto/argparse.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/howto/argparse.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -952,7 +941,7 @@ without feeling overwhelmed.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
@@ -974,7 +963,7 @@ without feeling overwhelmed.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -988,7 +977,7 @@ without feeling overwhelmed.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

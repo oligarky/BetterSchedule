@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Programming FAQ" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/faq/programming.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Contents: Programming FAQ- General Questions- Is there a source code level debugger with breakpoints, single-stepping, etc.?, Are there tools to help find bugs or perform static analysis?, How can ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Contents: Programming FAQ- General Questions- Is there a source code level debugger with breakpoints, single-stepping, etc.?, Are there tools to help find bugs or perform static analysis?, How can ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Programming FAQ &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming FAQ &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -111,7 +100,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/faq/programming.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/faq/programming.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -148,7 +137,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python Frequently Asked Questions</a> &#187;</li>
@@ -224,57 +213,56 @@
 <li><p><a class="reference internal" href="#is-there-an-equivalent-to-perl-s-chomp-for-removing-trailing-newlines-from-strings" id="id35">Is there an equivalent to Perl’s chomp() for removing trailing newlines from strings?</a></p></li>
 <li><p><a class="reference internal" href="#is-there-a-scanf-or-sscanf-equivalent" id="id36">Is there a scanf() or sscanf() equivalent?</a></p></li>
 <li><p><a class="reference internal" href="#what-does-unicodedecodeerror-or-unicodeencodeerror-error-mean" id="id37">What does ‘UnicodeDecodeError’ or ‘UnicodeEncodeError’ error  mean?</a></p></li>
-<li><p><a class="reference internal" href="#can-i-end-a-raw-string-with-an-odd-number-of-backslashes" id="id38">Can I end a raw string with an odd number of backslashes?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#performance" id="id39">Performance</a></p>
+<li><p><a class="reference internal" href="#performance" id="id38">Performance</a></p>
 <ul>
-<li><p><a class="reference internal" href="#my-program-is-too-slow-how-do-i-speed-it-up" id="id40">My program is too slow. How do I speed it up?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-the-most-efficient-way-to-concatenate-many-strings-together" id="id41">What is the most efficient way to concatenate many strings together?</a></p></li>
+<li><p><a class="reference internal" href="#my-program-is-too-slow-how-do-i-speed-it-up" id="id39">My program is too slow. How do I speed it up?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-most-efficient-way-to-concatenate-many-strings-together" id="id40">What is the most efficient way to concatenate many strings together?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#sequences-tuples-lists" id="id42">Sequences (Tuples/Lists)</a></p>
+<li><p><a class="reference internal" href="#sequences-tuples-lists" id="id41">Sequences (Tuples/Lists)</a></p>
 <ul>
-<li><p><a class="reference internal" href="#how-do-i-convert-between-tuples-and-lists" id="id43">How do I convert between tuples and lists?</a></p></li>
-<li><p><a class="reference internal" href="#what-s-a-negative-index" id="id44">What’s a negative index?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-iterate-over-a-sequence-in-reverse-order" id="id45">How do I iterate over a sequence in reverse order?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-you-remove-duplicates-from-a-list" id="id46">How do you remove duplicates from a list?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-you-remove-multiple-items-from-a-list" id="id47">How do you remove multiple items from a list</a></p></li>
-<li><p><a class="reference internal" href="#how-do-you-make-an-array-in-python" id="id48">How do you make an array in Python?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-create-a-multidimensional-list" id="id49">How do I create a multidimensional list?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-apply-a-method-or-function-to-a-sequence-of-objects" id="id50">How do I apply a method or function to a sequence of objects?</a></p></li>
-<li><p><a class="reference internal" href="#why-does-a-tuple-i-item-raise-an-exception-when-the-addition-works" id="id51">Why does a_tuple[i] += [‘item’] raise an exception when the addition works?</a></p></li>
-<li><p><a class="reference internal" href="#i-want-to-do-a-complicated-sort-can-you-do-a-schwartzian-transform-in-python" id="id52">I want to do a complicated sort: can you do a Schwartzian Transform in Python?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-i-sort-one-list-by-values-from-another-list" id="id53">How can I sort one list by values from another list?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-convert-between-tuples-and-lists" id="id42">How do I convert between tuples and lists?</a></p></li>
+<li><p><a class="reference internal" href="#what-s-a-negative-index" id="id43">What’s a negative index?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-iterate-over-a-sequence-in-reverse-order" id="id44">How do I iterate over a sequence in reverse order?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-you-remove-duplicates-from-a-list" id="id45">How do you remove duplicates from a list?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-you-remove-multiple-items-from-a-list" id="id46">How do you remove multiple items from a list</a></p></li>
+<li><p><a class="reference internal" href="#how-do-you-make-an-array-in-python" id="id47">How do you make an array in Python?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-create-a-multidimensional-list" id="id48">How do I create a multidimensional list?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-apply-a-method-or-function-to-a-sequence-of-objects" id="id49">How do I apply a method or function to a sequence of objects?</a></p></li>
+<li><p><a class="reference internal" href="#why-does-a-tuple-i-item-raise-an-exception-when-the-addition-works" id="id50">Why does a_tuple[i] += [‘item’] raise an exception when the addition works?</a></p></li>
+<li><p><a class="reference internal" href="#i-want-to-do-a-complicated-sort-can-you-do-a-schwartzian-transform-in-python" id="id51">I want to do a complicated sort: can you do a Schwartzian Transform in Python?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-sort-one-list-by-values-from-another-list" id="id52">How can I sort one list by values from another list?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#objects" id="id54">Objects</a></p>
+<li><p><a class="reference internal" href="#objects" id="id53">Objects</a></p>
 <ul>
-<li><p><a class="reference internal" href="#what-is-a-class" id="id55">What is a class?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-a-method" id="id56">What is a method?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-self" id="id57">What is self?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-check-if-an-object-is-an-instance-of-a-given-class-or-of-a-subclass-of-it" id="id58">How do I check if an object is an instance of a given class or of a subclass of it?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-delegation" id="id59">What is delegation?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-call-a-method-defined-in-a-base-class-from-a-derived-class-that-extends-it" id="id60">How do I call a method defined in a base class from a derived class that extends it?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-i-organize-my-code-to-make-it-easier-to-change-the-base-class" id="id61">How can I organize my code to make it easier to change the base class?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-create-static-class-data-and-static-class-methods" id="id62">How do I create static class data and static class methods?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-i-overload-constructors-or-methods-in-python" id="id63">How can I overload constructors (or methods) in Python?</a></p></li>
-<li><p><a class="reference internal" href="#i-try-to-use-spam-and-i-get-an-error-about-someclassname-spam" id="id64">I try to use __spam and I get an error about _SomeClassName__spam.</a></p></li>
-<li><p><a class="reference internal" href="#my-class-defines-del-but-it-is-not-called-when-i-delete-the-object" id="id65">My class defines __del__ but it is not called when I delete the object.</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-get-a-list-of-all-instances-of-a-given-class" id="id66">How do I get a list of all instances of a given class?</a></p></li>
-<li><p><a class="reference internal" href="#why-does-the-result-of-id-appear-to-be-not-unique" id="id67">Why does the result of <code class="docutils literal notranslate"><span class="pre">id()</span></code> appear to be not unique?</a></p></li>
-<li><p><a class="reference internal" href="#when-can-i-rely-on-identity-tests-with-the-is-operator" id="id68">When can I rely on identity tests with the <em>is</em> operator?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-a-subclass-control-what-data-is-stored-in-an-immutable-instance" id="id69">How can a subclass control what data is stored in an immutable instance?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-cache-method-calls" id="id70">How do I cache method calls?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-class" id="id54">What is a class?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-method" id="id55">What is a method?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-self" id="id56">What is self?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-check-if-an-object-is-an-instance-of-a-given-class-or-of-a-subclass-of-it" id="id57">How do I check if an object is an instance of a given class or of a subclass of it?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-delegation" id="id58">What is delegation?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-call-a-method-defined-in-a-base-class-from-a-derived-class-that-extends-it" id="id59">How do I call a method defined in a base class from a derived class that extends it?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-organize-my-code-to-make-it-easier-to-change-the-base-class" id="id60">How can I organize my code to make it easier to change the base class?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-create-static-class-data-and-static-class-methods" id="id61">How do I create static class data and static class methods?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-overload-constructors-or-methods-in-python" id="id62">How can I overload constructors (or methods) in Python?</a></p></li>
+<li><p><a class="reference internal" href="#i-try-to-use-spam-and-i-get-an-error-about-someclassname-spam" id="id63">I try to use __spam and I get an error about _SomeClassName__spam.</a></p></li>
+<li><p><a class="reference internal" href="#my-class-defines-del-but-it-is-not-called-when-i-delete-the-object" id="id64">My class defines __del__ but it is not called when I delete the object.</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-get-a-list-of-all-instances-of-a-given-class" id="id65">How do I get a list of all instances of a given class?</a></p></li>
+<li><p><a class="reference internal" href="#why-does-the-result-of-id-appear-to-be-not-unique" id="id66">Why does the result of <code class="docutils literal notranslate"><span class="pre">id()</span></code> appear to be not unique?</a></p></li>
+<li><p><a class="reference internal" href="#when-can-i-rely-on-identity-tests-with-the-is-operator" id="id67">When can I rely on identity tests with the <em>is</em> operator?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-a-subclass-control-what-data-is-stored-in-an-immutable-instance" id="id68">How can a subclass control what data is stored in an immutable instance?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-cache-method-calls" id="id69">How do I cache method calls?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#modules" id="id71">Modules</a></p>
+<li><p><a class="reference internal" href="#modules" id="id70">Modules</a></p>
 <ul>
-<li><p><a class="reference internal" href="#how-do-i-create-a-pyc-file" id="id72">How do I create a .pyc file?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-find-the-current-module-name" id="id73">How do I find the current module name?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-i-have-modules-that-mutually-import-each-other" id="id74">How can I have modules that mutually import each other?</a></p></li>
-<li><p><a class="reference internal" href="#import-x-y-z-returns-module-x-how-do-i-get-z" id="id75">__import__(‘x.y.z’) returns &lt;module ‘x’&gt;; how do I get z?</a></p></li>
-<li><p><a class="reference internal" href="#when-i-edit-an-imported-module-and-reimport-it-the-changes-don-t-show-up-why-does-this-happen" id="id76">When I edit an imported module and reimport it, the changes don’t show up.  Why does this happen?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-create-a-pyc-file" id="id71">How do I create a .pyc file?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-find-the-current-module-name" id="id72">How do I find the current module name?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-have-modules-that-mutually-import-each-other" id="id73">How can I have modules that mutually import each other?</a></p></li>
+<li><p><a class="reference internal" href="#import-x-y-z-returns-module-x-how-do-i-get-z" id="id74">__import__(‘x.y.z’) returns &lt;module ‘x’&gt;; how do I get z?</a></p></li>
+<li><p><a class="reference internal" href="#when-i-edit-an-imported-module-and-reimport-it-the-changes-don-t-show-up-why-does-this-happen" id="id75">When I edit an imported module and reimport it, the changes don’t show up.  Why does this happen?</a></p></li>
 </ul>
 </li>
 </ul>
@@ -366,7 +354,7 @@ executables:</p>
 <section id="core-language">
 <h2><a class="toc-backref" href="#id8">Core Language</a><a class="headerlink" href="#core-language" title="Permalink to this headline">¶</a></h2>
 <section id="why-am-i-getting-an-unboundlocalerror-when-the-variable-has-a-value">
-<span id="faq-unboundlocalerror"></span><h3><a class="toc-backref" href="#id9">Why am I getting an UnboundLocalError when the variable has a value?</a><a class="headerlink" href="#why-am-i-getting-an-unboundlocalerror-when-the-variable-has-a-value" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Why am I getting an UnboundLocalError when the variable has a value?</a><a class="headerlink" href="#why-am-i-getting-an-unboundlocalerror-when-the-variable-has-a-value" title="Permalink to this headline">¶</a></h3>
 <p>It can be a surprise to get the <a class="reference internal" href="../library/exceptions.html#UnboundLocalError" title="UnboundLocalError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnboundLocalError</span></code></a> in previously working
 code when it is modified by adding an assignment statement somewhere in
 the body of a function.</p>
@@ -389,7 +377,7 @@ the body of a function.</p>
 <p>results in an <code class="xref py py-exc docutils literal notranslate"><span class="pre">UnboundLocalError</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">UnboundLocalError</span>: <span class="n">local variable &#39;x&#39; referenced before assignment</span>
 </pre></div>
 </div>
@@ -1197,48 +1185,11 @@ than C’s <code class="docutils literal notranslate"><span class="pre">sscanf</
 <h3><a class="toc-backref" href="#id37">What does ‘UnicodeDecodeError’ or ‘UnicodeEncodeError’ error  mean?</a><a class="headerlink" href="#what-does-unicodedecodeerror-or-unicodeencodeerror-error-mean" title="Permalink to this headline">¶</a></h3>
 <p>See the <a class="reference internal" href="../howto/unicode.html#unicode-howto"><span class="std std-ref">Unicode HOWTO</span></a>.</p>
 </section>
-<section id="can-i-end-a-raw-string-with-an-odd-number-of-backslashes">
-<span id="faq-programming-raw-string-backslash"></span><h3><a class="toc-backref" href="#id38">Can I end a raw string with an odd number of backslashes?</a><a class="headerlink" href="#can-i-end-a-raw-string-with-an-odd-number-of-backslashes" title="Permalink to this headline">¶</a></h3>
-<p>A raw string ending with an odd number of backslashes will escape the string’s quote:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">r</span><span class="s1">&#39;C:\this\will\not\work</span><span class="se">\&#39;</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
-<span class="w">    </span><span class="sa">r</span><span class="s1">&#39;C:\this\will\not\work</span><span class="se">\&#39;</span>
-<span class="w">         </span><span class="pm">^</span>
-<span class="gr">SyntaxError</span>: <span class="n">unterminated string literal (detected at line 1)</span>
-</pre></div>
-</div>
-<p>There are several workarounds for this. One is to use regular strings and double
-the backslashes:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">this</span><span class="se">\\</span><span class="s1">will</span><span class="se">\\</span><span class="s1">work</span><span class="se">\\</span><span class="s1">&#39;</span>
-<span class="go">&#39;C:\\this\\will\\work\\&#39;</span>
-</pre></div>
-</div>
-<p>Another is to concatenate a regular string containing an escaped backslash to the
-raw string:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">r</span><span class="s1">&#39;C:\this\will\work&#39;</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span>
-<span class="go">&#39;C:\\this\\will\\work\\&#39;</span>
-</pre></div>
-</div>
-<p>It is also possible to use <a class="reference internal" href="../library/os.path.html#os.path.join" title="os.path.join"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.join()</span></code></a> to append a backslash on Windows:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\this\will\work&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="go">&#39;C:\\this\\will\\work\\&#39;</span>
-</pre></div>
-</div>
-<p>Note that while a backslash will “escape” a quote for the purposes of
-determining where the raw string ends, no escaping occurs when interpreting the
-value of the raw string. That is, the backslash remains present in the value of
-the raw string:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">r</span><span class="s1">&#39;backslash</span><span class="se">\&#39;</span><span class="s1">preserved&#39;</span>
-<span class="go">&quot;backslash\\&#39;preserved&quot;</span>
-</pre></div>
-</div>
-<p>Also see the specification in the <a class="reference internal" href="../reference/lexical_analysis.html#strings"><span class="std std-ref">language reference</span></a>.</p>
-</section>
 </section>
 <section id="performance">
-<h2><a class="toc-backref" href="#id39">Performance</a><a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id38">Performance</a><a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
 <section id="my-program-is-too-slow-how-do-i-speed-it-up">
-<h3><a class="toc-backref" href="#id40">My program is too slow. How do I speed it up?</a><a class="headerlink" href="#my-program-is-too-slow-how-do-i-speed-it-up" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">My program is too slow. How do I speed it up?</a><a class="headerlink" href="#my-program-is-too-slow-how-do-i-speed-it-up" title="Permalink to this headline">¶</a></h3>
 <p>That’s a tough one, in general.  First, here are a list of things to
 remember before diving further:</p>
 <ul class="simple">
@@ -1290,7 +1241,7 @@ yourself.</p>
 </div>
 </section>
 <section id="what-is-the-most-efficient-way-to-concatenate-many-strings-together">
-<span id="efficient-string-concatenation"></span><h3><a class="toc-backref" href="#id41">What is the most efficient way to concatenate many strings together?</a><a class="headerlink" href="#what-is-the-most-efficient-way-to-concatenate-many-strings-together" title="Permalink to this headline">¶</a></h3>
+<span id="efficient-string-concatenation"></span><h3><a class="toc-backref" href="#id40">What is the most efficient way to concatenate many strings together?</a><a class="headerlink" href="#what-is-the-most-efficient-way-to-concatenate-many-strings-together" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> objects are immutable, therefore concatenating
 many strings together is inefficient as each concatenation creates a new
 object.  In the general case, the total runtime cost is quadratic in the
@@ -1314,9 +1265,9 @@ a <a class="reference internal" href="../library/stdtypes.html#bytearray" title=
 </section>
 </section>
 <section id="sequences-tuples-lists">
-<h2><a class="toc-backref" href="#id42">Sequences (Tuples/Lists)</a><a class="headerlink" href="#sequences-tuples-lists" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id41">Sequences (Tuples/Lists)</a><a class="headerlink" href="#sequences-tuples-lists" title="Permalink to this headline">¶</a></h2>
 <section id="how-do-i-convert-between-tuples-and-lists">
-<h3><a class="toc-backref" href="#id43">How do I convert between tuples and lists?</a><a class="headerlink" href="#how-do-i-convert-between-tuples-and-lists" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">How do I convert between tuples and lists?</a><a class="headerlink" href="#how-do-i-convert-between-tuples-and-lists" title="Permalink to this headline">¶</a></h3>
 <p>The type constructor <code class="docutils literal notranslate"><span class="pre">tuple(seq)</span></code> converts any sequence (actually, any
 iterable) into a tuple with the same items in the same order.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">tuple([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> yields <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">tuple('abc')</span></code>
@@ -1329,7 +1280,7 @@ with the same items in the same order.  For example, <code class="docutils liter
 is a list, it makes a copy just like <code class="docutils literal notranslate"><span class="pre">seq[:]</span></code> would.</p>
 </section>
 <section id="what-s-a-negative-index">
-<h3><a class="toc-backref" href="#id44">What’s a negative index?</a><a class="headerlink" href="#what-s-a-negative-index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">What’s a negative index?</a><a class="headerlink" href="#what-s-a-negative-index" title="Permalink to this headline">¶</a></h3>
 <p>Python sequences are indexed with positive numbers and negative numbers.  For
 positive numbers 0 is the first index 1 is the second index and so forth.  For
 negative indices -1 is the last index and -2 is the penultimate (next to last)
@@ -1339,7 +1290,7 @@ the string except for its last character, which is useful for removing the
 trailing newline from a string.</p>
 </section>
 <section id="how-do-i-iterate-over-a-sequence-in-reverse-order">
-<h3><a class="toc-backref" href="#id45">How do I iterate over a sequence in reverse order?</a><a class="headerlink" href="#how-do-i-iterate-over-a-sequence-in-reverse-order" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">How do I iterate over a sequence in reverse order?</a><a class="headerlink" href="#how-do-i-iterate-over-a-sequence-in-reverse-order" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference internal" href="../library/functions.html#reversed" title="reversed"><code class="xref py py-func docutils literal notranslate"><span class="pre">reversed()</span></code></a> built-in function:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
     <span class="o">...</span>  <span class="c1"># do something with x ...</span>
@@ -1349,7 +1300,7 @@ trailing newline from a string.</p>
 order to iterate over.</p>
 </section>
 <section id="how-do-you-remove-duplicates-from-a-list">
-<h3><a class="toc-backref" href="#id46">How do you remove duplicates from a list?</a><a class="headerlink" href="#how-do-you-remove-duplicates-from-a-list" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">How do you remove duplicates from a list?</a><a class="headerlink" href="#how-do-you-remove-duplicates-from-a-list" title="Permalink to this headline">¶</a></h3>
 <p>See the Python Cookbook for a long discussion of many ways to do this:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://code.activestate.com/recipes/52560/">https://code.activestate.com/recipes/52560/</a></p>
@@ -1375,7 +1326,7 @@ list, deleting duplicates as you go:</p>
 into a list.</p>
 </section>
 <section id="how-do-you-remove-multiple-items-from-a-list">
-<h3><a class="toc-backref" href="#id47">How do you remove multiple items from a list</a><a class="headerlink" href="#how-do-you-remove-multiple-items-from-a-list" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id46">How do you remove multiple items from a list</a><a class="headerlink" href="#how-do-you-remove-multiple-items-from-a-list" title="Permalink to this headline">¶</a></h3>
 <p>As with removing duplicates, explicitly iterating in reverse with a
 delete condition is one possibility.  However, it is easier and faster
 to use slice replacement with an implicit or explicit forward iteration.
@@ -1388,7 +1339,7 @@ Here are three variations.:</p>
 <p>The list comprehension may be fastest.</p>
 </section>
 <section id="how-do-you-make-an-array-in-python">
-<h3><a class="toc-backref" href="#id48">How do you make an array in Python?</a><a class="headerlink" href="#how-do-you-make-an-array-in-python" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">How do you make an array in Python?</a><a class="headerlink" href="#how-do-you-make-an-array-in-python" title="Permalink to this headline">¶</a></h3>
 <p>Use a list:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;this&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;an&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">]</span>
 </pre></div>
@@ -1410,7 +1361,7 @@ analogue of a Lisp <em>car</em> is <code class="docutils literal notranslate"><s
 usually a lot slower than using Python lists.</p>
 </section>
 <section id="how-do-i-create-a-multidimensional-list">
-<span id="faq-multidimensional-list"></span><h3><a class="toc-backref" href="#id49">How do I create a multidimensional list?</a><a class="headerlink" href="#how-do-i-create-a-multidimensional-list" title="Permalink to this headline">¶</a></h3>
+<span id="faq-multidimensional-list"></span><h3><a class="toc-backref" href="#id48">How do I create a multidimensional list?</a><a class="headerlink" href="#how-do-i-create-a-multidimensional-list" title="Permalink to this headline">¶</a></h3>
 <p>You probably tried to make a multidimensional array like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
@@ -1446,7 +1397,7 @@ use a list comprehension:</p>
 <p>Or, you can use an extension that provides a matrix datatype; <a class="reference external" href="https://numpy.org/">NumPy</a> is the best known.</p>
 </section>
 <section id="how-do-i-apply-a-method-or-function-to-a-sequence-of-objects">
-<h3><a class="toc-backref" href="#id50">How do I apply a method or function to a sequence of objects?</a><a class="headerlink" href="#how-do-i-apply-a-method-or-function-to-a-sequence-of-objects" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">How do I apply a method or function to a sequence of objects?</a><a class="headerlink" href="#how-do-i-apply-a-method-or-function-to-a-sequence-of-objects" title="Permalink to this headline">¶</a></h3>
 <p>To call a method or function and accumulate the return values is a list,
 a <a class="reference internal" href="../glossary.html#term-list-comprehension"><span class="xref std std-term">list comprehension</span></a> is an elegant solution:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">]</span>
@@ -1465,7 +1416,7 @@ a plain <a class="reference internal" href="../reference/compound_stmts.html#for
 </div>
 </section>
 <section id="why-does-a-tuple-i-item-raise-an-exception-when-the-addition-works">
-<span id="faq-augmented-assignment-tuple-error"></span><h3><a class="toc-backref" href="#id51">Why does a_tuple[i] += [‘item’] raise an exception when the addition works?</a><a class="headerlink" href="#why-does-a-tuple-i-item-raise-an-exception-when-the-addition-works" title="Permalink to this headline">¶</a></h3>
+<span id="faq-augmented-assignment-tuple-error"></span><h3><a class="toc-backref" href="#id50">Why does a_tuple[i] += [‘item’] raise an exception when the addition works?</a><a class="headerlink" href="#why-does-a-tuple-i-item-raise-an-exception-when-the-addition-works" title="Permalink to this headline">¶</a></h3>
 <p>This is because of a combination of the fact that augmented assignment
 operators are <em>assignment</em> operators, and the difference between mutable and
 immutable objects in Python.</p>
@@ -1476,7 +1427,7 @@ a <code class="docutils literal notranslate"><span class="pre">list</span></code
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">   </span><span class="c">...</span>
+   <span class="c">...</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </div>
@@ -1490,7 +1441,7 @@ approximately this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </div>
@@ -1500,7 +1451,7 @@ tuple is immutable.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </div>
@@ -1536,7 +1487,7 @@ was previously pointing to, but the assignment still happens.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="fm">__iadd__</span><span class="p">([</span><span class="s1">&#39;item&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
 <span class="gt">Traceback (most recent call last):</span>
-<span class="w">  </span><span class="c">...</span>
+  <span class="c">...</span>
 <span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
 </pre></div>
 </div>
@@ -1545,7 +1496,7 @@ was previously pointing to, but the assignment still happens.</p>
 that final assignment still results in an error, because tuples are immutable.</p>
 </section>
 <section id="i-want-to-do-a-complicated-sort-can-you-do-a-schwartzian-transform-in-python">
-<h3><a class="toc-backref" href="#id52">I want to do a complicated sort: can you do a Schwartzian Transform in Python?</a><a class="headerlink" href="#i-want-to-do-a-complicated-sort-can-you-do-a-schwartzian-transform-in-python" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id51">I want to do a complicated sort: can you do a Schwartzian Transform in Python?</a><a class="headerlink" href="#i-want-to-do-a-complicated-sort-can-you-do-a-schwartzian-transform-in-python" title="Permalink to this headline">¶</a></h3>
 <p>The technique, attributed to Randal Schwartz of the Perl community, sorts the
 elements of a list by a metric which maps each element to its “sort value”. In
 Python, use the <code class="docutils literal notranslate"><span class="pre">key</span></code> argument for the <a class="reference internal" href="../library/stdtypes.html#list.sort" title="list.sort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list.sort()</span></code></a> method:</p>
@@ -1555,7 +1506,7 @@ Python, use the <code class="docutils literal notranslate"><span class="pre">key
 </div>
 </section>
 <section id="how-can-i-sort-one-list-by-values-from-another-list">
-<h3><a class="toc-backref" href="#id53">How can I sort one list by values from another list?</a><a class="headerlink" href="#how-can-i-sort-one-list-by-values-from-another-list" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id52">How can I sort one list by values from another list?</a><a class="headerlink" href="#how-can-i-sort-one-list-by-values-from-another-list" title="Permalink to this headline">¶</a></h3>
 <p>Merge them into an iterator of tuples, sort the resulting list, and then pick
 out the element you want.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;what&quot;</span><span class="p">,</span> <span class="s2">&quot;I&#39;m&quot;</span><span class="p">,</span> <span class="s2">&quot;sorting&quot;</span><span class="p">,</span> <span class="s2">&quot;by&quot;</span><span class="p">]</span>
@@ -1572,9 +1523,9 @@ out the element you want.</p>
 </section>
 </section>
 <section id="objects">
-<h2><a class="toc-backref" href="#id54">Objects</a><a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id53">Objects</a><a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
 <section id="what-is-a-class">
-<h3><a class="toc-backref" href="#id55">What is a class?</a><a class="headerlink" href="#what-is-a-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id54">What is a class?</a><a class="headerlink" href="#what-is-a-class" title="Permalink to this headline">¶</a></h3>
 <p>A class is the particular object type created by executing a class statement.
 Class objects are used as templates to create instance objects, which embody
 both the data (attributes) and code (methods) specific to a datatype.</p>
@@ -1586,7 +1537,7 @@ and subclasses such as <code class="docutils literal notranslate"><span class="p
 that handle various specific mailbox formats.</p>
 </section>
 <section id="what-is-a-method">
-<h3><a class="toc-backref" href="#id56">What is a method?</a><a class="headerlink" href="#what-is-a-method" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id55">What is a method?</a><a class="headerlink" href="#what-is-a-method" title="Permalink to this headline">¶</a></h3>
 <p>A method is a function on some object <code class="docutils literal notranslate"><span class="pre">x</span></code> that you normally call as
 <code class="docutils literal notranslate"><span class="pre">x.name(arguments...)</span></code>.  Methods are defined as functions inside the class
 definition:</p>
@@ -1597,7 +1548,7 @@ definition:</p>
 </div>
 </section>
 <section id="what-is-self">
-<h3><a class="toc-backref" href="#id57">What is self?</a><a class="headerlink" href="#what-is-self" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id56">What is self?</a><a class="headerlink" href="#what-is-self" title="Permalink to this headline">¶</a></h3>
 <p>Self is merely a conventional name for the first argument of a method.  A method
 defined as <code class="docutils literal notranslate"><span class="pre">meth(self,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> should be called as <code class="docutils literal notranslate"><span class="pre">x.meth(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> for
 some instance <code class="docutils literal notranslate"><span class="pre">x</span></code> of the class in which the definition occurs; the called
@@ -1605,7 +1556,7 @@ method will think it is called as <code class="docutils literal notranslate"><sp
 <p>See also <a class="reference internal" href="design.html#why-self"><span class="std std-ref">Why must ‘self’ be used explicitly in method definitions and calls?</span></a>.</p>
 </section>
 <section id="how-do-i-check-if-an-object-is-an-instance-of-a-given-class-or-of-a-subclass-of-it">
-<h3><a class="toc-backref" href="#id58">How do I check if an object is an instance of a given class or of a subclass of it?</a><a class="headerlink" href="#how-do-i-check-if-an-object-is-an-instance-of-a-given-class-or-of-a-subclass-of-it" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id57">How do I check if an object is an instance of a given class or of a subclass of it?</a><a class="headerlink" href="#how-do-i-check-if-an-object-is-an-instance-of-a-given-class-or-of-a-subclass-of-it" title="Permalink to this headline">¶</a></h3>
 <p>Use the built-in function <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance(obj,</span> <span class="pre">cls)</span></code></a>.  You can
 check if an object
 is an instance of any of a number of classes by providing a tuple instead of a
@@ -1673,7 +1624,7 @@ call it:</p>
 </div>
 </section>
 <section id="what-is-delegation">
-<h3><a class="toc-backref" href="#id59">What is delegation?</a><a class="headerlink" href="#what-is-delegation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">What is delegation?</a><a class="headerlink" href="#what-is-delegation" title="Permalink to this headline">¶</a></h3>
 <p>Delegation is an object oriented technique (also called a design pattern).
 Let’s say you have an object <code class="docutils literal notranslate"><span class="pre">x</span></code> and want to change the behaviour of just one
 of its methods.  You can create a new class that provides a new implementation
@@ -1716,7 +1667,7 @@ method too, and it must do so carefully.  The basic implementation of
 local state for self without causing an infinite recursion.</p>
 </section>
 <section id="how-do-i-call-a-method-defined-in-a-base-class-from-a-derived-class-that-extends-it">
-<h3><a class="toc-backref" href="#id60">How do I call a method defined in a base class from a derived class that extends it?</a><a class="headerlink" href="#how-do-i-call-a-method-defined-in-a-base-class-from-a-derived-class-that-extends-it" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id59">How do I call a method defined in a base class from a derived class that extends it?</a><a class="headerlink" href="#how-do-i-call-a-method-defined-in-a-base-class-from-a-derived-class-that-extends-it" title="Permalink to this headline">¶</a></h3>
 <p>Use the built-in <a class="reference internal" href="../library/functions.html#super" title="super"><code class="xref py py-func docutils literal notranslate"><span class="pre">super()</span></code></a> function:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Derived</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">meth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1729,7 +1680,7 @@ order</span></a> (MRO) with <code class="docutils literal notranslate"><span cla
 <code class="docutils literal notranslate"><span class="pre">Derived</span></code> in the MRO: <code class="docutils literal notranslate"><span class="pre">Base</span></code>.</p>
 </section>
 <section id="how-can-i-organize-my-code-to-make-it-easier-to-change-the-base-class">
-<h3><a class="toc-backref" href="#id61">How can I organize my code to make it easier to change the base class?</a><a class="headerlink" href="#how-can-i-organize-my-code-to-make-it-easier-to-change-the-base-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id60">How can I organize my code to make it easier to change the base class?</a><a class="headerlink" href="#how-can-i-organize-my-code-to-make-it-easier-to-change-the-base-class" title="Permalink to this headline">¶</a></h3>
 <p>You could assign the base class to an alias and derive from the alias.  Then all
 you have to change is the value assigned to the alias.  Incidentally, this trick
 is also handy if you want to decide dynamically (e.g. depending on availability
@@ -1745,7 +1696,7 @@ of resources) which base class to use.  Example:</p>
 </div>
 </section>
 <section id="how-do-i-create-static-class-data-and-static-class-methods">
-<h3><a class="toc-backref" href="#id62">How do I create static class data and static class methods?</a><a class="headerlink" href="#how-do-i-create-static-class-data-and-static-class-methods" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id61">How do I create static class data and static class methods?</a><a class="headerlink" href="#how-do-i-create-static-class-data-and-static-class-methods" title="Permalink to this headline">¶</a></h3>
 <p>Both static data and static methods (in the sense of C++ or Java) are supported
 in Python.</p>
 <p>For static data, simply define a class attribute.  To assign a new value to the
@@ -1788,14 +1739,14 @@ via a simple module-level function:</p>
 hierarchy) per module, this supplies the desired encapsulation.</p>
 </section>
 <section id="how-can-i-overload-constructors-or-methods-in-python">
-<h3><a class="toc-backref" href="#id63">How can I overload constructors (or methods) in Python?</a><a class="headerlink" href="#how-can-i-overload-constructors-or-methods-in-python" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id62">How can I overload constructors (or methods) in Python?</a><a class="headerlink" href="#how-can-i-overload-constructors-or-methods-in-python" title="Permalink to this headline">¶</a></h3>
 <p>This answer actually applies to all methods, but the question usually comes up
 first in the context of constructors.</p>
 <p>In C++ you’d write</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">C</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;No arguments</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="n">C</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Argument is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">C</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;No arguments</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">C</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Argument is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In Python you have to write a single constructor that catches all cases using
@@ -1817,7 +1768,7 @@ default arguments.  For example:</p>
 <p>The same approach works for all method definitions.</p>
 </section>
 <section id="i-try-to-use-spam-and-i-get-an-error-about-someclassname-spam">
-<h3><a class="toc-backref" href="#id64">I try to use __spam and I get an error about _SomeClassName__spam.</a><a class="headerlink" href="#i-try-to-use-spam-and-i-get-an-error-about-someclassname-spam" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id63">I try to use __spam and I get an error about _SomeClassName__spam.</a><a class="headerlink" href="#i-try-to-use-spam-and-i-get-an-error-about-someclassname-spam" title="Permalink to this headline">¶</a></h3>
 <p>Variable names with double leading underscores are “mangled” to provide a simple
 but effective way to define class private variables.  Any identifier of the form
 <code class="docutils literal notranslate"><span class="pre">__spam</span></code> (at least two leading underscores, at most one trailing underscore)
@@ -1829,7 +1780,7 @@ the “_classname__spam” attribute, and private values are visible in the obje
 names at all.</p>
 </section>
 <section id="my-class-defines-del-but-it-is-not-called-when-i-delete-the-object">
-<h3><a class="toc-backref" href="#id65">My class defines __del__ but it is not called when I delete the object.</a><a class="headerlink" href="#my-class-defines-del-but-it-is-not-called-when-i-delete-the-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id64">My class defines __del__ but it is not called when I delete the object.</a><a class="headerlink" href="#my-class-defines-del-but-it-is-not-called-when-i-delete-the-object" title="Permalink to this headline">¶</a></h3>
 <p>There are several possible reasons for this.</p>
 <p>The <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> statement does not necessarily call <a class="reference internal" href="../reference/datamodel.html#object.__del__" title="object.__del__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code></a> – it simply
 decrements the object’s reference count, and if this reaches zero
@@ -1858,13 +1809,13 @@ and sibling references (if they need them!).</p>
 is printed to <a class="reference internal" href="../library/sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>.</p>
 </section>
 <section id="how-do-i-get-a-list-of-all-instances-of-a-given-class">
-<h3><a class="toc-backref" href="#id66">How do I get a list of all instances of a given class?</a><a class="headerlink" href="#how-do-i-get-a-list-of-all-instances-of-a-given-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id65">How do I get a list of all instances of a given class?</a><a class="headerlink" href="#how-do-i-get-a-list-of-all-instances-of-a-given-class" title="Permalink to this headline">¶</a></h3>
 <p>Python does not keep track of all instances of a class (or of a built-in type).
 You can program the class’s constructor to keep track of all instances by
 keeping a list of weak references to each instance.</p>
 </section>
 <section id="why-does-the-result-of-id-appear-to-be-not-unique">
-<h3><a class="toc-backref" href="#id67">Why does the result of <code class="docutils literal notranslate"><span class="pre">id()</span></code> appear to be not unique?</a><a class="headerlink" href="#why-does-the-result-of-id-appear-to-be-not-unique" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id66">Why does the result of <code class="docutils literal notranslate"><span class="pre">id()</span></code> appear to be not unique?</a><a class="headerlink" href="#why-does-the-result-of-id-appear-to-be-not-unique" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="../library/functions.html#id" title="id"><code class="xref py py-func docutils literal notranslate"><span class="pre">id()</span></code></a> builtin returns an integer that is guaranteed to be unique during
 the lifetime of the object.  Since in CPython, this is the object’s memory
 address, it happens frequently that after an object is deleted from memory, the
@@ -1889,7 +1840,7 @@ to the object:</p>
 </div>
 </section>
 <section id="when-can-i-rely-on-identity-tests-with-the-is-operator">
-<h3><a class="toc-backref" href="#id68">When can I rely on identity tests with the <em>is</em> operator?</a><a class="headerlink" href="#when-can-i-rely-on-identity-tests-with-the-is-operator" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id67">When can I rely on identity tests with the <em>is</em> operator?</a><a class="headerlink" href="#when-can-i-rely-on-identity-tests-with-the-is-operator" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">is</span></code> operator tests for object identity.  The test <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is</span> <span class="pre">b</span></code> is
 equivalent to <code class="docutils literal notranslate"><span class="pre">id(a)</span> <span class="pre">==</span> <span class="pre">id(b)</span></code>.</p>
 <p>The most important property of an identity test is that an object is always
@@ -1966,7 +1917,7 @@ identity tests.  This prevents the code from being confused by objects such as
 </div>
 </section>
 <section id="how-can-a-subclass-control-what-data-is-stored-in-an-immutable-instance">
-<h3><a class="toc-backref" href="#id69">How can a subclass control what data is stored in an immutable instance?</a><a class="headerlink" href="#how-can-a-subclass-control-what-data-is-stored-in-an-immutable-instance" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id68">How can a subclass control what data is stored in an immutable instance?</a><a class="headerlink" href="#how-can-a-subclass-control-what-data-is-stored-in-an-immutable-instance" title="Permalink to this headline">¶</a></h3>
 <p>When subclassing an immutable type, override the <a class="reference internal" href="../reference/datamodel.html#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a> method
 instead of the <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> method.  The latter only runs <em>after</em> an
 instance is created, which is too late to alter data in an immutable
@@ -2008,7 +1959,7 @@ parent class:</p>
 </div>
 </section>
 <section id="how-do-i-cache-method-calls">
-<span id="faq-cache-method-calls"></span><h3><a class="toc-backref" href="#id70">How do I cache method calls?</a><a class="headerlink" href="#how-do-i-cache-method-calls" title="Permalink to this headline">¶</a></h3>
+<span id="faq-cache-method-calls"></span><h3><a class="toc-backref" href="#id69">How do I cache method calls?</a><a class="headerlink" href="#how-do-i-cache-method-calls" title="Permalink to this headline">¶</a></h3>
 <p>The two principal tools for caching methods are
 <a class="reference internal" href="../library/functools.html#functools.cached_property" title="functools.cached_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.cached_property()</span></code></a> and <a class="reference internal" href="../library/functools.html#functools.lru_cache" title="functools.lru_cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.lru_cache()</span></code></a>.  The
 former stores results at the instance level and the latter at the class
@@ -2082,9 +2033,9 @@ methods so that the cache can detect relevant attribute updates:</p>
 </section>
 </section>
 <section id="modules">
-<h2><a class="toc-backref" href="#id71">Modules</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id70">Modules</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <section id="how-do-i-create-a-pyc-file">
-<h3><a class="toc-backref" href="#id72">How do I create a .pyc file?</a><a class="headerlink" href="#how-do-i-create-a-pyc-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id71">How do I create a .pyc file?</a><a class="headerlink" href="#how-do-i-create-a-pyc-file" title="Permalink to this headline">¶</a></h3>
 <p>When a module is imported for the first time (or when the source file has
 changed since the current compiled file was created) a <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file containing
 the compiled code should be created in a <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> subdirectory of the
@@ -2127,7 +2078,7 @@ to compile:</p>
 </div>
 </section>
 <section id="how-do-i-find-the-current-module-name">
-<h3><a class="toc-backref" href="#id73">How do I find the current module name?</a><a class="headerlink" href="#how-do-i-find-the-current-module-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id72">How do I find the current module name?</a><a class="headerlink" href="#how-do-i-find-the-current-module-name" title="Permalink to this headline">¶</a></h3>
 <p>A module can find out its own module name by looking at the predefined global
 variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.  If this has the value <code class="docutils literal notranslate"><span class="pre">'__main__'</span></code>, the program is
 running as a script.  Many modules that are usually used by importing them also
@@ -2143,7 +2094,7 @@ after checking <code class="docutils literal notranslate"><span class="pre">__na
 </div>
 </section>
 <section id="how-can-i-have-modules-that-mutually-import-each-other">
-<h3><a class="toc-backref" href="#id74">How can I have modules that mutually import each other?</a><a class="headerlink" href="#how-can-i-have-modules-that-mutually-import-each-other" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id73">How can I have modules that mutually import each other?</a><a class="headerlink" href="#how-can-i-have-modules-that-mutually-import-each-other" title="Permalink to this headline">¶</a></h3>
 <p>Suppose you have the following modules:</p>
 <p><code class="file docutils literal notranslate"><span class="pre">foo.py</span></code>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">bar_var</span>
@@ -2189,7 +2140,7 @@ is not necessary in the first place.</p>
 <p>These solutions are not mutually exclusive.</p>
 </section>
 <section id="import-x-y-z-returns-module-x-how-do-i-get-z">
-<h3><a class="toc-backref" href="#id75">__import__(‘x.y.z’) returns &lt;module ‘x’&gt;; how do I get z?</a><a class="headerlink" href="#import-x-y-z-returns-module-x-how-do-i-get-z" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id74">__import__(‘x.y.z’) returns &lt;module ‘x’&gt;; how do I get z?</a><a class="headerlink" href="#import-x-y-z-returns-module-x-how-do-i-get-z" title="Permalink to this headline">¶</a></h3>
 <p>Consider using the convenience function <a class="reference internal" href="../library/importlib.html#importlib.import_module" title="importlib.import_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">import_module()</span></code></a> from
 <a class="reference internal" href="../library/importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a> instead:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;x.y.z&#39;</span><span class="p">)</span>
@@ -2197,7 +2148,7 @@ is not necessary in the first place.</p>
 </div>
 </section>
 <section id="when-i-edit-an-imported-module-and-reimport-it-the-changes-don-t-show-up-why-does-this-happen">
-<h3><a class="toc-backref" href="#id76">When I edit an imported module and reimport it, the changes don’t show up.  Why does this happen?</a><a class="headerlink" href="#when-i-edit-an-imported-module-and-reimport-it-the-changes-don-t-show-up-why-does-this-happen" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id75">When I edit an imported module and reimport it, the changes don’t show up.  Why does this happen?</a><a class="headerlink" href="#when-i-edit-an-imported-module-and-reimport-it-the-changes-don-t-show-up-why-does-this-happen" title="Permalink to this headline">¶</a></h3>
 <p>For reasons of efficiency as well as consistency, Python only reads the module
 file on the first time a module is imported.  If it didn’t, in a program
 consisting of many modules where each one imports the same basic module, the
@@ -2276,7 +2227,7 @@ class objects:</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/faq/programming.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/faq/programming.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -2312,7 +2263,7 @@ class objects:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python Frequently Asked Questions</a> &#187;</li>
@@ -2334,7 +2285,7 @@ class objects:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -2348,7 +2299,7 @@ class objects:</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

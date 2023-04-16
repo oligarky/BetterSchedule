@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="enum — Support for enumerations" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/enum.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/enum.py Important: This page contains the API reference information. For tutorial information and discussion of more advanced topics, see Basic Tutorial, Advanced Tutorial, Enum Co..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/enum.py Important: This page contains the API reference information. For tutorial information and discussion of more advanced topics, see Basic Tutorial, Advanced Tutorial, Enum Co..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>enum — Support for enumerations &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enum — Support for enumerations &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -112,7 +101,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/enum.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/enum.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -149,7 +138,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -561,11 +550,11 @@ any public methods defined on <em>self.__class__</em>:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">PowersOfThree</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nd">@staticmethod</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">_generate_next_value_</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">last_values</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="mi">3</span> <span class="o">**</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="gp">... </span>    <span class="n">FIRST</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">SECOND</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PowersOfThree</span><span class="o">.</span><span class="n">SECOND</span><span class="o">.</span><span class="n">value</span>
-<span class="go">9</span>
+<span class="go">6</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -687,9 +676,9 @@ with an <em>IntEnum</em> member, the resulting value loses its enumeration statu
 value, starting with <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.11: </span><a class="reference internal" href="../reference/datamodel.html#object.__str__" title="object.__str__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__str__()</span></code></a> is now <code class="xref py py-meth docutils literal notranslate"><span class="pre">int.__str__()</span></code> to
+<p><span class="versionmodified changed">Changed in version 3.11: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">__str__()</span></code> is now <code class="xref py py-func docutils literal notranslate"><span class="pre">int.__str__()</span></code> to
 better support the <em>replacement of existing constants</em> use-case.
-<a class="reference internal" href="../reference/datamodel.html#object.__format__" title="object.__format__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__format__()</span></code></a> was already <code class="xref py py-meth docutils literal notranslate"><span class="pre">int.__format__()</span></code> for that same reason.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">__format__()</span></code> was already <code class="xref py py-func docutils literal notranslate"><span class="pre">int.__format__()</span></code> for that same reason.</p>
 </div>
 </dd></dl>
 
@@ -915,7 +904,7 @@ This matches the existing <a class="reference internal" href="#enum.Flag" title=
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.ReprEnum">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">ReprEnum</span></span><a class="headerlink" href="#enum.ReprEnum" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ReprEnum</span></code> uses the <a class="reference internal" href="#enum.Enum.__repr__" title="enum.Enum.__repr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">repr()</span></code></a> of <a class="reference internal" href="#enum.Enum" title="enum.Enum"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a>,
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ReprEum</span></code> uses the <a class="reference internal" href="#enum.Enum.__repr__" title="enum.Enum.__repr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">repr()</span></code></a> of <a class="reference internal" href="#enum.Enum" title="enum.Enum"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a>,
 but the <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str()</span></code></a> of the mixed-in data type:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1084,7 +1073,7 @@ used for some stdlib flags:</p>
 <h3>Supported <code class="docutils literal notranslate"><span class="pre">__dunder__</span></code> names<a class="headerlink" href="#supported-dunder-names" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__members__</span></code> is a read-only ordered mapping of <code class="docutils literal notranslate"><span class="pre">member_name</span></code>:<code class="docutils literal notranslate"><span class="pre">member</span></code>
 items.  It is only available on the class.</p>
-<p><a class="reference internal" href="../reference/datamodel.html#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a>, if specified, must create and return the enum members; it is
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code>, if specified, must create and return the enum members; it is
 also a very good idea to set the member’s <code class="xref py py-attr docutils literal notranslate"><span class="pre">_value_</span></code> appropriately.  Once
 all the members are created it is no longer used.</p>
 </section>
@@ -1128,12 +1117,12 @@ power-of-two, regardless of the last value seen.</p>
 <dt class="sig sig-object py" id="enum.auto">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">auto</span></span><a class="headerlink" href="#enum.auto" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>auto</em> can be used in place of a value.  If used, the <em>Enum</em> machinery will
-call an <em>Enum</em>’s <a class="reference internal" href="#enum.Enum._generate_next_value_" title="enum.Enum._generate_next_value_"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_generate_next_value_()</span></code></a> to get an appropriate value.
+call an <em>Enum</em>’s <code class="xref py py-meth docutils literal notranslate"><span class="pre">_generate_next_value_()</span></code> to get an appropriate value.
 For <em>Enum</em> and <em>IntEnum</em> that appropriate value will be the last value plus
 one; for <em>Flag</em> and <em>IntFlag</em> it will be the first power-of-two greater
-than the highest value; for <em>StrEnum</em> it will be the lower-cased version of
-the member’s name.  Care must be taken if mixing <em>auto()</em> with manually
-specified values.</p>
+than the last value; for <em>StrEnum</em> it will be the lower-cased version of the
+member’s name.  Care must be taken if mixing <em>auto()</em> with manually specified
+values.</p>
 <p><em>auto</em> instances are only resolved when at the top level of an assignment:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1155,7 +1144,7 @@ on the assignment line to work properly.</p>
 <em>auto</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>in 3.13 the default <code class="docutils literal notranslate"><span class="pre">_generate_next_value_</span></code> will always return
+<p>in 3.13 the default <code class="docutils literal notranslate"><span class="pre">&quot;generate_next_value_</span></code> will always return
 the highest member value incremented by 1, and will fail if any
 member is an incompatible type.</p>
 </div>
@@ -1271,9 +1260,9 @@ base class by mixing in the <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 <p>or you can reassign the appropriate <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str()</span></code></a>, etc., in your enum:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">IntEnum</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyIntEnum</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="fm">__str__</span> <span class="o">=</span> <span class="n">Enum</span><span class="o">.</span><span class="fm">__str__</span>
+<span class="gp">... </span>    <span class="fm">__str__</span> <span class="o">=</span> <span class="n">IntEnum</span><span class="o">.</span><span class="fm">__str__</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1319,7 +1308,7 @@ base class by mixing in the <code class="docutils literal notranslate"><span cla
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/enum.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/enum.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1355,7 +1344,7 @@ base class by mixing in the <code class="docutils literal notranslate"><span cla
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -1378,7 +1367,7 @@ base class by mixing in the <code class="docutils literal notranslate"><span cla
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1392,7 +1381,7 @@ base class by mixing in the <code class="docutils literal notranslate"><span cla
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

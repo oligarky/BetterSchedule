@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="socketserver — A framework for network servers" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/socketserver.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/socketserver.py The socketserver module simplifies the task of writing network servers. Availability: not Emscripten, not WASI. This module does not work or is not available on Web..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/socketserver.py The socketserver module simplifies the task of writing network servers. Availability: not Emscripten, not WASI. This module does not work or is not available on Web..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>socketserver — A framework for network servers &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socketserver — A framework for network servers &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -113,7 +102,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/socketserver.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/socketserver.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -150,7 +139,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -628,7 +617,7 @@ and <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socketserver</span>
 
 <span class="k">class</span> <span class="nc">MyTCPHandler</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">BaseRequestHandler</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The request handler class for our server.</span>
 
 <span class="sd">    It is instantiated once per connection to the server, and must</span>
@@ -695,7 +684,7 @@ from the client in one <code class="docutils literal notranslate"><span class="p
 </div>
 <p>The output of the example should look something like this:</p>
 <p>Server:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>TCPServer.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python TCPServer.py
 <span class="go">127.0.0.1 wrote:</span>
 <span class="go">b&#39;hello world with TCP&#39;</span>
 <span class="go">127.0.0.1 wrote:</span>
@@ -703,10 +692,10 @@ from the client in one <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <p>Client:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>TCPClient.py<span class="w"> </span>hello<span class="w"> </span>world<span class="w"> </span>with<span class="w"> </span>TCP
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python TCPClient.py hello world with TCP
 <span class="go">Sent:     hello world with TCP</span>
 <span class="go">Received: HELLO WORLD WITH TCP</span>
-<span class="gp">$ </span>python<span class="w"> </span>TCPClient.py<span class="w"> </span>python<span class="w"> </span>is<span class="w"> </span>nice
+<span class="gp">$ </span>python TCPClient.py python is nice
 <span class="go">Sent:     python is nice</span>
 <span class="go">Received: PYTHON IS NICE</span>
 </pre></div>
@@ -718,7 +707,7 @@ from the client in one <code class="docutils literal notranslate"><span class="p
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socketserver</span>
 
 <span class="k">class</span> <span class="nc">MyUDPHandler</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">BaseRequestHandler</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class works similar to the TCP handler class, except that</span>
 <span class="sd">    self.request consists of a pair of data and client socket, and since</span>
 <span class="sd">    there is no connection the client address must be given explicitly</span>
@@ -810,7 +799,7 @@ from the client in one <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <p>The output of the example should look something like this:</p>
-<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>ThreadedTCPServer.py
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python ThreadedTCPServer.py
 <span class="go">Server loop running in thread: Thread-1</span>
 <span class="go">Received: Thread-2: Hello World 1</span>
 <span class="go">Received: Thread-3: Hello World 2</span>
@@ -864,7 +853,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/socketserver.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/socketserver.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -900,7 +889,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -923,7 +912,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -937,7 +926,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

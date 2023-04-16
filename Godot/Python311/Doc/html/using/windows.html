@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="4. Using Python on Windows" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/using/windows.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="This document aims to give an overview of Windows-specific behaviour you should know about when using Python on Microsoft Windows. Unlike most Unix systems and services, Windows does not include a ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="This document aims to give an overview of Windows-specific behaviour you should know about when using Python on Microsoft Windows. Unlike most Unix systems and services, Windows does not include a ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>4. Using Python on Windows &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Using Python on Windows &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -161,7 +150,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/windows.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/windows.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -198,7 +187,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python Setup and Usage</a> &#187;</li>
@@ -483,11 +472,11 @@ When a value is provided as an attribute, it will be converted to a number if
 possible. Values provided as element text are always left as strings. This
 example file sets the same options as the previous example:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Options&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;InstallAllUsers&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Include_launcher&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Include_test&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;SimpleInstall&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;SimpleInstallDescription&quot;</span><span class="nt">&gt;</span>Just<span class="w"> </span>for<span class="w"> </span>me,<span class="w"> </span>no<span class="w"> </span>test<span class="w"> </span>suite<span class="nt">&lt;/Option&gt;</span>
+    <span class="nt">&lt;Option</span> <span class="na">Name=</span><span class="s">&quot;InstallAllUsers&quot;</span> <span class="na">Value=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Option</span> <span class="na">Name=</span><span class="s">&quot;Include_launcher&quot;</span> <span class="na">Value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Option</span> <span class="na">Name=</span><span class="s">&quot;Include_test&quot;</span> <span class="na">Value=</span><span class="s">&quot;no&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Option</span> <span class="na">Name=</span><span class="s">&quot;SimpleInstall&quot;</span> <span class="na">Value=</span><span class="s">&quot;yes&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;Option</span> <span class="na">Name=</span><span class="s">&quot;SimpleInstallDescription&quot;</span><span class="nt">&gt;</span>Just for me, no test suite<span class="nt">&lt;/Option&gt;</span>
 <span class="nt">&lt;/Options&gt;</span>
 </pre></div>
 </div>
@@ -886,42 +875,19 @@ command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>py -2
 </pre></div>
 </div>
+<p>You should find the latest version of Python 3.x starts.</p>
 <p>If you see the following error, you do not have the launcher installed:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;py&#39; is not recognized as an internal or external command,
 operable program or batch file.
 </pre></div>
 </div>
+<p>Per-user installations of Python do not add the launcher to <span class="target" id="index-21"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>
+unless the option was selected on installation.</p>
 <p>The command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>py --list
 </pre></div>
 </div>
 <p>displays the currently installed version(s) of Python.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">-x.y</span></code> argument is the short form of the <code class="docutils literal notranslate"><span class="pre">-V:Company/Tag</span></code> argument,
-which allows selecting a specific Python runtime, including those that may have
-come from somewhere other than python.org. Any runtime registered by following
-<span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0514/"><strong>PEP 514</strong></a> will be discoverable. The <code class="docutils literal notranslate"><span class="pre">--list</span></code> command lists all available
-runtimes using the <code class="docutils literal notranslate"><span class="pre">-V:</span></code> format.</p>
-<p>When using the <code class="docutils literal notranslate"><span class="pre">-V:</span></code> argument, specifying the Company will limit selection to
-runtimes from that provider, while specifying only the Tag will select from all
-providers. Note that omitting the slash implies a tag:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Select any &#39;3.*&#39; tagged runtime
-py -V:3
-
-# Select any &#39;PythonCore&#39; released runtime
-py -V:PythonCore/
-
-# Select PythonCore&#39;s latest Python 3 runtime
-py -V:PythonCore/3
-</pre></div>
-</div>
-<p>The short form of the argument (<code class="docutils literal notranslate"><span class="pre">-3</span></code>) only ever selects from core Python
-releases, and not other distributions. However, the longer form (<code class="docutils literal notranslate"><span class="pre">-V:3</span></code>) will
-select from any.</p>
-<p>The Company is matched on the full string, case-insenitive. The Tag is matched
-oneither the full string, or a prefix, provided the next character is a dot or a
-hyphen. This allows <code class="docutils literal notranslate"><span class="pre">-V:3.1</span></code> to match <code class="docutils literal notranslate"><span class="pre">3.1-32</span></code>, but not <code class="docutils literal notranslate"><span class="pre">3.10</span></code>. Tags are
-sorted using numerical ordering (<code class="docutils literal notranslate"><span class="pre">3.10</span></code> is newer than <code class="docutils literal notranslate"><span class="pre">3.1</span></code>), but are
-compared using text (<code class="docutils literal notranslate"><span class="pre">-V:3.01</span></code> does not match <code class="docutils literal notranslate"><span class="pre">3.1</span></code>).</p>
 </section>
 <section id="virtual-environments">
 <h4><span class="section-number">4.8.1.2. </span>Virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h4>
@@ -956,7 +922,7 @@ is printed.  Now try changing the first line to be:</p>
 <p>Re-executing the command should now print the latest Python 3.x information.
 As with the above command-line examples, you can specify a more explicit
 version qualifier.  Assuming you have Python 3.7 installed, try changing
-the first line to <code class="docutils literal notranslate"><span class="pre">#!</span> <span class="pre">python3.7</span></code> and you should find the 3.7
+the first line to <code class="docutils literal notranslate"><span class="pre">#!</span> <span class="pre">python3.7</span></code> and you should find the 3.11
 version information printed.</p>
 <p>Note that unlike interactive use, a bare “python” will use the latest
 version of Python 2.x that you have installed.  This is for backward
@@ -986,7 +952,7 @@ use.</p>
 Windows, this launcher supports a number of ‘virtual’ commands to specify
 which interpreter to use.  The supported virtual commands are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/usr/bin/env</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr/bin/env</span> <span class="pre">python</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/usr/local/bin/python</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
@@ -1017,26 +983,13 @@ not provably i386/32-bit”. To request a specific environment, use the new
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">/usr/bin/env</span></code> form of shebang line has one further special property.
 Before looking for installed Python interpreters, this form will search the
-executable <span class="target" id="index-22"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> for a Python executable matching the name provided
-as the first argument. This corresponds to the behaviour of the Unix <code class="docutils literal notranslate"><span class="pre">env</span></code>
-program, which performs a <span class="target" id="index-23"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> search.
+executable <span class="target" id="index-22"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> for a Python executable. This corresponds to the
+behaviour of the Unix <code class="docutils literal notranslate"><span class="pre">env</span></code> program, which performs a <span class="target" id="index-23"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> search.
 If an executable matching the first argument after the <code class="docutils literal notranslate"><span class="pre">env</span></code> command cannot
-be found, but the argument starts with <code class="docutils literal notranslate"><span class="pre">python</span></code>, it will be handled as
-described for the other virtual commands.
-The environment variable <span class="target" id="index-24"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_NO_SEARCH_PATH</span></code> may be set
-(to any value) to skip this search of <span class="target" id="index-25"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
-<p>Shebang lines that do not match any of these patterns are looked up in the
-<code class="docutils literal notranslate"><span class="pre">[commands]</span></code> section of the launcher’s <a class="reference internal" href="#launcher-ini"><span class="std std-ref">.INI file</span></a>.
-This may be used to handle certain commands in a way that makes sense for your
-system. The name of the command must be a single argument (no spaces in the
-shebang executable), and the value substituted is the full path to the
-executable (additional arguments specified in the .INI will be quoted as part
-of the filename).</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[commands]</span>
-<span class="na">/bin/xpython</span><span class="o">=</span><span class="s">C:\Program Files\XPython\python.exe</span>
-</pre></div>
-</div>
-<p>Any commands not found in the .INI file are treated as <strong>Windows</strong> executable
+be found, it will be handled as described below. Additionally, the environment
+variable <span class="target" id="index-24"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_NO_SEARCH_PATH</span></code> may be set (to any value) to skip
+this additional search.</p>
+<p>Shebang lines that do not match any of these patterns are treated as <strong>Windows</strong>
 paths that are absolute or relative to the directory containing the script file.
 This is a convenience for Windows-only scripts, such as those generated by an
 installer, since the behavior is not compatible with Unix-style shells.
@@ -1055,12 +1008,13 @@ Python interpreter.  For example, if you have a shebang line:</p>
 <section id="customization">
 <h3><span class="section-number">4.8.4. </span>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h3>
 <section id="customization-via-ini-files">
-<span id="launcher-ini"></span><h4><span class="section-number">4.8.4.1. </span>Customization via INI files<a class="headerlink" href="#customization-via-ini-files" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">4.8.4.1. </span>Customization via INI files<a class="headerlink" href="#customization-via-ini-files" title="Permalink to this headline">¶</a></h4>
 <p>Two .ini files will be searched by the launcher - <code class="docutils literal notranslate"><span class="pre">py.ini</span></code> in the current
-user’s application data directory (<code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%</span></code> or <code class="docutils literal notranslate"><span class="pre">$env:LocalAppData</span></code>)
-and <code class="docutils literal notranslate"><span class="pre">py.ini</span></code> in the same directory as the launcher. The same .ini files are
-used for both the ‘console’ version of the launcher (i.e. py.exe) and for the
-‘windows’ version (i.e. pyw.exe).</p>
+user’s “application data” directory (i.e. the directory returned by calling the
+Windows function <code class="docutils literal notranslate"><span class="pre">SHGetFolderPath</span></code> with <code class="docutils literal notranslate"><span class="pre">CSIDL_LOCAL_APPDATA</span></code>) and <code class="docutils literal notranslate"><span class="pre">py.ini</span></code> in the
+same directory as the launcher. The same .ini files are used for both the
+‘console’ version of the launcher (i.e. py.exe) and for the ‘windows’ version
+(i.e. pyw.exe).</p>
 <p>Customization specified in the “application directory” will have precedence over
 the one next to the executable, so a user, who may not have write access to the
 .ini file next to the launcher, can override commands in that global .ini file.</p>
@@ -1075,7 +1029,7 @@ if a 32 or 64 bit implementation shall be requested by adding “-32” or “-6
 <p>For example, a shebang line of <code class="docutils literal notranslate"><span class="pre">#!python</span></code> has no version qualifier, while
 <code class="docutils literal notranslate"><span class="pre">#!python3</span></code> has a version qualifier which specifies only a major version.</p>
 <p>If no version qualifiers are found in a command, the environment
-variable <span class="target" id="index-26"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PY_PYTHON</span></code> can be set to specify the default version
+variable <span class="target" id="index-25"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PY_PYTHON</span></code> can be set to specify the default version
 qualifier. If it is not set, the default is “3”. The variable can
 specify any value that may be passed on the command line, such as “3”,
 “3.7”, “3.7-32” or “3.7-64”. (Note that the “-64” option is only
@@ -1123,24 +1077,24 @@ an environment variable will override things specified in the INI file.</p>
 <ul class="simple">
 <li><p>Setting <code class="docutils literal notranslate"><span class="pre">PY_PYTHON=3.7</span></code> is equivalent to the INI file containing:</p></li>
 </ul>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[defaults]</span>
-<span class="na">python</span><span class="o">=</span><span class="s">3.7</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[defaults]</span><span class="w"></span>
+<span class="na">python</span><span class="o">=</span><span class="s">3.7</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Setting <code class="docutils literal notranslate"><span class="pre">PY_PYTHON=3</span></code> and <code class="docutils literal notranslate"><span class="pre">PY_PYTHON3=3.7</span></code> is equivalent to the INI file
 containing:</p></li>
 </ul>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[defaults]</span>
-<span class="na">python</span><span class="o">=</span><span class="s">3</span>
-<span class="na">python3</span><span class="o">=</span><span class="s">3.7</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[defaults]</span><span class="w"></span>
+<span class="na">python</span><span class="o">=</span><span class="s">3</span><span class="w"></span>
+<span class="na">python3</span><span class="o">=</span><span class="s">3.7</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="diagnostics">
 <h3><span class="section-number">4.8.5. </span>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this headline">¶</a></h3>
-<p>If an environment variable <span class="target" id="index-27"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DEBUG</span></code> is set (to any value), the
+<p>If an environment variable <span class="target" id="index-26"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DEBUG</span></code> is set (to any value), the
 launcher will print diagnostic information to stderr (i.e. to the console).
 While this information manages to be simultaneously verbose <em>and</em> terse, it
 should allow you to see what versions of Python were located, why a
@@ -1149,7 +1103,7 @@ target Python. It is primarily intended for testing and debugging.</p>
 </section>
 <section id="dry-run">
 <h3><span class="section-number">4.8.6. </span>Dry Run<a class="headerlink" href="#dry-run" title="Permalink to this headline">¶</a></h3>
-<p>If an environment variable <span class="target" id="index-28"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DRYRUN</span></code> is set (to any value),
+<p>If an environment variable <span class="target" id="index-27"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DRYRUN</span></code> is set (to any value),
 the launcher will output the command it would have run, but will not actually
 launch Python. This may be useful for tools that want to use the launcher to
 detect and then launch Python directly. Note that the command written to
@@ -1158,13 +1112,13 @@ the console.</p>
 </section>
 <section id="install-on-demand">
 <h3><span class="section-number">4.8.7. </span>Install on demand<a class="headerlink" href="#install-on-demand" title="Permalink to this headline">¶</a></h3>
-<p>If an environment variable <span class="target" id="index-29"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_ALLOW_INSTALL</span></code> is set (to any
+<p>If an environment variable <span class="target" id="index-28"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_ALLOW_INSTALL</span></code> is set (to any
 value), and the requested Python version is not installed but is available on
 the Microsoft Store, the launcher will attempt to install it. This may require
 user interaction to complete, and you may need to run the command again.</p>
-<p>An additional <span class="target" id="index-30"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_ALWAYS_INSTALL</span></code> variable causes the launcher
+<p>An additional <span class="target" id="index-29"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_ALWAYS_INSTALL</span></code> variable causes the launcher
 to always try to install Python, even if it is detected. This is mainly intended
-for testing (and should be used with <span class="target" id="index-31"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DRYRUN</span></code>).</p>
+for testing (and should be used with <span class="target" id="index-30"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYLAUNCHER_DRYRUN</span></code>).</p>
 </section>
 <section id="return-codes">
 <h3><span class="section-number">4.8.8. </span>Return codes<a class="headerlink" href="#return-codes" title="Permalink to this headline">¶</a></h3>
@@ -1230,7 +1184,7 @@ Windows:</p>
 <ul class="simple">
 <li><p>An empty entry is added at the start, which corresponds to the current
 directory.</p></li>
-<li><p>If the environment variable <span class="target" id="index-32"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> exists, as described in
+<li><p>If the environment variable <span class="target" id="index-31"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> exists, as described in
 <a class="reference internal" href="cmdline.html#using-on-envvars"><span class="std std-ref">Environment variables</span></a>, its entries are added next.  Note that on Windows,
 paths in this variable must be separated by semicolons, to distinguish them
 from the colon used in drive identifiers (<code class="docutils literal notranslate"><span class="pre">C:\</span></code> etc.).</p></li>
@@ -1240,21 +1194,21 @@ from the colon used in drive identifiers (<code class="docutils literal notransl
 semicolon-delimited path strings as their default value will cause each path
 to be added to <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a>.  (Note that all known installers only use
 HKLM, so HKCU is typically empty.)</p></li>
-<li><p>If the environment variable <span class="target" id="index-33"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a> is set, it is assumed as
+<li><p>If the environment variable <span class="target" id="index-32"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a> is set, it is assumed as
 “Python Home”.  Otherwise, the path of the main Python executable is used to
 locate a “landmark file” (either <code class="docutils literal notranslate"><span class="pre">Lib\os.py</span></code> or <code class="docutils literal notranslate"><span class="pre">pythonXY.zip</span></code>) to deduce
 the “Python Home”.  If a Python home is found, the relevant sub-directories
 added to <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> (<code class="docutils literal notranslate"><span class="pre">Lib</span></code>, <code class="docutils literal notranslate"><span class="pre">plat-win</span></code>, etc) are based on that
 folder.  Otherwise, the core Python path is constructed from the PythonPath
 stored in the registry.</p></li>
-<li><p>If the Python Home cannot be located, no <span class="target" id="index-34"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> is specified in
+<li><p>If the Python Home cannot be located, no <span class="target" id="index-33"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> is specified in
 the environment, and no registry entries can be found, a default path with
 relative entries is used (e.g. <code class="docutils literal notranslate"><span class="pre">.\Lib;.\plat-win</span></code>, etc).</p></li>
 </ul>
 <p>If a <code class="docutils literal notranslate"><span class="pre">pyvenv.cfg</span></code> file is found alongside the main executable or in the
 directory one level above the executable, the following variations apply:</p>
 <ul class="simple">
-<li><p>If <code class="docutils literal notranslate"><span class="pre">home</span></code> is an absolute path and <span class="target" id="index-35"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a> is not set, this
+<li><p>If <code class="docutils literal notranslate"><span class="pre">home</span></code> is an absolute path and <span class="target" id="index-34"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a> is not set, this
 path is used instead of the path to the main executable when deducing the
 home location.</p></li>
 </ul>
@@ -1281,7 +1235,7 @@ listed.</p></li>
 <li><p>If you are loading <code class="file docutils literal notranslate"><span class="pre">python3.dll</span></code> or <code class="file docutils literal notranslate"><span class="pre">python37.dll</span></code> in your own
 executable, explicitly call <a class="reference internal" href="../c-api/init.html#c.Py_SetPath" title="Py_SetPath"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetPath()</span></code></a> or (at least)
 <a class="reference internal" href="../c-api/init.html#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a> before <a class="reference internal" href="../c-api/init.html#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p></li>
-<li><p>Clear and/or overwrite <span class="target" id="index-36"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> and set <span class="target" id="index-37"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a>
+<li><p>Clear and/or overwrite <span class="target" id="index-35"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> and set <span class="target" id="index-36"></span><a class="reference internal" href="cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a>
 before launching <code class="file docutils literal notranslate"><span class="pre">python.exe</span></code> from your application.</p></li>
 <li><p>If you cannot use the previous suggestions (for example, you are a
 distribution that allows people to run <code class="file docutils literal notranslate"><span class="pre">python.exe</span></code> directly), ensure
@@ -1372,7 +1326,7 @@ releases. These files are in the <code class="file docutils literal notranslate"
 <h2><span class="section-number">4.12. </span>Other Platforms<a class="headerlink" href="#other-platforms" title="Permalink to this headline">¶</a></h2>
 <p>With ongoing development of Python, some platforms that used to be supported
 earlier are no longer supported (due to the lack of users or developers).
-Check <span class="target" id="index-38"></span><a class="pep reference external" href="https://peps.python.org/pep-0011/"><strong>PEP 11</strong></a> for details on all unsupported platforms.</p>
+Check <span class="target" id="index-37"></span><a class="pep reference external" href="https://peps.python.org/pep-0011/"><strong>PEP 11</strong></a> for details on all unsupported platforms.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pythonce.sourceforge.net/">Windows CE</a> is
 <a class="reference external" href="https://github.com/python/cpython/issues/71542">no longer supported</a>
@@ -1474,7 +1428,7 @@ for detailed information about platforms with pre-compiled installers.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/using/windows.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/using/windows.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -1510,7 +1464,7 @@ for detailed information about platforms with pre-compiled installers.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python Setup and Usage</a> &#187;</li>
@@ -1532,7 +1486,7 @@ for detailed information about platforms with pre-compiled installers.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -1546,7 +1500,7 @@ for detailed information about platforms with pre-compiled installers.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

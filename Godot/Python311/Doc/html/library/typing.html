@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="typing — Support for type hints" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/typing.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/typing.py This module provides runtime support for type hints. The most fundamental support consists of the types Any, Union, Callable, TypeVar, and Generic. For a full specificati..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/typing.py This module provides runtime support for type hints. The most fundamental support consists of the types Any, Union, Callable, TypeVar, and Generic. For a full specificati..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>typing — Support for type hints &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typing — Support for type hints &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -140,7 +129,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/typing.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/typing.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -177,7 +166,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -855,7 +844,7 @@ called, or a function that never returns:</p>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s an int&quot;</span><span class="p">)</span>
         <span class="k">case</span> <span class="nb">str</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a str&quot;</span><span class="p">)</span>
-        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="k">case</span> <span class="k">_</span><span class="p">:</span>
             <span class="n">never_call_me</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>  <span class="c1"># ok, arg is of type Never</span>
 </pre></div>
 </div>
@@ -1104,7 +1093,7 @@ callable being passed in:</p>
 <span class="n">my_lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">with_lock</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">Concatenate</span><span class="p">[</span><span class="n">Lock</span><span class="p">,</span> <span class="n">P</span><span class="p">],</span> <span class="n">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">R</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;A type-safe decorator which provides a lock.&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;A type-safe decorator which provides a lock.&#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">R</span><span class="p">:</span>
         <span class="c1"># Provide the lock as the first argument.</span>
         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">my_lock</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1112,7 +1101,7 @@ callable being passed in:</p>
 
 <span class="nd">@with_lock</span>
 <span class="k">def</span> <span class="nf">sum_threadsafe</span><span class="p">(</span><span class="n">lock</span><span class="p">:</span> <span class="n">Lock</span><span class="p">,</span> <span class="n">numbers</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Add a list of numbers together in a thread-safe manner.&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;Add a list of numbers together in a thread-safe manner.&#39;&#39;&#39;</span>
     <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
@@ -1398,7 +1387,7 @@ is the type inside <code class="docutils literal notranslate"><span class="pre">
 </ol>
 <p>For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_str_list</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">object</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Determines whether all objects in the list are strings&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;Determines whether all objects in the list are strings&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">val</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">object</span><span class="p">]):</span>
@@ -1475,18 +1464,18 @@ checkers.  They serve as the parameters for generic types as well
 as for generic function definitions.  See <a class="reference internal" href="#typing.Generic" title="typing.Generic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a> for more
 information on generic types.  Generic functions work as follows:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a list containing n references to x.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Return a list containing n references to x.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">*</span><span class="n">n</span>
 
 
 <span class="k">def</span> <span class="nf">print_capitalized</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">S</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print x capitalized, and return x.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Print x capitalized, and return x.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">x</span>
 
 
 <span class="k">def</span> <span class="nf">concatenate</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">A</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add two strings or bytes objects together.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Add two strings or bytes objects together.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1686,7 +1675,7 @@ new callable returned by it have inter-dependent type parameters:</p>
 <span class="n">P</span> <span class="o">=</span> <span class="n">ParamSpec</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">add_logging</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;A type-safe decorator to add logging to a function.&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;A type-safe decorator to add logging to a function.&#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> was called&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1694,7 +1683,7 @@ new callable returned by it have inter-dependent type parameters:</p>
 
 <span class="nd">@add_logging</span>
 <span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Add two numbers together.&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;Add two numbers together.&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1892,7 +1881,7 @@ the <code class="docutils literal notranslate"><span class="pre">_fields</span><
 API.)</p>
 <p><code class="docutils literal notranslate"><span class="pre">NamedTuple</span></code> subclasses can also have docstrings and methods:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents an employee.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Represents an employee.&quot;&quot;&quot;</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
 
@@ -2846,7 +2835,7 @@ script is in line with the developer’s intentions:</p>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s an int&quot;</span><span class="p">)</span>
         <span class="k">case</span> <span class="nb">str</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a str&quot;</span><span class="p">)</span>
-        <span class="k">case</span><span class="w"> </span><span class="k">_</span> <span class="k">as</span> <span class="n">unreachable</span><span class="p">:</span>
+        <span class="k">case</span> <span class="k">_</span> <span class="k">as</span> <span class="n">unreachable</span><span class="p">:</span>
             <span class="n">assert_never</span><span class="p">(</span><span class="n">unreachable</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3389,7 +3378,7 @@ collections</p></td>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/typing.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/typing.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -3425,7 +3414,7 @@ collections</p></td>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -3448,7 +3437,7 @@ collections</p></td>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -3462,7 +3451,7 @@ collections</p></td>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

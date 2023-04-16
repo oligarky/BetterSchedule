@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="socket — Low-level networking interface" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/socket.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/socket.py This module provides access to the BSD socket interface. It is available on all modern Unix systems, Windows, MacOS, and probably additional platforms. Availability: not ..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/socket.py This module provides access to the BSD socket interface. It is available on all modern Unix systems, Windows, MacOS, and probably additional platforms. Availability: not ..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>socket — Low-level networking interface &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket — Low-level networking interface &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -122,7 +111,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/socket.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/socket.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -159,7 +148,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -971,8 +960,8 @@ attempts.</p>
 <dd><p>Convenience function which creates a TCP socket bound to <em>address</em> (a 2-tuple
 <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code>) and return the socket object.</p>
 <p><em>family</em> should be either <a class="reference internal" href="#socket.AF_INET" title="socket.AF_INET"><code class="xref py py-data docutils literal notranslate"><span class="pre">AF_INET</span></code></a> or <a class="reference internal" href="#socket.AF_INET6" title="socket.AF_INET6"><code class="xref py py-data docutils literal notranslate"><span class="pre">AF_INET6</span></code></a>.
-<em>backlog</em> is the queue size passed to <a class="reference internal" href="#socket.socket.listen" title="socket.socket.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">socket.listen()</span></code></a>; if not specified
-, a default reasonable value is chosen.
+<em>backlog</em> is the queue size passed to <a class="reference internal" href="#socket.socket.listen" title="socket.socket.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">socket.listen()</span></code></a>; when <code class="docutils literal notranslate"><span class="pre">0</span></code>
+a default reasonable value is chosen.
 <em>reuse_port</em> dictates whether to set the <code class="xref py py-data docutils literal notranslate"><span class="pre">SO_REUSEPORT</span></code> socket option.</p>
 <p>If <em>dualstack_ipv6</em> is true and the platform supports it the socket will
 be able to accept both IPv4 and IPv6 connections, else it will raise
@@ -2480,7 +2469,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/socket.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/socket.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -2516,7 +2505,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -2539,7 +2528,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -2553,7 +2542,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Initialization, Finalization, and Threads" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/c-api/init.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="See also Python Initialization Configuration. Before Python Initialization: In an application embedding Python, the Py_Initialize() function must be called before using any other Python/C API funct..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="See also Python Initialization Configuration. Before Python Initialization: In an application embedding Python, the Py_Initialize() function must be called before using any other Python/C API funct..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>Initialization, Finalization, and Threads &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initialization, Finalization, and Threads &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -132,7 +121,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/init.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/init.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -169,7 +158,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API Reference Manual</a> &#187;</li>
@@ -697,7 +686,7 @@ of the program name.</p>
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetVersion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetVersion" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the version of this Python interpreter.  This is a string that looks
 something like</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;3.0a5+ (py3k:63103M, May 12 2008, 00:53:55) </span><span class="se">\n</span><span class="s">[GCC 4.2.3]&quot;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;3.0a5+ (py3k:63103M, May 12 2008, 00:53:55) </span><span class="se">\n</span><span class="s">[GCC 4.2.3]&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <p id="index-25">The first word (up to the first space character) is the current Python version;
@@ -733,7 +722,7 @@ value.  The value is available to Python code as <code class="docutils literal n
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetCompiler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetCompiler" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return an indication of the compiler used to build the current Python version,
 in square brackets, for example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;[GCC 2.7.2.2]&quot;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;[GCC 2.7.2.2]&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <p id="index-28">The returned string points into static storage; the caller should not modify its
@@ -746,7 +735,7 @@ value.  The value is available to Python code as part of the variable
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetBuildInfo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetBuildInfo" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return information about the sequence number and build date and time  of the
 current Python interpreter instance, for example</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;#67, Aug  1 1997, 22:34:28&quot;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;#67, Aug  1 1997, 22:34:28&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <p id="index-29">The returned string points into static storage; the caller should not modify its
@@ -793,7 +782,7 @@ See <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cg
 <p>On versions before 3.1.3, you can achieve the same effect by manually
 popping the first <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> element after having called
 <a class="reference internal" href="#c.PySys_SetArgv" title="PySys_SetArgv"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgv()</span></code></a>, for example using:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyRun_SimpleString</span><span class="p">(</span><span class="s">&quot;import sys; sys.path.pop(0)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyRun_SimpleString</span><span class="p">(</span><span class="s">&quot;import sys; sys.path.pop(0)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -883,28 +872,28 @@ be retrieved using <a class="reference internal" href="#c.PyThreadState_Get" tit
 <h3>Releasing the GIL from extension code<a class="headerlink" href="#releasing-the-gil-from-extension-code" title="Permalink to this headline">¶</a></h3>
 <p>Most extension code manipulating the <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a> has the following simple
 structure:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kr">thread</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">variable</span><span class="p">.</span>
-<span class="n">Release</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">global</span><span class="w"> </span><span class="n">interpreter</span><span class="w"> </span><span class="n">lock</span><span class="p">.</span>
-<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span>
-<span class="n">Reacquire</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">global</span><span class="w"> </span><span class="n">interpreter</span><span class="w"> </span><span class="n">lock</span><span class="p">.</span>
-<span class="n">Restore</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kr">thread</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">variable</span><span class="p">.</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kr">thread</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">variable</span><span class="p">.</span><span class="w"></span>
+<span class="n">Release</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">global</span><span class="w"> </span><span class="n">interpreter</span><span class="w"> </span><span class="n">lock</span><span class="p">.</span><span class="w"></span>
+<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="n">Reacquire</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">global</span><span class="w"> </span><span class="n">interpreter</span><span class="w"> </span><span class="n">lock</span><span class="p">.</span><span class="w"></span>
+<span class="n">Restore</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kr">thread</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">variable</span><span class="p">.</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This is so common that a pair of macros exists to simplify it:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Py_BEGIN_ALLOW_THREADS</span>
-<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span>
-<span class="n">Py_END_ALLOW_THREADS</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Py_BEGIN_ALLOW_THREADS</span><span class="w"></span>
+<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="n">Py_END_ALLOW_THREADS</span><span class="w"></span>
 </pre></div>
 </div>
 <p id="index-36">The <a class="reference internal" href="#c.Py_BEGIN_ALLOW_THREADS" title="Py_BEGIN_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></code></a> macro opens a new block and declares a
 hidden local variable; the <a class="reference internal" href="#c.Py_END_ALLOW_THREADS" title="Py_END_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_END_ALLOW_THREADS</span></code></a> macro closes the
 block.</p>
 <p>The block above expands to the following code:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyThreadState</span><span class="w"> </span><span class="o">*</span><span class="n">_save</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyThreadState</span><span class="w"> </span><span class="o">*</span><span class="n">_save</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">_save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyEval_SaveThread</span><span class="p">();</span>
-<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span>
-<span class="n">PyEval_RestoreThread</span><span class="p">(</span><span class="n">_save</span><span class="p">);</span>
+<span class="n">_save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyEval_SaveThread</span><span class="p">();</span><span class="w"></span>
+<span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="n">PyEval_RestoreThread</span><span class="p">(</span><span class="n">_save</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p id="index-37">Here is how these functions work: the global interpreter lock is used to protect the pointer to the
@@ -942,15 +931,15 @@ the GIL, and finally free the thread state data structure.</p>
 <p>The <a class="reference internal" href="#c.PyGILState_Ensure" title="PyGILState_Ensure"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Ensure()</span></code></a> and <a class="reference internal" href="#c.PyGILState_Release" title="PyGILState_Release"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Release()</span></code></a> functions do
 all of the above automatically.  The typical idiom for calling into Python
 from a C thread is:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyGILState_STATE</span><span class="w"> </span><span class="n">gstate</span><span class="p">;</span>
-<span class="n">gstate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyGILState_Ensure</span><span class="p">();</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyGILState_STATE</span><span class="w"> </span><span class="n">gstate</span><span class="p">;</span><span class="w"></span>
+<span class="n">gstate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyGILState_Ensure</span><span class="p">();</span><span class="w"></span>
 
-<span class="cm">/* Perform Python actions here. */</span>
-<span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CallSomeFunction</span><span class="p">();</span>
-<span class="cm">/* evaluate result or handle exception */</span>
+<span class="cm">/* Perform Python actions here. */</span><span class="w"></span>
+<span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CallSomeFunction</span><span class="p">();</span><span class="w"></span>
+<span class="cm">/* evaluate result or handle exception */</span><span class="w"></span>
 
-<span class="cm">/* Release the thread. No Python API allowed beyond this point. */</span>
-<span class="n">PyGILState_Release</span><span class="p">(</span><span class="n">gstate</span><span class="p">);</span>
+<span class="cm">/* Release the thread. No Python API allowed beyond this point. */</span><span class="w"></span>
+<span class="n">PyGILState_Release</span><span class="p">(</span><span class="n">gstate</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">PyGILState_*</span></code> functions assume there is only one global
@@ -1031,8 +1020,8 @@ have to call it yourself anymore.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.2: </span>This function cannot be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> anymore.</p>
 </div>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 3.9.</span></p>
+<div class="deprecated-removed">
+<p><span class="versionmodified">Deprecated since version 3.9, removed in version 3.11.</span></p>
 </div>
 <span class="target" id="index-39"></span></dd></dl>
 
@@ -1045,8 +1034,8 @@ avoid calls to the locking API when running single-threaded.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.7: </span>The <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a> is now initialized by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
 </div>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 3.9.</span></p>
+<div class="deprecated-removed">
+<p><span class="versionmodified">Deprecated since version 3.9, removed in version 3.11.</span></p>
 </div>
 </dd></dl>
 
@@ -2067,7 +2056,7 @@ be used in new code.</p>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/c-api/init.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/init.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -2103,7 +2092,7 @@ be used in new code.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
@@ -2125,7 +2114,7 @@ be used in new code.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -2139,7 +2128,7 @@ be used in new code.</p>
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,19 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="pdb — The Python Debugger" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.python.org/3/library/pdb.html" />
-<meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Source code: Lib/pdb.py The module pdb defines an interactive source code debugger for Python programs. It supports setting (conditional) breakpoints and single stepping at the source line level, i..." />
-<meta property="og:image" content="https://docs.python.org/3/_static/og-image.png" />
-<meta property="og:image:alt" content="Python documentation" />
-<meta name="description" content="Source code: Lib/pdb.py The module pdb defines an interactive source code debugger for Python programs. It supports setting (conditional) breakpoints and single stepping at the source line level, i..." />
-<meta property="og:image:width" content="200">
-<meta property="og:image:height" content="200">
-<meta name="theme-color" content="#3776ab">
 
-    <title>pdb — The Python Debugger &#8212; Python 3.11.2 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdb — The Python Debugger &#8212; Python 3.11.1 documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
@@ -30,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Python 3.11.2 documentation"
+          title="Search within Python 3.11.1 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -105,7 +94,7 @@
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/pdb.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/pdb.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -142,7 +131,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -182,16 +171,6 @@ supports post-mortem debugging and can be called under program control.</p>
 <p id="index-1">The debugger is extensible – it is actually defined as the class <a class="reference internal" href="#pdb.Pdb" title="pdb.Pdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pdb</span></code></a>.
 This is currently undocumented but easily understood by reading the source.  The
 extension interface uses the modules <a class="reference internal" href="bdb.html#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> and <a class="reference internal" href="cmd.html#module-cmd" title="cmd: Build line-oriented command interpreters."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code></a>.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt>Module <a class="reference internal" href="faulthandler.html#module-faulthandler" title="faulthandler: Dump the Python traceback."><code class="xref py py-mod docutils literal notranslate"><span class="pre">faulthandler</span></code></a></dt><dd><p>Used to dump Python tracebacks explicitly, on a fault, after a timeout,
-or on a user signal.</p>
-</dd>
-<dt>Module <a class="reference internal" href="traceback.html#module-traceback" title="traceback: Print or retrieve a stack traceback."><code class="xref py py-mod docutils literal notranslate"><span class="pre">traceback</span></code></a></dt><dd><p>Standard interface to extract, format and print stack traces of Python programs.</p>
-</dd>
-</dl>
-</div>
 <p>The debugger’s prompt is <code class="docutils literal notranslate"><span class="pre">(Pdb)</span></code>. Typical usage to run a program under control
 of the debugger is:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pdb</span>
@@ -248,9 +227,9 @@ instead of <code class="docutils literal notranslate"><span class="pre">import</
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
   File <span class="nb">&quot;./mymodule.py&quot;</span>, line <span class="m">4</span>, in <span class="n">test</span>
-<span class="w">    </span><span class="n">test2</span><span class="p">()</span>
+    <span class="n">test2</span><span class="p">()</span>
   File <span class="nb">&quot;./mymodule.py&quot;</span>, line <span class="m">3</span>, in <span class="n">test2</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">spam</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">spam</span><span class="p">)</span>
 <span class="gr">NameError</span>: <span class="n">spam</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pdb</span><span class="o">.</span><span class="n">pm</span><span class="p">()</span>
 <span class="go">&gt; ./mymodule.py(3)test2()</span>
@@ -801,7 +780,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
     <ul class="this-page-menu">
       <li><a href="../bugs.html">Report a Bug</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.11/Doc/library/pdb.rst"
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/pdb.rst"
             rel="nofollow">Show Source
         </a>
       </li>
@@ -837,7 +816,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.2 Documentation</a> &#187;
+      <a href="../index.html">3.11.1 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -860,7 +839,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
@@ -874,7 +853,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
 <br />
     <br />
 
-    Last updated on Feb 07, 2023.
+    Last updated on Dec 06, 2022.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
