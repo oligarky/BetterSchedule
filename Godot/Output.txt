@@ -6,9 +6,9 @@ Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 1000 202010 COMP 1000 COMPUTER SCIENCE I 4.00 A H
 Yes MATH 2300 202010 MATH 2300 DISCRETE MATH 4.00 A- H
-Yes COMP�- 1 - COMP 1100 or COMP 2100 202010 COMP 1100 INTRODUCTION TO NETWORKS 4.00 C+ H
-Yes ENGLISH�-1 English Sequence 201930 ENGL 1100 AP ENGLISH I 4.00 TR T
-Total Credits and GPA : 16.00���3.33
+Yes COMP - 1 - COMP 1100 or COMP 2100 202010 COMP 1100 INTRODUCTION TO NETWORKS 4.00 C+ H
+Yes ENGLISH -1 English Sequence 201930 ENGL 1100 AP ENGLISH I 4.00 TR T
+Total Credits and GPA : 16.00   3.33
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::B BS SC CY Y  F Fr re es sh hm me en n  S Sp p r riin ng g  S Se em me es st te er r R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
@@ -17,9 +17,9 @@ Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 1050 202020 COMP 1050 COMPUTER SCIENCE II 4.00 A H
 Yes COMP 2500 202020 COMP 2500 SECURITY PRINCIPLES 4.00 A H
-Yes ENGLISH�- 1 English Sequence 202010 ENGL 2200 ENGLISH II 4.00 A H
-Yes MATH�- 1 MATH-1775 or MATH-1750 202020 MATH 1750 ENGINEERING CALCULUS I 4.00 P H
-Total Credits and GPA : 16.00���4.00
+Yes ENGLISH - 1 English Sequence 202010 ENGL 2200 ENGLISH II 4.00 A H
+Yes MATH - 1 MATH-1775 or MATH-1750 202020 MATH 1750 ENGINEERING CALCULUS I 4.00 P H
+Total Credits and GPA : 16.00   4.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::B BS SC CY Y  S So op ph ho om mo or re e  F Fa allll  S Se em me es st te er r R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
@@ -28,10 +28,10 @@ Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 2000 202110 COMP 2000 DATA STRUCTURES 4.00 A- H
 Yes MGMT 2560 202110 MGMT 2560 CYBERSECURITY LAW & POLICY 3.00 B+ H
-Yes COMP/ELEC�- 1 COMP-1200 or ELEC-2275 202110 COMP 1200 COMPUTER ORGANIZATION 4.00 A H
-Yes ELECTIVE�-1 Humanities/Social Science 202120 COMM 3800 FILM & CODE 4.00 A H
-Yes MATH�- 1 MATH-1875 or MATH-1850 202110 MATH 1850 ENGINEERING CALCULUS II 4.00 C+ H
-Total Credits and GPA : 19.00���3.47
+Yes COMP/ELEC - 1 COMP-1200 or ELEC-2275 202110 COMP 1200 COMPUTER ORGANIZATION 4.00 A H
+Yes ELECTIVE -1 Humanities/Social Science 202120 COMM 3800 FILM & CODE 4.00 A H
+Yes MATH - 1 MATH-1875 or MATH-1850 202110 MATH 1850 ENGINEERING CALCULUS II 4.00 C+ H
+Total Credits and GPA : 19.00   3.47
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et t C Cr re ed diit ts s C Co ou ur rs se es sDegree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
 2 of 6 3/23/2023, 3:42 PM
@@ -42,14 +42,14 @@ Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 2150 202120 COMP 2150 NETWORK ADMINISTRATION 4.00 A- H
 Yes COMP 2350 202120 COMP 2350 ALGORITHMS 4.00 A H
 Yes MATH 2860 202120 MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 A- H
-Yes ELECTIVE�- 1 Humanities/Social Science 202230 HIST 4175 MODERN AMERICAN HISTORY 4.00 A H
-Total Credits and GPA : 16.00���3.84
+Yes ELECTIVE - 1 Humanities/Social Science 202230 HIST 4175 MODERN AMERICAN HISTORY 4.00 A H
+Total Credits and GPA : 16.00   3.84
 Area Requirements
 Area :BSCY Sophomore Summer Semester Required Used Required Used
 Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
-No COOP-OPT�- Optional COOP
-Total Credits and GPA : 0���0.00
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::B BS SC CY Y  JJu un niio or r  F Fa allll  S Se em me es st te er r R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
@@ -59,15 +59,15 @@ Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 3100 202210 COMP 3100 SYSTEM ADMINISTRATION 4.00 A H
 Yes COMP 3400 202210 COMP 3400 OPERATING SYSTEMS 4.00 A H
 Yes COMP 3500 202210 COMP 3500 NETWORK SECURITY 4.00 A H
-Yes ELECTIVE�- 1 Humanities/Social Science 202210 HIST 4300 AMERICAN URBAN HISTORY 4.00 A- H
-Yes MATH/SCI�- 1 MATH or SCIENCE 202320 CHEM 1100 GENERAL CHEMISTRY I 4.00 R
-Total Credits and GPA : 20.00���3.92
+Yes ELECTIVE - 1 Humanities/Social Science 202210 HIST 4300 AMERICAN URBAN HISTORY 4.00 A- H
+Yes MATH/SCI - 1 MATH or SCIENCE 202320 CHEM 1100 GENERAL CHEMISTRY I 4.00 R
+Total Credits and GPA : 20.00   3.92
 Area Requirements
 Area :BSCY Junior Spring Semester Required Used Required Used
 Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COOP 3500 202220 COOP 3500 COOP EDUCATION 1 (BSCY) 0 S H
-Total Credits and GPA : 0���0.00
+Total Credits and GPA : 0   0.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et t C Cr re ed diit ts s C Co ou ur rs se es sDegree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
 3 of 6 3/23/2023, 3:42 PM
@@ -77,15 +77,15 @@ Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 3550 202230 COMP 3550 COMPUTER SECURITY 4.00 A H
 Yes MATH 2100 202230 MATH 2100 PROB & STATS FOR ENGINEERS 4.00 B+ H
-Yes CRYPTO ELE�- 1 Cryptography Elective 202330 COMP 3590 APPLIED CRYPTOGRAPHY 4.00 R
-Yes MATH/SCI�- 1 MATH or SCIENCE 202210 MATH 3700 OPERATIONS RESEARCH 4.00 A H
-Total Credits and GPA : 16.00���3.78
+Yes CRYPTO ELE - 1 Cryptography Elective 202330 COMP 3590 APPLIED CRYPTOGRAPHY 4.00 R
+Yes MATH/SCI - 1 MATH or SCIENCE 202210 MATH 3700 OPERATIONS RESEARCH 4.00 A H
+Total Credits and GPA : 16.00   3.78
 Area Requirements
 Area :BSCY Senior Fall Semester Required Used Required Used
 Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BSCY 0 S H
-Total Credits and GPA : 0���0.00
+Total Credits and GPA : 0   0.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::B BS SC CY Y  S Se en niio or r  S Sp pr riin ng g  S Se em me es st te er r R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
@@ -93,10 +93,10 @@ T T o ot ta all  R Re eq qu uiir re ed d  :: Yes 15.00 16.00 4
 Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 4500 202320 COMP 4500 OFFENSIVE SECURITY 4.00 R
-Yes COMP ELEC�- 1 COMP Elective 202330 COMP 3800 MALWARE ANALYSIS 4.00 R
-Yes CYBER ELEC�- 1 Cybersecurity Elective 202320 COMP 3580 DIGITAL FORENSICS 4.00 R
-Yes ELECTIVE�- 1 Humanities/Social Science 201930 LITR 3797 AP ENGLISH LITERATURE 4.00 TR T
-Total Credits and GPA : 16.00���0.00
+Yes COMP ELEC - 1 COMP Elective 202330 COMP 3800 MALWARE ANALYSIS 4.00 R
+Yes CYBER ELEC - 1 Cybersecurity Elective 202320 COMP 3580 DIGITAL FORENSICS 4.00 R
+Yes ELECTIVE - 1 Humanities/Social Science 201930 LITR 3797 AP ENGLISH LITERATURE 4.00 TR T
+Total Credits and GPA : 16.00   0.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::B BS SC CY Y  S Se en niio or r  S Su um mm me er r  S Se em me es st te er r R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
@@ -105,28 +105,28 @@ Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
 Yes COMP 4550 202330 COMP 4550 INCIDENT RESP & BUS CONTINUITY 4.00 R
 Yes COMP 5500 202330 COMP 5500 SENIOR PROJECT 4.00 R
-No CYBER ELEC�-1 Cybersecurity ElectiveDegree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
+No CYBER ELEC -1 Cybersecurity ElectiveDegree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
 4 of 6 3/23/2023, 3:42 PM
-Yes ELECTIVE�- 1 Humanities/Social Science 202110 PHIL 4501 ETHICS 4.00 B H
-Total Credits and GPA : 12.00���3.00
+Yes ELECTIVE - 1 Humanities/Social Science 202110 PHIL 4501 ETHICS 4.00 B H
+Total Credits and GPA : 12.00   3.00
 A Ar re ea a  R Re eq qu uiir re em me en nt ts s
 M Me et tC Cr re ed diit ts s C Co ou ur rs se es s
 A Ar re ea a  ::C Co om mp pu ut te er r  S Sc ciie en nc ce e  ( (M Miin no or r)) R Re eq qu uiir re ed d U Us se ed d R Re eq qu uiir re ed d U Us se ed d
 T T o ot ta all  R Re eq qu uiir re ed d  :: Yes 16.00 28.00 7
 Area Description
-To earn a minor in Computer Science students�must complete 16 credits.�Core Requirements: COMP2000 & COMP2350�Select 1 course from the following
-list�COMP1200, COMP2100, COMP2650,COMP3660, COMP3750�COMP4050�Advanced Electives: selesct 1course from the following list�COMP3200, COMP3350,
-COMP3400, COMP3450�COMP4450, COMP4460, COMP4700, COMP4960�
+To earn a minor in Computer Science students must complete 16 credits. Core Requirements: COMP2000 & COMP2350 Select 1 course from the following
+list COMP1200, COMP2100, COMP2650,COMP3660, COMP3750 COMP4050 Advanced Electives: selesct 1course from the following list COMP3200, COMP3350,
+COMP3400, COMP3450 COMP4450, COMP4460, COMP4700, COMP4960 
 Detail Requirements
 Met Rule Subject Low Term Subject Course Title Credits Grade Source
-Yes ADV-ELECT�- 1 Advance Electives 202230 COMP 3350 PROGRAMMING LANGUAGES 4.00 A H
-Yes CORE�- 2 Core Courses 202110 COMP 2000 DATA STRUCTURES 4.00 A- H
+Yes ADV-ELECT - 1 Advance Electives 202230 COMP 3350 PROGRAMMING LANGUAGES 4.00 A H
+Yes CORE - 2 Core Courses 202110 COMP 2000 DATA STRUCTURES 4.00 A- H
 202120 COMP 2350 ALGORITHMS 4.00 A H
-No ELECTIVES�- 2 Elective 202110 COMP 1200 COMPUTER ORGANIZATION 4.00 A H
-Yes PREREQS�- 3 Prerequisite Courses 202010 COMP 1000 COMPUTER SCIENCE I 4.00 A H
+No ELECTIVES - 2 Elective 202110 COMP 1200 COMPUTER ORGANIZATION 4.00 A H
+Yes PREREQS - 3 Prerequisite Courses 202010 COMP 1000 COMPUTER SCIENCE I 4.00 A H
 202020 COMP 1050 COMPUTER SCIENCE II 4.00 A H
 202010 MATH 2300 DISCRETE MATH 4.00 A- H
-Total Credits and GPA : 28.00���3.90
+Total Credits and GPA : 28.00   3.90
 In Progress Courses
 Area Subject Course Title Credits
 BSCY Senior Spring Semester COMP 3580 DIGITAL FORENSICS 4.00
@@ -143,10 +143,856 @@ COOP 2500 CO-OP INST: BCOS, BSCN, BSCY 202110 0 S
 FYS 1000 FIRST YEAR SEMINAR 202010 0 S
 Attributes Not Used
 Attribute Subject Course Title Term Credits Grade
-OLC COMM 3800 FILM & CODE 202120 4.00 A
-OLC COMP 2350 ALGORITHMS 202120 4.00 A
-OLC MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 202120 4.00 A-
-RLC COMP 2150 NETWORK ADMINISTRATION 202120 4.00 A-Degree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
-5 of 6 3/23/2023, 3:42 PM
-Degree evaluation record https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/...
-6 of 6 3/23/2023, 3:42 PM
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 2/5Program Additional Levels
+Level Include/Exclude Grade Maximum Credits And/Or Actual Credits Actual Courses
+Graduate Include 8.00 None 0 0
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Fall Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1000 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+Yes MATH 2300 202010MATH 2300 DISCRETE MATH 4.00 A- H
+No ENGLISH - 1 English Sequence 201930ENGL 1100 ENGLISH I 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1750 or MATH-1775 202010MATH 1775 INTEGRATED ENG CALCULUS I 4.00 C+ H
+Total Credits and GPA : 15.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Freshmen Spring Semester Required Used Required Used
+Total Required : No 16.00 15.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 1050 202020COMP 1050 COMPUTER SCIENCE II 4.00 B+ H
+Yes COMP 1200 202020COMP 1200 COMPUTER ORGANIZATION 4.00 C H
+No ENGLISH - 1 English Sequence 201930ENGL 2200 ENGLISH II 3.00 TR T
+Yes ENGR-MATH - 1 MATH-1850 or MATH-1875 202020MATH 1875 INTEGRATED ENG CALCULUS II 4.00 C+ H
+Total Credits and GPA : 15.00   2.55
+Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2000 202110COMP 2000 DATA STRUCTURES 4.00 C H
+Yes COMP 2100 202110COMP 2100 NETWORK PROGRAMMING 4.00 C+ H
+Yes MATH 2860 202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+YesELECTIVE - 1 Humanities/ Social Science 202110ECON 4102 PRINCIPLES OF ECONOMICS 4.00 C H
+Total Credits and GPA :16.00   1.92
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 3/5Area Requir ements
+MetCredits Courses
+Area :BCOS Sophomore Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 2350 202210COMP 2350 ALGORITHMS 4.00 A H
+Yes COMP 2650 202120COMP 2650 DATABASES 4.00 B+ H
+Yes MATH 2100 202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Yes ELECTIVE - 1 Humanities/ Social Science 202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+Total Credits and GPA : 16.00   3.42
+Area Requirements
+Area :BCOS Sophomore Summer Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+No COOP-OPT - Optional COOP
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Fall Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3400 202210COMP 3400 OPERATING SYSTEMS 4.00 B- H
+Yes ELECTIVE - 1 Humanities/ Social Science 202120POLS 4502 MEDIA AND POLITICS 4.00 A- H
+Yes ELECTIVE 2 - 1 Computer Science 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+Yes ELECTIVE 3 - 1 Mathematics or Science 201930CHEM 1100 AP GENERAL CHEMISTRY I 4.00 TR T
+Total Credits and GPA : 16.00   3.45
+Area Requirements
+Area :BCOS Junior Spring Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 3500 202220 COOP 3500 CREATIVE CO-OP - FUTURE LAB 0 S H
+Total Credits and GPA : 0   0.00
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 4/5Area Requir ements
+MetCredits Courses
+Area :BCOS Junior Summer Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 3350 202230COMP 3350 PROGRAMMING LANGUAGES 4.00 B+ H
+Yes COMP 3450 202230COMP 3450 PARALLEL COMPUTING 4.00 A- H
+Yes ELECTIVE -1 Mathematics or Science 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+Yes ELECTIVE 2 - 1 Computer Science 202320COMP 3800 DATABASE SECURITY 4.00 R
+Total Credits and GPA : 16.00   3.67
+Area Requirements
+Area :BCOS Senior Fall Semester Required Used Required Used
+Detail Requirements
+Met Rule Subject Low Term Subject Course Title Credits Grade Source
+Yes COOP 4500 202310 COOP 4500 COOP EDUCATION 2: BCOS 0 S H
+Total Credits and GPA : 0   0.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Spring Semester Required Used Required Used
+Total Required : Yes 16.00 16.00 4
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+Yes COMP 4960 202320COMP 4960 SOFTWARE ENGINEERING 4.00 R
+Yes ELECTIVE - 1 Humanities/ Social Science 202020PSYC 4100 INTRODUCTION TO PSYCHOLOGY 4.00 A H
+Yes ELECTIVE 2 - 2 Computer Science 202330COMP 3800 AI FOR GAMING 4.00 R
+202320COMP 4650 WEB DEVELOPMENT 4.00 R
+Total Credits and GPA : 16.00   4.00
+Area Requir ements
+MetCredits Courses
+Area :BCOS Senior Summer Semester Required Used Required Used
+Total Required : No 16.00 8.00 2
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+No COMP 5500
+3/22/23, 3:39 PM Degree evaluation record
+https://selfservice.wit.edu/StudentSelfService/ssb/degreeEvaluation#!/home/202410/tabs/curriculum/report/54 5/5No ELECTIVE -1 Computer Science
+Yes ELECTIVE 2 - 1 Mathematics or Science 202210PHYS 1250 ENGINEERING PHYSICS I 4.00 B H
+Yes ELECTIVE 3 - 1 Humanities/ Social Science 202320PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00 R
+Total Credits and GPA : 8.00   3.00
+Area Requir ements
+MetCredits Courses
+Area :Data Science (Minor) Required Used Required Used
+Total Required : Yes 20.00 24.00 6
+Area GPA : Yes 2.00 3.11
+Detail Requirements
+MetRule Subject Low Term Subject Course Title CreditsGradeSource
+YesCORE - 2 Req: COMP-3125 & MATH-2860 202210COMP 3125 DATA SCIENCE FUNDAMENTALS 4.00 A H
+202110MATH 2860 LINEAR ALGEBRA & MATRIX THEORY 4.00 D+ H
+No ELECTIVE - 3 Electives Required 202230MATH 4050 MACHINE LRNG:CONC,TECH, ALGRYM 4.00 A H
+202230PHIL 4525 VIRTUAL ETHICS 4.00 A H
+YesPREREQ - 2 Req. Course (see catalog) 202010COMP 1000 COMPUTER SCIENCE I 4.00 B H
+202120MATH 2100 PROB & STATS FOR ENGINEERS 4.00 C+ H
+Total Credits and GPA :24.00   3.11
+In Progress Courses
+Area Subject Course Title Credits
+BCOS Senior Spring Semester COMP 3800 AI FOR GAMING 4.00
+BCOS Senior Spring Semester COMP 4650 WEB DEVELOPMENT 4.00
+BCOS Senior Spring Semester COMP 4960 SOFTWARE ENGINEERING 4.00
+BCOS Senior Summer Semester PSYC 4552 INDUSTRIAL-ORG PSYCHOLOGY 4.00
+BCOS Junior Summer Semester COMP 3800 DATABASE SECURITY 4.00
+Courses Not Used
+Subject Course Title Term Credits Grade
+COMP 2350 ALGORITHMS 202120 4.00 F*
+COOP 2500 CO-OP INSTITUTE: BCOS 202210 0 S
+FYS 1000 FIRST YEAR SEMINAR 202010 0 S
+Attributes Not Used
+Attribute Subject Course Title Term Credits Grade
+OLC COMP 2350 ALGORITHMS 202120 4.00 F*
