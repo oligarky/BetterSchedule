@@ -2,6 +2,7 @@ extends Button
 
 
 func _pressed():
+	
 	var p=get_parent()
 	p.hide()
 # Called when the node enters the scene tree for the first time.
