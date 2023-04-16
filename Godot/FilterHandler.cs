@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 public partial class FilterHandler : Node
 {
+	
 	List<Label> filters=new List<Label>();
 	List<String> tfilters=new List<String>();
 	List<String> sfilters=new List<String>();
@@ -37,7 +38,7 @@ public partial class FilterHandler : Node
 	List<String> Campus= new List<String>();
 	List<String> Status= new List<String>();
 	List<String> stat= new List<String>();
-
+	
 	bool exclusive=false;
 
 	public async void get_filter(){
@@ -137,13 +138,9 @@ public partial class FilterHandler : Node
 		}
 	}
 
-	public void degreefilter(String s, String n){
-		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
-		GD.Print("in filter handler");
-		filter.listlabels(this.GetChild<VBoxContainer>(0));
-		GD.Print("going to hides");
-		filter.Hides(s,n);
-	}
+	
+
+	
 	//Seperated for easier editing
 	private VBoxContainer get_filter_parent(){
 		GD.Print(this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0));
@@ -217,6 +214,12 @@ public partial class FilterHandler : Node
 				Status.Add(ob.GetItemText(i));
 			}
 		}
+	}
+
+	public void searchH(String s){
+		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
+		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
+		filter.search(s);
 	}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

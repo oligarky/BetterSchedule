@@ -12,10 +12,19 @@ public partial class filter_hiding : Node
 	public override void _Ready()
 	{
 	
-		
+	}
 
-		
-
+	//Used by the search bar
+	public void search(String fs){
+		hideAll();
+		for(var j=0;j<classes.Count-1;j++){
+			
+			String filter = classes[j].Text;
+			if((filter.Contains(fs))){
+				classes[j].GetParent<HBoxContainer>().Show();
+				
+			}
+		}
 	}
 	//Moves through the tree of nodes to find all of the labels 
 	public void listlabels(VBoxContainer head){
