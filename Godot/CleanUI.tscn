@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://iuwl0fe038rq"]
+[gd_scene load_steps=16 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
 [ext_resource type="Script" path="res://addFilter.gd" id="5_2jukh"]
 [ext_resource type="Script" path="res://Managefile.gd" id="7_io627"]
+[ext_resource type="Script" path="res://GenerateOptions.cs" id="7_tfku8"]
 [ext_resource type="Script" path="res://bookmarklet.gd" id="8_vta1a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
@@ -45,7 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("8_vta1a")
 
 [node name="WentworthTitleBar" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -129,7 +129,7 @@ layout_mode = 2
 offset_left = 4.0
 offset_right = 104.0
 offset_bottom = 291.0
-script = ExtResource("8_vta1a")
+script = ExtResource("7_tfku8")
 
 [node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
 layout_mode = 2
@@ -150,7 +150,9 @@ offset_left = 70.0
 offset_right = 173.0
 offset_bottom = 31.0
 scale = Vector2(0.85, 0.85)
-text = "Reset Filters"
+tooltip_text = "Shows all courses including those filtered out."
+text = "Show All
+"
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2"]
 custom_minimum_size = Vector2(160, 0)
@@ -1030,11 +1032,13 @@ Audit
 "
 text_overrun_behavior = 3
 
-[node name="Button2" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+[node name="Bookmarklet" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Bookmarklet generator"
+text = "Export 
+Schedule"
+script = ExtResource("8_vta1a")
 
 [node name="Button3" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 layout_mode = 2
@@ -1077,9 +1081,10 @@ script = ExtResource("7_io627")
 
 [connection signal="text_submitted" from="VBoxContainer/WentworthTitleBar/HBoxContainer/right/LineEdit" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="searchH"]
 [connection signal="toggled" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/CheckButton" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="exin"]
-[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/Reset Filters" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/Reset Filters" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="showall"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/DegreeAudit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Bookmarklet" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Bookmarklet" method="_on_pressed"]
 [connection signal="about_to_popup" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" to="VBoxContainer/VSplitContainer" method="import"]
 [connection signal="file_selected" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" method="scraper"]

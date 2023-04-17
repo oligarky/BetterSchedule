@@ -39,6 +39,7 @@ public partial class FilterHandler : Node
 	List<String> Status= new List<String>();
 	List<String> stat= new List<String>();
 	
+	filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 	bool exclusive=false;
 
 	public async void get_filter(){
@@ -118,12 +119,11 @@ public partial class FilterHandler : Node
 				stfilters.Add(match);
 			}
 		}
-		filter();
+		filtersend();
 	}
 	//runs everytime a filter is applied
-	public void filter(){
+	public void filtersend(){
 		
-		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
 		List<String>[] fi = {tfilters,sfilters,cfilters,sefilters,hfilters,crfilters,terfilters,infilters,mdfilters,mtsfilters,mtefilters,bfilters,rfilters,cafilters,stfilters};
 		if(exclusive){
@@ -215,7 +215,12 @@ public partial class FilterHandler : Node
 			}
 		}
 	}
+	public void showall(){
+		filter.listlabels(this.GetChild<VBoxContainer>(0));
+		filter.showAll();
+	}
 
+	//Called by 
 	public void searchH(String s){
 		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
