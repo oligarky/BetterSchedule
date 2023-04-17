@@ -17,10 +17,11 @@ public partial class filter_hiding : Node
 	//Used by the search bar
 	public void search(String fs){
 		hideAll();
+		String find= fs.ToLower();
 		for(var j=0;j<classes.Count-1;j++){
 			
-			String filter = classes[j].Text;
-			if((filter.Contains(fs))){
+			String filter = classes[j].Text.ToLower();
+			if((filter.Contains(find))){
 				classes[j].GetParent<HBoxContainer>().Show();
 				
 			}
@@ -164,6 +165,7 @@ public partial class filter_hiding : Node
 	public void unHide(String s){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
+		
 		for(var j=0;j<classes.Count-1;j++){
 
 			String filter = classes[j].Text;

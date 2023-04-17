@@ -1,7 +1,7 @@
 extends OptionButton
 
 
-
+#Adds filters 
 func _add_filter():
 	var l = Label.new()
 	var p=get_parent().get_child(3).get_child(0)

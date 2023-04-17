@@ -3,9 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
+/**
+This Class is the script that gets called by other elements in Godot to filter things.
+**/
 public partial class FilterHandler : Node
 {
-	
+	//Create filters lists
 	List<Label> filters=new List<Label>();
 	List<String> tfilters=new List<String>();
 	List<String> sfilters=new List<String>();
@@ -39,12 +43,16 @@ public partial class FilterHandler : Node
 	List<String> Status= new List<String>();
 	List<String> stat= new List<String>();
 	
+	//making the filter object to use for sending the filtering commands
 	filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 	bool exclusive=false;
 
+	//This function gets the filters that the user has selected
 	public async void get_filter(){
+		//Making sure that the data is where it should be before looking for it
 		await Task.Delay(1);
 		
+		//clearing all of the lists before looking again
 		tfilters.Clear();
 		sfilters.Clear();
 		cfilters.Clear();
@@ -61,27 +69,33 @@ public partial class FilterHandler : Node
 		cafilters.Clear();
 		stfilters.Clear();
 		filters.Clear();
+
+		//this checks to see if the lists that the filters check against are filled and if not calls the function to fill them
 		if(Subject.Count==0){
 			get_options();
 		}
+		
 		VBoxContainer vp = get_filter_parent();
-		GD.Print("Getting filters");
-		GD.Print("vp child count "+vp.GetChildCount());
+		//GD.Print("Getting filters");
+		//GD.Print("vp child count "+vp.GetChildCount());
+		//loops through the all the filter labels that exist
 		for(int i=0;i<vp.GetChildCount();i++){
-			GD.Print(vp.GetChild(i));
-			GD.Print(vp.GetChild<Label>(i).Text);
+			//GD.Print(vp.GetChild(i));
+			//GD.Print(vp.GetChild<Label>(i).Text);
+			//if the filter is visible it will add it to the unsorted filters list
 			if(vp.GetChild<Label>(i).IsVisibleInTree()){
 				filters.Add(vp.GetChild<Label>(i));
 			}
 		}
+
 		sortFilter();
 	}
-
+	//Used for exclusive filters that is currently not working
 	public void exin(bool b){
 		exclusive = b;
 		get_filter();
 	}
-	
+	//This function will sort the filters to make determining the appropriate index is checked later
 	private void sortFilter(){
 		
 		for(int i=0;i<filters.Count;i++){
@@ -115,17 +129,20 @@ public partial class FilterHandler : Node
 				rfilters.Add(match);
 			}else if(Campus.Contains(match)){
 				cafilters.Add(match);
+			//Special case for Space and Full to make it a little easier to filter for
 			}else if(match.Contains("Space") || match.Contains("Full")){
 				stfilters.Add(match);
 			}
 		}
+		//Sends the filters to the function that uses filter hider functions.
 		filtersend();
 	}
-	//runs everytime a filter is applied
+	//runs everytime a filter is applied and sends the filter lists to the filter hider function
 	public void filtersend(){
 		
 		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
 		List<String>[] fi = {tfilters,sfilters,cfilters,sefilters,hfilters,crfilters,terfilters,infilters,mdfilters,mtsfilters,mtefilters,bfilters,rfilters,cafilters,stfilters};
+		//Checks to see if filters 
 		if(exclusive){
 			GD.Print("Sending to exclusive");
 

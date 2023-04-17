@@ -11,7 +11,7 @@ public partial class DegreeInParse : VSplitContainer
 	{
 		
 	}
-
+	//This function opens the output file from the degree audit parsing python scripts and reads it.
 	public void import(){
 		String f = "ParsedOutput.txt";
 		GD.Print(File.Exists(f));
@@ -27,17 +27,19 @@ public partial class DegreeInParse : VSplitContainer
 		parse();
 
 	}
-
+	//Pares the text imported by import().
 	private void parse(){
 		filter_hiding hider = new filter_hiding();
 		hider.listlabels(GetChild(0).GetChild(0).GetChild<VBoxContainer>(0));
 		for(int i=0;i<dinfo.Count-1;i++){
 			String[] tohide = dinfo[i].Split(",");
+			//hides the courses that are listed as completed
 			if(tohide[0].Contains("Yes")){
 				hider.Hides(tohide[1].StripEdges(),tohide[2].StripEdges());
 			}
 		}
 	}
+	//Used for debug purposes.
 	private void printall(){
 		for(int i=0;i<dinfo.Count-1;i++){
 			
