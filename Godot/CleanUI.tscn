@@ -1050,7 +1050,8 @@ text = "Button"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Button"
+text = "Refresh 
+list"
 
 [node name="Button5" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 layout_mode = 2
@@ -1086,5 +1087,6 @@ script = ExtResource("7_io627")
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/DegreeAudit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Bookmarklet" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Bookmarklet" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Button4" to="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer" method="_ready"]
 [connection signal="about_to_popup" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" to="VBoxContainer/VSplitContainer" method="import"]
 [connection signal="file_selected" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" method="scraper"]
