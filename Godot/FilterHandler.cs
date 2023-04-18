@@ -163,7 +163,7 @@ public partial class FilterHandler : Node
 		GD.Print(this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0));
 		return this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0);
 	}
-
+	//Gets the options listed in the dropdown list.
 	private void get_options(){
 		var ob=get_filter_parent().GetParent().GetParent().GetChild<OptionButton>(1);
 		var obc=ob.ItemCount;
@@ -232,12 +232,13 @@ public partial class FilterHandler : Node
 			}
 		}
 	}
+	//Shows all the courses even through filters
 	public void showall(){
 		filter.listlabels(this.GetChild<VBoxContainer>(0));
 		filter.showAll();
 	}
 
-	//Called by 
+	//Called by the search bar and prepares the filter_hiding then sends the data
 	public void searchH(String s){
 		filter_hiding filter = new filter_hiding(); //importing method in C# for other scripts
 		filter.listlabels(this.GetChild<VBoxContainer>(0));//This will need to be checked in final to make sure it is correct
