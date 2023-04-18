@@ -55,11 +55,6 @@ public partial class filter_hiding : Node
 		//GD.Print("End list");
 
 	}
-	//still attached to the button but does nothing, should be removed in cleaning
-	public void _on_pressed()
-	{
-		//listlabels();
-	}
 
 	//Not working
 	public void exfilter(List<String>[] fi){
@@ -115,22 +110,22 @@ public partial class filter_hiding : Node
 	public void filterby(List<String>[] fi){
 		//loops through all of the classes found in listLabels. ListLabes should be called first but will just not work as 
 		//intended otherwise without an error.
-		showAll();
+		hideAll();
+		
 		statManager();
 		for(var j=0;j<classes.Count-1;j++){
 
 			String filter = classes[j].Text;
 			for(var i=0; i<15;i++){
 				if(!(j%15==14)&& ((fi[i].Contains(filter) && j%15==i))){
-					classes[j].GetParent<HBoxContainer>().Hide();
+					classes[j].GetParent<HBoxContainer>().Show();
+					//GD.Print(filter);
 				}else if(j%15==14){
-					
-					
 					if(!(stat.Contains(filter))&& (fi[14].Contains("Space"))){
 						
-						classes[j].GetParent<HBoxContainer>().Hide();
+						classes[j].GetParent<HBoxContainer>().Show();
 					}else if(stat.Contains(filter)&& (fi[14].Contains("Full"))){
-						classes[j].GetParent<HBoxContainer>().Hide();
+						classes[j].GetParent<HBoxContainer>().Show();
 						
 					}
 						
@@ -138,14 +133,14 @@ public partial class filter_hiding : Node
 			}
 		}
 		
-		for(var j=0;j<classes.Count-1;j++){
+		// for(var j=0;j<classes.Count-1;j++){
 			
-			if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
-				classes[j].GetParent<HBoxContainer>().Hide();
-			}else{
-				classes[j].GetParent<HBoxContainer>().Show();
-			}
-		}
+		// 	if(classes[j].GetParent<HBoxContainer>().IsVisibleInTree()){
+		// 		classes[j].GetParent<HBoxContainer>().Hide();
+		// 	}else{
+		// 		classes[j].GetParent<HBoxContainer>().Show();
+		// 	}
+		// }
 
 
 	}

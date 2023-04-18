@@ -1078,7 +1078,7 @@ script = ExtResource("7_io627")
 
 [connection signal="text_submitted" from="VBoxContainer/WentworthTitleBar/HBoxContainer/right/LineEdit" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="searchH"]
 [connection signal="toggled" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/CheckButton" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="exin"]
-[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/Reset Filters" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="showall"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/Label/Reset Filters" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Refresh" to="VBoxContainer/VSplitContainer/TopHBox/Head/VBoxContainer" method="_ready"]

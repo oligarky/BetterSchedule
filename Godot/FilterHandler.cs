@@ -148,9 +148,9 @@ public partial class FilterHandler : Node
 
 			filter.exfilter(fi);
 		}else{
-			GD.Print(Status[1]);
-			GD.Print(fi[14].Contains("Full"));
-			GD.Print("Sending to inclusive");
+			//GD.Print(Status[1]);
+			//GD.Print(fi[14].Contains("Full"));
+			//GD.Print("Sending to inclusive");
 			filter.filterby(fi);//example used is COMP but will eventaully be finding the text from nodes elsewhere
 		}
 	}
@@ -160,7 +160,7 @@ public partial class FilterHandler : Node
 	
 	//Seperated for easier editing
 	private VBoxContainer get_filter_parent(){
-		GD.Print(this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0));
+		//GD.Print(this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0));
 		return this.GetParent().GetChild(1).GetChild<VBoxContainer>(0).GetChild(3).GetChild<VBoxContainer>(0);
 	}
 	//Gets the options listed in the dropdown list.
