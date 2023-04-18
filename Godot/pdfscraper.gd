@@ -7,6 +7,7 @@ func _ready():
 
 
 
+
 func scraper(path):
 	var pid=OS.create_process("./Python311/python.exe", ["./pdfscraping.py",path])
 	print(pid)
@@ -16,4 +17,5 @@ func scraper(path):
 	print(pid2)
 	while OS.is_process_running(pid2):
 		pass
-	popup_centered()
+	if(!(OS.is_process_running(pid)) && !(OS.is_process_running(pid2))):
+		popup_centered()

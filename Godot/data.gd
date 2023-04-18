@@ -13,6 +13,13 @@ func load_csv():
 	var counter = 0
 	var counter2 = 0
 	
+	if get_child_count()>0:
+		for i in range(get_child_count()):
+			if(get_child(0)!= null):
+				remove_child(get_child(0))
+		
+		
+	
 	for j in range(80):
 		var hbox = HBoxContainer.new()
 		add_child(hbox)
