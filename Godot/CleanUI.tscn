@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://iuwl0fe038rq"]
+[gd_scene load_steps=13 format=3 uid="uid://iuwl0fe038rq"]
 
 [ext_resource type="Texture2D" uid="uid://dj2jxyup7xbde" path="res://Images/Wentworth Logo.png" id="1_8fobm"]
 [ext_resource type="Script" path="res://pdfscraper.gd" id="1_es1a6"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://FilterHandler.cs" id="4_asn7s"]
 [ext_resource type="Script" path="res://data.gd" id="4_xd4mr"]
 [ext_resource type="Script" path="res://addFilter.gd" id="5_2jukh"]
-[ext_resource type="Script" path="res://scheduleBuilder.gd" id="6_ba0b7"]
-[ext_resource type="Script" path="res://addCRN.gd" id="6_s4opb"]
 [ext_resource type="Script" path="res://Managefile.gd" id="7_io627"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxw7"]
@@ -188,7 +186,6 @@ text = "Add"
 [node name="BottomHBox" type="HBoxContainer" parent="VBoxContainer/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("6_ba0b7")
 
 [node name="CalendarVBox" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox"]
 layout_mode = 2
@@ -541,6 +538,7 @@ size_flags_horizontal = 3
 
 [node name="GridContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="7am" type="Panel" parent="VBoxContainer/VSplitContainer/BottomHBox/CalendarVBox/CalendarScroll/CalendarHBox/Mon/GridContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -1026,11 +1024,12 @@ size_flags_vertical = 3
 
 [node name="Head2" type="GridContainer" parent="VBoxContainer/VSplitContainer/BottomHBox"]
 layout_mode = 2
+columns = 2
 
 [node name="DegreeAudit" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 17
 text = "Upload 
 Degree 
@@ -1038,30 +1037,35 @@ Audit
 "
 text_overrun_behavior = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Bookmarklet
-"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+[node name="Button2" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+text = "Button"
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-placeholder_text = "Add CRN"
-script = ExtResource("6_s4opb")
-
-[node name="Button3" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="Button3" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Add
-"
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button4" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button5" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button6" type="Button" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
 
 [node name="Upload Succesful" type="AcceptDialog" parent="VBoxContainer/VSplitContainer/BottomHBox/Head2"]
 initial_position = 1
@@ -1081,6 +1085,4 @@ script = ExtResource("7_io627")
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Head" method="get_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/AddFilter" to="VBoxContainer/VSplitContainer/TopHBox/Panel/Head2/OptionButton" method="_add_filter"]
 [connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/DegreeAudit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/VBoxContainer/Button3" to="VBoxContainer/VSplitContainer/BottomHBox" method="getLabel"]
-[connection signal="pressed" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/VBoxContainer/Button3" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/VBoxContainer/LineEdit" method="_add_text"]
 [connection signal="file_selected" from="VBoxContainer/VSplitContainer/BottomHBox/Head2/Select degree audit" to="VBoxContainer/VSplitContainer/BottomHBox/Head2/Upload Succesful" method="scraper"]
